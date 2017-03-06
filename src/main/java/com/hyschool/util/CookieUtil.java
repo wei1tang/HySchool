@@ -23,12 +23,14 @@ public class CookieUtil {
      */
     public static void addLoginCookie(HttpServletResponse response, Vip vip) {
         String email = vip.getEmail();
-        addCookie(response, LOGIN_COOKIE_NAME, email, REMEMBER_ME_COOKIE_EXPIRE, DOMAIN, PATH);
+        String name = vip.getName();
+        String name_email = name+"|"+email;
+        addCookie(response, LOGIN_COOKIE_NAME, name_email, REMEMBER_ME_COOKIE_EXPIRE, DOMAIN, PATH);
     }
 
-    public static void addCookie(HttpServletResponse response, String cookie_name, String email, int maxAge, String domain,
+    private static void addCookie(HttpServletResponse response, String cookie_name, String name_email, int maxAge, String domain,
                                  String path) {
-        Cookie cookie = new Cookie(cookie_name, email);
+        Cookie cookie = new Cookie(cookie_name, name_email);
         cookie.setDomain(domain);
         cookie.setPath(path);
         cookie.setMaxAge(maxAge);
@@ -41,11 +43,11 @@ public class CookieUtil {
      * @param request
      * @return
      */
-    public static String getLoginVipEmail(HttpServletRequest request) {
+    public static String getLoginVipNameEmail(HttpServletRequest request) {
         return getByCookieName(request, LOGIN_COOKIE_NAME);
     }
 
-    public static String getByCookieName(HttpServletRequest request,String cookie_name){
+    private static String getByCookieName(HttpServletRequest request,String cookie_name){
         String email = "";
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0) {
@@ -68,7 +70,7 @@ public class CookieUtil {
         removeCookie(response, LOGIN_COOKIE_NAME, DOMAIN, PATH);
     }
 
-    public static void removeCookie(HttpServletResponse response, String cookie_name, String domain, String path) {
+    private static void removeCookie(HttpServletResponse response, String cookie_name, String domain, String path) {
         Cookie cookie = new Cookie(cookie_name, null);
         cookie.setMaxAge(0);
         cookie.setDomain(domain);

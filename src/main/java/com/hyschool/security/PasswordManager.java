@@ -47,6 +47,13 @@ public class PasswordManager {
 		return encoder.encode(password);
 	}
 
+
+    /**
+     *
+     * @param encPass   数据库提取的密码
+     * @param rawPass   需要验证的密码
+     * @return
+     */
 	public boolean isPasswordValid(String encPass, String rawPass) {
 		return encoder.matches(rawPass, encPass);
 	}

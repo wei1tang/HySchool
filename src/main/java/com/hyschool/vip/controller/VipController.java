@@ -1,6 +1,7 @@
 package com.hyschool.vip.controller;
 
 import com.hyschool.security.PasswordManager;
+import com.hyschool.util.CookieUtil;
 import com.hyschool.util.ServiceException;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.bean.VipValidate;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 /**
@@ -41,11 +45,53 @@ public class VipController {
     private static Logger logger = LoggerFactory.getLogger(VipController.class);
 
     @RequestMapping(value = "/login.html",method = RequestMethod.GET)
-    public String goLogin(){
+    public String goLogin(HttpServletRequest request){
+        String name_email = CookieUtil.getLoginVipNameEmail(request);
+        if (name_email!=null && !name_email.equals(""))
+            return "redirect:/index.html";
         return "login";
     }
 
+    @RequestMapping(value = "/login.html",method = RequestMethod.POST)
+    public String doLogin(@RequestParam("email")String email, @RequestParam("password")String password,
+                          Model model, HttpServletResponse response, HttpSession session){
+        String error;
+        boolean isValid = EmailValidator.getInstance().isValid(email);
+        if (email == null || email.equals("") || !isValid){
+            error = "邮箱格式不正确";
+            model.addAttribute("error",error);
+            return "login";
+        }
+        if (password == null || password.equals("")){
+            error = "密码不能为空";
+            model.addAttribute("error",error);
+            return "login";
+        }
+        Vip vip = vipService.findAvailableVip(email);
+        if (vip == null){
+            error = "账号不存在";
+            model.addAttribute("error",error);
+            return "login";
+        }else if (!passwordManager.isPasswordValid(vip.getPassword(),password)){
+            error = "密码错误";
+            model.addAttribute("error",error);
+            return "login";
+        }
+        CookieUtil.addLoginCookie(response,vip);
+        session.setAttribute("vip",vip);
+        logger.info("Vip:  "+vip.getName()+"|"+vip.getEmail()+"  成功登录!");
+        return "redirect:/index.html";
+    }
 
+    @RequestMapping(value = "logout.html",method = RequestMethod.GET)
+    public String logout(HttpServletResponse response,HttpServletRequest request){
+        String name_email = CookieUtil.getLoginVipNameEmail(request);
+        CookieUtil.removeLoginCookie(response);
+        if (name_email!=null && !name_email.equals("")){
+            logger.info("Vip:  "+name_email+"  成功登出!");
+        }
+        return "redirect:/index.html";
+    }
 
     @RequestMapping(value = "/register.html",method = RequestMethod.GET)
     public String goRegister(Model model){

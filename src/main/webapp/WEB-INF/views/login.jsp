@@ -28,8 +28,9 @@
 
         <!-- 登录 -->
         <div class="login-con f-l">
-            <form action="${pageContext.request.contextPath}/login.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/login.html" method="post">
                 <div class="form-group">
+                    <span>${error}</span>
                     <input type="text" name="email" placeholder="邮箱">
                 </div>
                 <div class="form-group">

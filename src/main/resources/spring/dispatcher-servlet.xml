@@ -39,7 +39,7 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/vip/login.html"/>
+            <mvc:mapping path="/order/*"/>
             <bean class="com.hyschool.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

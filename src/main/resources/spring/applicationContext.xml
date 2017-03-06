@@ -37,7 +37,11 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSession"/>
     </bean>
 
+    <bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
+    <bean id="passwordManager" class="com.hyschool.security.PasswordManager">
+        <property name="encoder" ref="bcryptEncoder" />
+    </bean>
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">

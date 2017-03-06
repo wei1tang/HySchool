@@ -24,5 +24,6 @@ index
 
 <br>
 ${test}
+<a href="${pageContext.request.contextPath}/vip/logout.html">vip登出</a>
 </body>
 </html>
