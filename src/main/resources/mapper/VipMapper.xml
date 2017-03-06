@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyschool.vip.dao.VipMapper">
+  <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.Vip">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="user_type" jdbcType="INTEGER" property="userType" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="reset_password_time" jdbcType="TIMESTAMP" property="resetPasswordTime" />
+  </resultMap>
+
+    <select id="findVipWithState" resultMap="BaseResultMap">
+        SELECT * FROM vip WHERE email=#{email,jdbcType=VARCHAR} AND state=#{state,jdbcType=INTEGER}
+    </select>
+
+    <select id="findVipByEmail" parameterType="String" resultMap="BaseResultMap">
+        SELECT * FROM vip WHERE email=#{email,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="createVip" parameterType="com.hyschool.vip.bean.Vip">
+        INSERT INTO vip (email,password,name,state,user_type,create_time)
+        VALUES (
+                #{email,jdbcType=VARCHAR},
+                #{password,jdbcType=VARCHAR},
+                #{name,jdbcType=VARCHAR},
+                #{state,jdbcType=INTEGER},
+                #{userType,jdbcType=INTEGER},
+                #{createTime,jdbcType=TIMESTAMP}
+                )
+    </insert>
+
+    <update id="updateInvalidVip" parameterType="com.hyschool.vip.bean.Vip">
+        UPDATE vip
+        <set>
+            password=#{password,jdbcType=VARCHAR},
+            name=#{name,jdbcType=VARCHAR},
+            create_time=#{createTime,jdbcType=TIMESTAMP}
+        </set>
+        WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+    <update id="activateVip">
+        UPDATE vip set state=#{state,jdbcType=INTEGER} WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateResetPasswordTime">
+        UPDATE vip set reset_password_time=#{resetPasswordTime,jdbcType=TIMESTAMP} WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+    <update id="resetPassword">
+        UPDATE vip set password=#{password,jdbcType=VARCHAR} WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

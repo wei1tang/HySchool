@@ -1,0 +1,318 @@
+body, div, ul, ol, li, p, i, em, h1, h2, h3, h4, a, strong, span, img, form, input, textarea, button{
+	padding: 0;
+	margin:0;
+}
+body{
+	/*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;*/
+	font-family:"Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+	font-size: 15px;
+	line-height: 24px;
+}
+input, textarea{
+	outline: none;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+img{
+	border: 0;
+}
+.pr{
+	position: relative;
+}
+.pa{
+	position: absolute;
+}
+.pf{
+	position: fixed;
+}
+.f-l{
+	float: left;
+}
+.f-r{
+	float: right;
+}
+li, div, ul{
+	*zoom:1;
+}
+li:after, div:after, ul:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+.tran{
+	transition:all 0.3s ease-out;
+	-webkit-transition:all 0.3s ease-out;
+	-moz-transition:all 0.3s ease-out;
+	-o-transition:all 0.3s ease-out;
+}
+.container{
+	width: 1000px;
+	margin: 0 auto;
+}
+/*--------------样式重置------------*/
+/***********/
+
+.login-banner{
+	width: 100%;
+	background: url(../images/login.jpg) center bottom no-repeat \9;
+	background: url(../images/login.jpg) center bottom/cover no-repeat;
+}
+@media screen and (min-width: 320px) {
+    .login-banner{
+    	height: 100px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .login-banner{
+    	height: 120px;
+    }
+}
+@media screen and (min-width: 640px) {
+    .login-banner{
+    	height: 160px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .login-banner{
+    	height: 180px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .login-banner{
+    	height: 200px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .login-banner{
+    	height: 220px;
+    }
+}
+@media screen and (min-width: 1366px) {
+    .login-banner{
+    	height: 240px;
+    }
+}
+@media screen and (min-width: 1680px) {
+    .login-banner{
+    	height: 260px;
+    }
+}
+.login-banner{
+	height: 260px \9;
+}
+.login-box{
+	width: 320px;
+	margin:0 auto;
+	overflow-x: hidden;
+}
+.box-con{
+	width: 1600px;
+}
+.login-con{
+	width: 300px;
+	margin:0 10px;
+}
+.login-box .form-group{
+	margin-top: 20px;
+}
+
+.login-box input{
+	width: 300px;
+	height:40px;
+	line-height: 40px \9;
+	padding-left: 10px;
+	border: 1px #d9d9d9 solid;
+	border-radius: 5px;
+	font-size: 14px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	transition:all 0.3s ease-out;
+	-webkit-transition:all 0.3s ease-out;
+	-moz-transition:all 0.3s ease-out;
+}
+.login-box input:focus{
+	border-color: #03a9f4;
+	box-shadow: 0 0 15px #03a9f4;
+	-webkit-box-shadow: 0 0 15px #03a9f4;
+	-moz-box-shadow: 0 0 15px #03a9f4;
+}
+.login-box button{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	border: 0;
+	background-color: #03a9f4;
+	color: #fff;
+	border-radius: 5px;
+}
+.login-box button a{
+	display: block;
+}
+.login-box button a:hover{
+	padding-top: 3px;
+}
+.login-box button:hover{
+	background-color: #0096da;
+}
+.from-line{
+	height: 0;
+	overflow: hidden;
+	border-top: 1px #c2c2c2 solid;
+	margin-top: 20px;
+}
+.a-tag{
+	position: relative;
+	display: block;
+	height: 40px;
+	border: 1px #c2c2c2 solid;
+	text-align: center;
+	line-height: 40px;
+	color: #c2c2c2;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.a-tag:hover{
+    background-color: #aaa;
+    color: #fff;
+    text-decoration:none;
+}
+.a-tag i{
+    position: absolute;
+    right: 20px;
+    margin-top: 8px;
+    font-size: 24px;
+    color: #fff;
+}
+.a-tag:hover i{
+    right: 10px;
+}
+.a-wx{
+    position: relative;
+    display: block;
+    height: 40px;
+    border: 1px #3CB034 solid;
+    text-align: center;
+    line-height: 40px;
+    color: #3CB034;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.a-wx:hover{
+    background-color: #3CB034;
+    color: #fff;
+    text-decoration:none;
+}
+.a-wx i{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-size: 24px;
+    color: #fff;
+}
+.a-wx:hover i{
+    right: 10px;
+}
+.blue-border{
+	border:1px #03a9f4 solid;
+	color: #03a9f4;
+}
+
+
+.blue-border:hover{
+	background-color: #03a9f4;
+	color: #fff;
+}
+
+.signup, .forgot{
+	width: 300px;
+	margin: 0 10px;
+}
+
+.signup-form {
+	margin-top: 20px;
+}
+.signup-form input{
+	border: 0;
+	height: 38px;
+	width: 250px;
+	padding-left: 0px;
+}
+.signup-form input:focus{
+	box-shadow:0 0 0 #fff;
+}
+.signup-form.border{
+	border-color: #03a9f4;
+	box-shadow: 0 0 15px #03a9f4;
+	-webkit-box-shadow: 0 0 15px #03a9f4;
+	-moz-box-shadow: 0 0 15px #03a9f4;
+}
+.signup-form a{
+	color: #03a9f4;
+}
+.view-clause{
+	padding-top: 20px;
+	line-height: 14px;
+	text-align: center;
+    font-size: 14px;
+	color: #808080;
+}
+.view-clause a{
+	color: #03a9f4;
+    font-size: 14px;
+}
+.view-clause a:hover{
+	text-decoration: none;
+}
+a.reacquire{
+	color: #c1c1c1;
+}
+.login-nav{
+	width: 100%;
+	height: 5px;
+	background-color: #0096da;
+	color: #fff;
+}
+p{
+	text-align: center;
+	color: #666;
+}
+p span{
+	font-weight: bold;
+	padding: 0 10px;
+}
+p a{
+	color: #03a9f4;
+	padding-left: 5px;
+}
+a:hover{
+	text-decoration: none;
+}
+.form-group li{
+    display: inline;
+}
+
+.login-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 20px;
+}
+.login-footer div{
+    color:#A6A6A6;
+    margin:0 0 0 10px;
+
+}
+.login-footer div a{
+    color:#A6A6A6;
+    text-decoration : none;
+}

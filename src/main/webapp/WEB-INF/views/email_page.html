@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base target="_blank">
+    <style type="text/css">
+        body{font-size:14px;font-family:arial,verdana,sans-serif;line-height:1.666;padding:0;margin:0;overflow:auto;white-space:normal;word-wrap:break-word;min-height:100px}
+        td, input, button, select, body{font-family:Helvetica, 'Microsoft Yahei', verdana}
+        pre {white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;width:95%}
+        th,td{font-family:arial,verdana,sans-serif;line-height:1.666}
+        img{ border:0}
+        header,footer,section,aside,article,nav,hgroup,figure,figcaption{display:block}
+        .HySchool-email{
+            margin: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            padding: 40px 0;
+            background: #f2f2f2;
+        }
+        .email-table{
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 690px;
+        }
+        tbody,tr,td{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+        }
+        table{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            width: 100%;
+        }
+        .content{
+            font-weight: normal;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            margin: 0 auto;
+            padding: 40px 30px;
+            max-width: 690px;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 3px;
+            box-sizing: border-box;
+            border: 1px solid #d9d9d9;
+        }
+        .logo{
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            margin: 30px auto;
+            display: block;
+            width: 168px;
+        }
+        .user{
+            margin: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            padding: 20px auto;
+        }
+        .avatar center{
+            word-break: normal;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            padding: 0;
+            font-weight: normal;
+            margin: 0 auto;
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .user-info{
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            margin: 20px auto;
+            font-size: 20px;
+            color: #383838;
+        }
+        .message{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+        }
+        h2{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            font-size: 20px;
+            display: inline;
+            color: #808080;
+        }
+        .btn{
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            padding: 0;
+            width: 200px;
+            margin: 30px auto;
+            display: block;
+            font-size: 20px;
+            height: 54px;
+            line-height: 54px;
+            border-radius: 2px;
+            background: #3da8f5;
+            text-decoration: none;
+            color: white;
+            border: 0;
+            cursor: pointer;
+        }
+        .hint{
+            word-break: normal;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            padding: 0;
+            font-weight: normal;
+            margin: 0 auto;
+            display: block!important;
+            max-width: 600px;
+            color: #a6a6a6;
+            line-height: 24px;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+        }
+        br{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+        }
+        .link{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            color: #3da8f5;
+        }
+        .footer{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+        }
+        .footer_p{
+            word-break: normal;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            text-align: center;
+            font-weight: normal;
+            margin: 20px auto 0;
+            padding: 0 5px;
+            font-size: 12px;
+            display: block;
+            max-width: 540px;
+            color: #bdbdbd;
+            line-height: 22px;
+        }
+        .footer_a{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            word-break: normal;
+            font-weight: normal;
+            color: #bdbdbd;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+<div class="HySchool-email">
+    <table cellspacing="0" cellpadding="0" class="email-table">
+        <tbody>
+		<tr>
+            <td>
+                <img src="https://www.processon.com/images/default/logo/logo_m.png" class="logo">
+            </td>
+         </tr>
+        <tr>
+            <td class="content">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+								<tr>
+                                    <td class="user">
+                                        <h2 class="user-info">
+                                            <a href="mailto:13163235957@163.com">13163235957@163.com</a>，您好！</h2>
+									</td>
+                                </tr>
+                                <tr>
+                                    <td class="message"><h2>欢迎使用 花样校园二手街，请验证邮箱，如果此操作并不是由您发起的，请忽略此邮件。</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a style="text-decoration:none;" href="https://account.teambition.com/active?code=bcfd97e47a66cf02ecc955b2b2646e66&amp;email=13163235957%40163.com" class="btn"  target="_blank">验证邮箱</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hint">
+                            <p>
+                                如果按钮无法点击，请点击以下链接进行验证
+                                <br>
+                                <a href="https://account.teambition.com/active?code=bcfd97e47a66cf02ecc955b2b2646e66&amp;email=13163235957%40163.com" class="link">
+                                    https://account.teambition.com/active?code=bcfd97e47a66cf02ecc955b2b2646e66&amp;email=13163235957%40163.com
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer">
+                <p class="footer_p">
+                    邮件来自 花样校园二手街 的自动提醒，无需回复。
+                    <br>
+                    如果您在使用中有任何的疑问或者建议， 欢迎反馈我们意见至邮件：
+                    <a  class="footer_a"  href="mailto:13163235957@163.com" style="">
+                        13163235957@163.com
+                    </a>
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<style id="ntes_link_color" type="text/css">a,td a{color:#064977}</style>
+</body></html>
