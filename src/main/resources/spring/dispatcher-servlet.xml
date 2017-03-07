@@ -40,8 +40,21 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/order/*"/>
+            <mvc:mapping path="/business/*"/>
+            <mvc:mapping path="/admin/*"/>
             <bean class="com.hyschool.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/business/*"/>
+            <bean class="com.hyschool.interceptors.BusinessInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/*"/>
+            <bean class="com.hyschool.interceptors.AdminINterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
+
 
 </beans>

@@ -4,8 +4,6 @@ public final class ConstantsUtil {
 	
 	private ConstantsUtil() { }
 
-	public static final String FORM_EMAIL_KEY = "email";
-
 
     //state
     public static final Integer STATE_INVALID = 1;
