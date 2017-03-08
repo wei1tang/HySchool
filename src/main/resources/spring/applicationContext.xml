@@ -25,10 +25,10 @@
 
     <!--sqlsessionFactory-->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:./mybatis/mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
         <!-- 指定SQL语句的XML文件 -->
-        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*/*.xml"/>
     </bean>
 
     <!--自动扫描mapper接口，并注入sqlsession-->
@@ -37,11 +37,13 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSession"/>
     </bean>
 
+    <!-- 密码工具bean-->
     <bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
     <bean id="passwordManager" class="com.hyschool.security.PasswordManager">
         <property name="encoder" ref="bcryptEncoder" />
     </bean>
+
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">

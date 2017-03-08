@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyschool.vip.dao.VipMapper">
-  <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.Vip">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="state" jdbcType="INTEGER" property="state" />
-    <result column="user_type" jdbcType="INTEGER" property="userType" />
-    <result column="birthday" jdbcType="DATE" property="birthday" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="reset_password_time" jdbcType="TIMESTAMP" property="resetPasswordTime" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.Vip">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="state" jdbcType="INTEGER" property="state" />
+        <result column="user_type" jdbcType="INTEGER" property="userType" />
+        <result column="birthday" jdbcType="DATE" property="birthday" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="reset_password_time" jdbcType="TIMESTAMP" property="resetPasswordTime" />
+    </resultMap>
 
-    <select id="findVipWithState" resultMap="BaseResultMap">
+    <!--<sql></sql>标签是可重用的sql语句-->
+
+    <!--select加入缓存,insert/update/delete刷新缓存-->
+    <!--<cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size="512"
+        readOnly="true"/>-->
+
+    <!--动态sql(基于OGNL表达式):if,choose,when,otherwise   trim,where,set   foreach,bind-->
+
+    <select id="findVipWithState" resultType="vip">
         SELECT * FROM vip WHERE email=#{email,jdbcType=VARCHAR} AND state=#{state,jdbcType=INTEGER}
     </select>
 
-    <select id="findVipByEmail" parameterType="String" resultMap="BaseResultMap">
+    <select id="findVipByEmail" parameterType="String" resultType="vip">
         SELECT * FROM vip WHERE email=#{email,jdbcType=VARCHAR}
     </select>
 
-    <insert id="createVip" parameterType="com.hyschool.vip.bean.Vip">
+    <insert id="createVip" parameterType="vip">
         INSERT INTO vip (email,password,name,state,user_type,create_time)
         VALUES (
                 #{email,jdbcType=VARCHAR},
@@ -34,7 +45,7 @@
                 )
     </insert>
 
-    <update id="updateInvalidVip" parameterType="com.hyschool.vip.bean.Vip">
+    <update id="updateInvalidVip" parameterType="vip">
         UPDATE vip
         <set>
             password=#{password,jdbcType=VARCHAR},
@@ -55,15 +66,6 @@
     <update id="resetPassword">
         UPDATE vip set password=#{password,jdbcType=VARCHAR} WHERE email=#{email,jdbcType=VARCHAR}
     </update>
-
-
-
-
-
-
-
-
-
 
 
 </mapper>

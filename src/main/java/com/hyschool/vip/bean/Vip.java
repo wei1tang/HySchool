@@ -104,6 +104,11 @@ public class Vip {
         this.resetPasswordTime = resetPasswordTime;
     }
 
+
+    /**
+     * 注册激活码的最后有效时间
+     * @return
+     */
     public Date getLastActivateTime() {
         Calendar cl = Calendar.getInstance();
         cl.setTime(createTime);
@@ -111,6 +116,10 @@ public class Vip {
         return cl.getTime();
     }
 
+    /**
+     * 重置密码激活码的最后有效时间
+     * @return
+     */
     public Date getResetLastActivateTime() {
         Calendar cl = Calendar.getInstance();
         cl.setTime(resetPasswordTime);
