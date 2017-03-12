@@ -19,7 +19,7 @@
 
 <body>
 index
-<a href="/vip/login.html">vip登录</a>
+<a href="${pageContext.request.contextPath}/vip/login.html">vip登录</a>
 
 
 <br>
