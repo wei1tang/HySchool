@@ -2,7 +2,7 @@ package com.hyschool.vip.service.mail;
 
 
 import com.hyschool.util.ConstantsUtil;
-import com.hyschool.util.RegisterSendEmail;
+import com.hyschool.util.SendEmailUtil;
 import com.hyschool.util.ServiceException;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.bean.VipValidate;
@@ -333,7 +333,7 @@ public class RegisterValidateService {
                 "</body></html>");
 
         //发送邮件
-        RegisterSendEmail.send(email, sbPage.toString());
+        SendEmailUtil.send(email, sbPage.toString(),ConstantsUtil.REGISTER_SUBJECT);
     }
 
     /**

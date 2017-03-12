@@ -5,6 +5,9 @@ import com.hyschool.vip.bean.Vip;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
  * Created by LJW on 2017/3/2.
@@ -21,16 +24,16 @@ public class CookieUtil {
      * @param response
      * @param vip
      */
-    public static void addLoginCookie(HttpServletResponse response, Vip vip) {
+    public static void addLoginCookie(HttpServletResponse response, Vip vip) throws UnsupportedEncodingException {
         String email = vip.getEmail();
         String name = vip.getName();
-        String name_email = name+"|"+email;
+        String name_email = name+"_"+email;
         addCookie(response, LOGIN_COOKIE_NAME, name_email, REMEMBER_ME_COOKIE_EXPIRE, DOMAIN, PATH);
     }
 
     private static void addCookie(HttpServletResponse response, String cookie_name, String name_email, int maxAge, String domain,
-                                 String path) {
-        Cookie cookie = new Cookie(cookie_name, name_email);
+                                 String path) throws UnsupportedEncodingException {
+        Cookie cookie = new Cookie(cookie_name, URLEncoder.encode(name_email, ConstantsUtil.ENCODING));
         cookie.setDomain(domain);
         cookie.setPath(path);
         cookie.setMaxAge(maxAge);
@@ -48,17 +51,21 @@ public class CookieUtil {
     }
 
     private static String getByCookieName(HttpServletRequest request,String cookie_name){
-        String email = "";
+        String name_email = "";
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0) {
             for (Cookie cookie: cookies) {
                 if (cookie != null && cookie.getName() != null && cookie.getName().equals(cookie_name)){
-                    email = cookie.getValue();
+                    try {
+                        name_email = URLDecoder.decode(cookie.getValue(), ConstantsUtil.ENCODING);
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
             }
         }
-        return email;
+        return name_email;
     }
 
 

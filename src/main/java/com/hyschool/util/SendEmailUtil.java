@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
 
-public class ResetPasswordSendEmail {
+public class SendEmailUtil {
 
     public static final String HOST = "smtp.163.com";
     public static final String PROTOCOL = "smtp";
@@ -38,12 +38,18 @@ public class ResetPasswordSendEmail {
         return session;
     }
 
-    public static void send(String toEmail , String page) {
+    /**
+     *
+     * @param toEmail 要发送的email地址
+     * @param page 发送的html页面
+     * @param subject 邮件主题
+     */
+    public static void send(String toEmail , String page, String subject) {
         Session session = getSession();
         //设置自定义发件人昵称
         String nick="";
         try {
-            nick=javax.mail.internet.MimeUtility.encodeText("HySchool");
+            nick=javax.mail.internet.MimeUtility.encodeText(ConstantsUtil.EMAIL_NICK);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -54,7 +60,8 @@ public class ResetPasswordSendEmail {
             msg.setFrom(new InternetAddress(nick+" <"+FROM+">"));
             InternetAddress[] address = {new InternetAddress(toEmail)};
             msg.setRecipients(Message.RecipientType.TO, address);
-            msg.setSubject("重置密码");
+            //msg.setSubject("重置密码");
+            msg.setSubject(subject);
             msg.setSentDate(new Date());
             msg.setContent(page , "text/html;charset=utf-8");
 

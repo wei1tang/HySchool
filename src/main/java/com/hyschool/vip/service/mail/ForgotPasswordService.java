@@ -1,7 +1,8 @@
 package com.hyschool.vip.service.mail;
 
 
-import com.hyschool.util.ResetPasswordSendEmail;
+import com.hyschool.util.ConstantsUtil;
+import com.hyschool.util.SendEmailUtil;
 import com.hyschool.util.ServiceException;
 import org.springframework.stereotype.Service;
 
@@ -322,6 +323,6 @@ public class ForgotPasswordService {
                 "</body></html>");
 
         //发送邮件
-        ResetPasswordSendEmail.send(email, sbPage.toString());
+        SendEmailUtil.send(email, sbPage.toString(), ConstantsUtil.RESET_PASSWORD_SUBJECT);
     }
 }

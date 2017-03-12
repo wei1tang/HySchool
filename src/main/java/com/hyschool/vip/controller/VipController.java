@@ -1,6 +1,7 @@
 package com.hyschool.vip.controller;
 
 import com.hyschool.security.PasswordManager;
+import com.hyschool.util.ConstantsUtil;
 import com.hyschool.util.CookieUtil;
 import com.hyschool.util.ServiceException;
 import com.hyschool.vip.bean.Vip;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Date;
 
 /**
@@ -54,7 +57,7 @@ public class VipController {
 
     @RequestMapping(value = "/login.html",method = RequestMethod.POST)
     public String doLogin(@RequestParam("email")String email, @RequestParam("password")String password,
-                          Model model, HttpServletResponse response, HttpSession session){
+                          Model model, HttpServletResponse response, HttpSession session) throws UnsupportedEncodingException {
         String error;
         boolean isValid = EmailValidator.getInstance().isValid(email);
         if (email == null || email.equals("") || !isValid){
@@ -84,10 +87,11 @@ public class VipController {
     }
 
     @RequestMapping(value = "logout.html",method = RequestMethod.GET)
-    public String logout(HttpServletResponse response,HttpServletRequest request){
+    public String logout(HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         CookieUtil.removeLoginCookie(response);
         if (name_email!=null && !name_email.equals("")){
+            name_email = URLDecoder.decode(name_email, ConstantsUtil.ENCODING);
             logger.info("Vip:  "+name_email+"  成功登出!");
         }
         return "redirect:/index.html";
