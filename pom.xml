@@ -21,15 +21,14 @@
     <aspectjweaver.version>1.7.2</aspectjweaver.version>
     <persistence-api.version>1.0.2</persistence-api.version>
 
-    <junit.version>4.11</junit.version>
-    <mysql-connector.version>5.1.21</mysql-connector.version>
-    <druid.version>1.0.4</druid.version>
+    <junit.version>4.12</junit.version>
+    <mysql-connector.version>5.1.36</mysql-connector.version>
 
     <javaee-api.version>7.0</javaee-api.version>
     <jstl.version>1.2</jstl.version>
     <jsp-api.version>2.0</jsp-api.version>
     <servlet-api.version>2.5</servlet-api.version>
-    <slf4j.version>1.6.4</slf4j.version>
+    <slf4j.version>1.7.10</slf4j.version>
 
     <commons-fileupload.version>1.3.1</commons-fileupload.version>
     <commons-io.version>2.4</commons-io.version>
@@ -38,16 +37,10 @@
     <commons-beanutils.version>1.9.2</commons-beanutils.version>
 
     <httpclient.version>4.3.3</httpclient.version>
-    <jackson-databind.version>2.4.2</jackson-databind.version>
-    <fastjson.version>1.1.43</fastjson.version>
-    <json.version>2.8.0</json.version>
+    <jackson.version>2.8.0</jackson.version>
     <!--jar包版本变量 end-->
 
     <!--插件版本变量 start-->
-    <tomcat6-maven-plugin.version>2.1</tomcat6-maven-plugin.version>
-    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
-    <jetty-plugin.version>8.1.16.v20140903</jetty-plugin.version>
-
     <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
     <maven-war-plugin.version>2.3</maven-war-plugin.version>
     <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
@@ -293,19 +286,19 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>${json.version}</version>
+      <version>${jackson.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-      <version>${json.version}</version>
+      <version>${jackson.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>${json.version}</version>
+      <version>${jackson.version}</version>
     </dependency>
 
     <dependency>
@@ -390,24 +383,6 @@
         </configuration>
       </plugin>
 
-      <!--tomcat7插件-->
-      <!--https://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/run-mojo.html-->
-      <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>${tomcat7-maven-plugin.version}</version>
-        <configuration>
-          <path>${tomcat-path.version}</path>
-          <port>${tomcat-port.version}</port>
-          <uriEncoding>${tomcat-uri-encoding.version}</uriEncoding>
-          <url>http://localhost:8080/manager/text</url>
-          <server>tomcat7</server>
-          <username>root</username>
-          <password>root</password>
-        </configuration>
-      </plugin>
-
-
       <!-- resource插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -434,13 +409,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <version>${maven-clean-plugin.version}</version>
-      </plugin>
-
-      <!-- ant插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>${maven-antrun-plugin.version}</version>
       </plugin>
 
       <!-- dependency插件 -->
