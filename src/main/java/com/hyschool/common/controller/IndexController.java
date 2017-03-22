@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.net.URLEncoder;
@@ -28,7 +29,12 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("json.html")
+    @RequestMapping(value = "jsonpage.html", method = RequestMethod.GET)
+    public String goJsonPage(){
+        return "jsonPage";
+    }
+
+    @RequestMapping(value = "json.html", method = RequestMethod.GET)
     @ResponseBody
     public String encode(){
         ObjectMapper objectMapper = new ObjectMapper();
@@ -41,6 +47,28 @@ public class IndexController {
             logger.warn("encoder failed!", e);
         }
         map.put("str", str);
+
+        String json = null;
+        try {
+            json =  objectMapper.writeValueAsString(map);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    @RequestMapping(value = "json.html", method = RequestMethod.POST)
+    @ResponseBody
+    public String jsonPost(@RequestParam("demo") String demo){
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> map = new HashMap();
+        map.put("status", true);
+        try {
+            demo = URLEncoder.encode(demo, "UTF-8");
+        } catch (Exception e) {
+            logger.warn("encoder failed!", e);
+        }
+        map.put("demo", demo);
 
         String json = null;
         try {

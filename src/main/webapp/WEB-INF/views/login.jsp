@@ -102,7 +102,7 @@
 
         <!-- 邮箱注册 -->
         <div class="signup f-l">
-            <form action="/vip/register.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/register.html" method="post">
 
                 <div class="signup-email">
                     <div class="form-group">
@@ -120,7 +120,7 @@
                     <div class="form-group">
                         <input type="password" placeholder="请重复输入密码" name="password2" id="password2" easyform="length:6-16;equal:#password1;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;">
                     </div>
-
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="form-group">
                         <button type="submit" class="tran pr">注 册</button>
                     </div>
@@ -146,7 +146,7 @@
 
         <!-- 忘记密码 -->
         <div class="forgot f-l">
-            <form action="/vip/forgotPassword.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/forgotPassword.html" method="post">
                 <div class="form-group">
                     <input type="text" placeholder="邮箱"  name="email" id="email3" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                 </div>

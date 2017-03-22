@@ -29,7 +29,7 @@
 
         <!-- 密码重置 -->
         <div class="forgot f-l">
-            <form action="/vip/resetPassword.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/resetPassword.html" method="post">
                 <div class="form-group">
                     <input type="text" name="email" value="${email}" style="background-color: #c2c2c2" readonly>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="form-group">
                     <input type="password" placeholder="请重复输入密码" name="password2">
                 </div>
-
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
                     <button type="submit" class="tran pr">重置密码</button>
                 </div>
