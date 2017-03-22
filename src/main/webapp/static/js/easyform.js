@@ -81,7 +81,7 @@
             this.submit_button.each(function ()
             {
                 var button = $(this);
-                button.attr("type", "submit");
+                button.attr("type", "button");
 
                 //提交前判断
                 button.click(function ()
@@ -101,7 +101,7 @@
             this.form.find("input").each(function (index, input)
             {
                 //排除 hidden、button、submit、checkbox、radio、file
-                if (input.type != "button" && input.type != "submit" && input.type != "checkbox" && input.type != "radio" && input.type != "file"&& input.type != "data")
+                if (input.type != "hidden" && input.type != "button" && input.type != "submit" && input.type != "checkbox" && input.type != "radio" && input.type != "file"&& input.type != "data")
                 {
                     var checker = $(input).easyinput({easytip: ev.easytip});
 

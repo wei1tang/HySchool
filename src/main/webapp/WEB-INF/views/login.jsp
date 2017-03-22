@@ -71,6 +71,7 @@
                 <div class="form-group">
                     <input type="password" name="password" placeholder="密码"  id="psw" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;">
                 </div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
                     <button type="submit" class="tran pr">登 录</button>
                 </div>
@@ -149,7 +150,7 @@
                 <div class="form-group">
                     <input type="text" placeholder="邮箱"  name="email" id="email3" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                 </div>
-
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
                     <button type="submit" class="tran pr">重置密码</button>
                 </div>

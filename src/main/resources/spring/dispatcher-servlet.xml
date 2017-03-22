@@ -27,9 +27,8 @@
     <mvc:resources mapping="/fonts/**" location="/static/fonts/"/>
     <mvc:resources mapping="/js/**" location="/static/js/"/>
 
-    <!-- configure the InternalResourceViewResolver -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          id="internalResourceViewResolver">
+    <!-- ViewResolver接口解析视图的简单实现UrlBasedViewResolver的子类InternalResourceViewResolver -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 前缀 -->
         <property name="prefix" value="/WEB-INF/views/" />
         <!-- 后缀 -->
