@@ -81,7 +81,7 @@
             this.submit_button.each(function ()
             {
                 var button = $(this);
-                button.attr("type", "button");
+                button.attr("type", "submit");
 
                 //提交前判断
                 button.click(function ()
