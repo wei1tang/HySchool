@@ -22,6 +22,41 @@
 
 <div class="login-banner"></div>
 
+<div class="header">
+    <div class="header-content">
+        <div class="logo">
+            <img src="../../static/images/index-logo.png" class="" />二手交易网
+        </div>
+        <div class="nav">
+            <a class="list" >首页</a>
+            <a class="list" >关于</a>
+        </div>
+        <%--<!--添加搜索-->--%>
+        <%--<form onSubmit="submitFn(this, event);">--%>
+            <%--<div class="search-wrapper">--%>
+                <%--<div class="input-holder">--%>
+                    <%--<input type="text" class="search-input" placeholder="请输入关键词" />--%>
+                    <%--<button class="search-icon" onClick="searchToggle(this, event);"><span></span></button>--%>
+                <%--</div>--%>
+                <%--<span class="close" onClick="searchToggle(this, event);"></span>--%>
+            <%--</div>--%>
+        <%--</form>--%>
+        <!--<div class="me">-->
+        <!--<div class="avatar-link" title="user">-->
+        <!--<img src="index-avatar.png" class="avatar" alt="avatar"/>-->
+        <!--Hello, {user.name}-->
+        <!--</div>-->
+        <!--<Button type="primary" onClick={this.logout}>退出登录</Button>-->
+        <!--</div>-->
+        <div class="sign">
+            <a class="list" href="${pageContext.request.contextPath}/vip/login.html">登录</a>
+            <%--<br>--%>
+            <%--${test}--%>
+            <a class="list" href="${pageContext.request.contextPath}/vip/logout.html">注册</a>
+        </div>
+    </div>
+</div>
+
 <div class="login-box">
     <div class="box-con tran">
 
@@ -31,10 +66,10 @@
             <form action="${pageContext.request.contextPath}/vip/login.html" method="post">
                 <div class="form-group">
                     <span>${error}</span>
-                    <input type="text" name="email" placeholder="邮箱">
+                    <input type="text" name="email" placeholder="邮箱" id="email1" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="密码">
+                    <input type="password" name="password" placeholder="密码"  id="psw" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="tran pr">登 录</button>
@@ -70,19 +105,19 @@
 
                 <div class="signup-email">
                     <div class="form-group">
-                        <input type="text" name="email" placeholder="邮箱">
+                        <input type="text" name="email" placeholder="邮箱" id="email2" easyform="email"  message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="用户名">
+                        <input type="text" name="name" placeholder="用户名" id="username" easyform="length:4-16;char-chinese;" message="用户名必须为4—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" placeholder="请输入密码" name="password1">
+                        <input type="password" placeholder="请输入密码" name="password1" id="password1" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" placeholder="请重复输入密码" name="password2">
+                        <input type="password" placeholder="请重复输入密码" name="password2" id="password2" easyform="length:6-16;equal:#password1;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;">
                     </div>
 
                     <div class="form-group">
@@ -112,7 +147,7 @@
         <div class="forgot f-l">
             <form action="/vip/forgotPassword.html" method="post">
                 <div class="form-group">
-                    <input type="text" placeholder="邮箱"  name="email">
+                    <input type="text" placeholder="邮箱"  name="email" id="email3" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                 </div>
 
                 <div class="form-group">
@@ -135,7 +170,7 @@
     </div>
 </div>
 
-<div class="login-footer">
+<div class="footer">
     <div>
         <a href="" class="footer-entry" target="_blank">服务条款</a> |
         <a href="" class="footer-entry" target="_blank">隐私政策</a> |
@@ -157,19 +192,61 @@
         $(".move-login").on("click",function(){
             $(_boxCon).css({
                 'marginLeft':0
+            });
+            $('#easytip-div-mainemail2').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainusername').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpassword1').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpassword2').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainemail3').css({
+                'display':'none'
             })
         });
 
         $(".move-signup").on("click",function(){
             $(_boxCon).css({
                 'marginLeft':-320
-            })
+            });
+            $('#easytip-div-mainemail1').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpsw').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainemail3').css({
+                'display':'none'
+            });
         });
 
         $(".move-reset").on("click",function(){
             $(_boxCon).css({
                 'marginLeft':-640
-            })
+            });
+            $('#easytip-div-mainemail2').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainusername').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpassword1').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpassword2').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainemail1').css({
+                'display':'none'
+            });
+            $('#easytip-div-mainpsw').css({
+                'display':'none'
+            });
         });
 
         var t = "register";
@@ -182,5 +259,23 @@
     });
 
 </script>
+
+<script type="text/javascript" src="../../static/js/easyform.js"></script>
+<script>
+
+    $(document).ready(function ()
+
+    {
+        $('.login-con').easyform();
+        $('.signup').easyform();
+        $('.forgot').easyform();
+
+    });
+
+</script>
+
+
+
+
 </body>
 </html>

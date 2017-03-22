@@ -1,0 +1,306 @@
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+}/*容器设置百分高度比，container在内容有或货没有的情况下能保持100%高度*/
+.container{
+    min-height: 100%;
+    position:relative;
+}
+/*----------- start header-------------*/
+.header {
+    position: fixed;
+    z-index: 999;/*设置重叠优先级*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+.header-content {
+    line-height: 60px;
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 17px;
+    font-weight: 600;
+    float: left;
+    color: #00d8ff;
+}
+.logo img {
+    float: left;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.nav {
+    font-size: 14px;
+    float: left;
+    margin-left: 20px;
+}
+.list {
+    font-weight: 500;
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    -webkit-transition: 0.3s;/* Safari 和 Chrome */
+    transition: 0.3s;/*CSS属性(none|all|属性)  持续时间  时间函数  延迟时间*/
+    opacity: 0.5;/*设置div元素不透明度*/
+    color: #2d3238;
+}
+.list:hover, .list:active {
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+}
+.sign {
+    font-size: 14px;
+    float: right;
+    margin-left: 20px;
+}
+.sign a{
+    text-decoration: none;
+}
+.me {
+    float: right;
+    overflow: hidden;
+    height: 100%;
+    margin-left: 20px;
+}
+.avatar-link {
+    margin-right: 20px;
+    opacity:0.5;
+    color: #2d3238;
+}
+.avatar-link:hover {
+    opacity: 1;
+}
+.avatar-link:active {
+    opacity: 1;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: .5em;
+    vertical-align: middle;/*垂直对齐一幅图像*/
+    border-radius: 20px;/*向 div 元素添加圆角边框：*/
+}
+/*----------- end header-------------*/
+
+.search_check a {
+    font-weight: 700;
+}
+.typegoods{
+    float:left;
+    line-height: 60px;
+    width: 1000px;
+    margin: 10px auto;
+    display: inline-block;
+}
+/*----------- start top-------------*/
+.top{
+    width:1000px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.top .first{
+    width: 100%;
+    height: 190px;
+}
+
+.top .first .level {
+    float:left;
+    width:23%;
+    height: 190px;
+    text-align: center;
+    border-radius: 2px;
+    background: no-repeat top center/contain;
+    background-color: #fff;
+    background-image: url('../images/user-avatar_bg.png');
+    box-shadow: 2px 2px 2px #aaa;
+}
+.top .first .level .avatar {
+    position: relative;
+    top: 40px;
+    width: 40px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+}
+.top .first .level .level-content {
+    margin-top: 5px;
+}
+
+.top .first .achieve {
+    float:left;
+    width:76%;
+    box-sizing: border-box;
+    /*border-box	为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+    通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。&nbsp;&nbsp;&nbsp;*/
+    height: 190px;
+    padding: 20px;
+    border-radius: 2px;
+    background: no-repeat center/cover;
+    background-image: url('../images/user-achieve.png');
+    box-shadow: 2px 2px 2px #aaa;
+}
+.top .first .achieve .title {
+    font-size: 18px;
+}
+.top .first .achieve .achieve-content {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+}
+.top .first .achieve .achieve-content .item {
+    padding: 0 30px;
+    flex: 1;
+}
+.top .first .achieve .achieve-content .item .value {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.top .information{
+    background: #fff;
+    border-top: 4px solid #00AC90;
+    height: 55px;
+    margin-top: 20px;
+    width:99%;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+.top .information p{
+    margin-top: 0;
+    text-align:center;
+    line-height:55px;
+    width: 23%;
+    height: 55px;
+    background-color: #00ad90;
+    color: #FFFFFF;
+}
+
+.top .items{
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.top .items .item{
+    height: 160px;
+    background: #fff;
+    margin-top: 20px;
+    width:99%;
+    box-shadow: 2px 2px 2px #aaa;
+}
+.items .item .left {
+    float:left;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: no-repeat center/cover;
+    width:230px;/*修改*/
+}
+ .left> .introduction {/*A>B 表示选择A元素的所有子B元素。与A B的区别在于，A B选择所有后代元素，而A>B只选择一代。*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+}
+.items .item .introduction p {
+    line-height: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;/* -webkit-line-clamp用来限制在一个块元素显示的文本的行数*/
+    -webkit-box-orient: vertical;
+}
+ .left:hover > .introduction {
+    display: block;
+}
+.items .item .list-content{
+    width: 760px;
+    float:left;
+}
+.items .item .list-content .name {
+    height: 30px;
+    padding: 5px 10px;
+}
+.items .item .list-content .detail{
+    height: 90px;
+    line-height: 90px;
+}
+
+.items .item .list-content .money {
+    font-size: 20px;
+    line-height: 40px;
+    float: left;
+    width: 40%;
+    height: 40px;
+    text-align: right;
+    /*padding-left: 10px;*/
+}
+.items .item .list-content .deadline {
+    line-height: 40px;
+    float: left;
+    width: 60%;
+    height: 40px;
+    /*padding-right: 10px;*/
+    text-align: left;
+    color: #c7c7c7;
+}
+/*-----------end top-------------*/
+
+/*-----------start footer-------------*/
+.footer {
+    position:absolute;
+    z-index: 0;
+    bottom: -70px;
+    left:0;
+    clear:both;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    background: #2b3747;
+    color: #979fa8;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+}
+.footer div{
+    color:#A6A6A6;
+    margin:0 0 0 10px;
+
+}
+.footer div a{
+    color:#A6A6A6;
+    text-decoration : none;
+}
+
+/*-----------end footer-------------*/
+
+.rightsidebar a {
+    position:absolute;
+    right:15px;
+    top:120px;
+    height:52px;
+    float:right;
+    background-image: url("../../static/images/index-release-button.png");
+    width:143px;
+}
+.rightsidebar a:hover {
+    cursor: pointer;
+}

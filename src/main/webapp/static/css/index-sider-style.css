@@ -1,0 +1,136 @@
+@import url(index-font-awesome.css);
+/*@import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);*/
+
+.logo{
+}
+
+.sidebar .settings {
+  height:73px;
+  float:left;
+  /*background-image:url(../img/startific.jpg);*/
+  background-repeat:no-repeat;
+  width:150px;
+  margin:0;
+  text-align: center;
+  font-size:20px;
+  font-family: 'Strait', sans-serif;
+}
+
+.sidebar .fa-lg {
+font-size: 1em;
+}
+.sidebar .fa {
+position: relative;
+display: table-cell;
+width: 50px;
+height: 36px;
+text-align:center;
+top:12px;
+font-size:20px;
+}
+
+
+.sidebar:hover, nav.sidebar.expanded {
+  width:150px;
+  overflow:hidden;
+  opacity:1;
+  /*opacity1.0（完全不透明）*/
+}
+/*鼠标移动到侧边栏展开*/
+.sidebar {
+  background:#F7F7F7;
+  border-right:1px solid #e5e5e5;
+  position:absolute;
+  top:0;
+  bottom:0;
+  height:100%;
+  left:0;
+  width:50px;
+  overflow:hidden;
+  -webkit-transition:width .2s linear;
+  transition:width .2s linear;
+  -webkit-transform:translateZ(0) scale(1,1);
+  box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
+  opacity:1;
+}
+
+.sidebar>ul {
+margin:7px 0;
+}
+
+.sidebar li {
+position:relative;
+display:block;
+width:150px;
+}
+
+.sidebar li>a {
+position:relative;
+width:150px;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#959595;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .14s linear;
+transition:all .14s linear;
+font-family: 'Strait', sans-serif;
+border-top:1px solid #F0F0F0;
+box-shadow:inset 0 1px 1px #FAFAFA;
+text-shadow: 1px 1px 1px  #fff;  
+}
+
+.sidebar .nav-text  {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:100px;
+font-family: 'Titillium Web', sans-serif;
+}
+
+.sidebar>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+/*最下面的logout*/
+
+.sidebar a:hover,a:focus {
+text-decoration:none;
+border-left:0 solid #F7F7F7;
+}
+/*a链接属性*/
+.sidebar {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+/*-o-user-select:none;*/
+user-select:none;
+}
+
+.sidebar ul,.sidebar li {
+outline:0;
+margin:0;
+padding:0;
+}
+
+.sidebar li:hover>a,nav.sidebar li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:rgba(0,147,253,1);
+text-shadow: 0 0 0;
+}
+/*鼠标移到侧边栏选项背景变为天蓝色*/
+
+.sidebar.fixed {
+  position: fixed;
+  top: 0;
+}
+/*无法完成二级菜单*/
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}

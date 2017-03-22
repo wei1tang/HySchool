@@ -57,57 +57,144 @@ li:after, div:after, ul:after{
 /*--------------样式重置------------*/
 /***********/
 
-.login-banner{
+/*修改*/
+/*----------- start header-------------*/
+.header {
+	position: fixed;
+	z-index: 999;/*设置重叠优先级*/
+	top: 0;
+	left: 0;
 	width: 100%;
-	background: url(../images/login.jpg) center bottom no-repeat \9;
-	background: url(../images/login.jpg) center bottom/cover no-repeat;
+	height: 60px;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2);
 }
+.header-content {
+	line-height: 60px;
+	width: 1000px;
+	height: 60px;
+	margin: 0 auto;
+}
+.logo {
+	font-size: 17px;
+	font-weight: 600;
+	float: left;
+	color: #00d8ff;
+}
+.logo img {
+	float: left;
+	height: 50px;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+.nav {
+	font-size: 14px;
+	float: left;
+	margin-left: 20px;
+}
+.list {
+	font-weight: 500;
+	float: left;
+	padding: 0 15px;
+	cursor: pointer;/*鼠标指向时改变光标*/
+	-webkit-transition: 0.3s;/* Safari 和 Chrome */
+	transition: 0.3s;/*CSS属性(none|all|属性)  持续时间  时间函数  延迟时间*/
+	opacity: 0.5;/*设置div元素不透明度*/
+	color: #2d3238;
+}
+.list:hover, .list:active {
+	opacity: 1;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+}
+.sign {
+	font-size: 14px;
+	float: right;
+	margin-left: 20px;
+}
+.sign a{
+	text-decoration: none;
+}
+.me {
+	float: right;
+	overflow: hidden;
+	height: 100%;
+	margin-left: 20px;
+}
+.avatar-link {
+	margin-right: 20px;
+	opacity:0.5;
+	color: #2d3238;
+}
+.avatar-link:hover {
+	opacity: 1;
+}
+.avatar-link:active {
+	opacity: 1;
+}
+.avatar {
+	width: 40px;
+	height: 40px;
+	margin-right: .5em;
+	vertical-align: middle;/*垂直对齐一幅图像*/
+	border-radius: 20px;/*向 div 元素添加圆角边框：*/
+}
+/*----------- end header-------------*/
+
+
+
+
+/*.login-banner{*/
+/*width: 100%;*/
+/*background: url(../images/login.jpg) center bottom no-repeat \9;*/
+/*background: url(../images/login.jpg) center bottom/cover no-repeat;*/
+/*}*/
 @media screen and (min-width: 320px) {
-    .login-banner{
-    	height: 100px;
-    }
+	.login-banner{
+		height: 80px;
+	}
 }
 @media screen and (min-width: 480px) {
-    .login-banner{
-    	height: 120px;
-    }
+	.login-banner{
+		height: 100px;
+	}
 }
 @media screen and (min-width: 640px) {
-    .login-banner{
-    	height: 160px;
-    }
+	.login-banner{
+		height: 140px;
+	}
 }
 @media screen and (min-width: 768px) {
-    .login-banner{
-    	height: 180px;
-    }
+	.login-banner{
+		height: 150px;
+	}
 }
 @media screen and (min-width: 1024px) {
-    .login-banner{
-    	height: 200px;
-    }
+	.login-banner{
+		height: 180px;
+	}
 }
 @media screen and (min-width: 1280px) {
-    .login-banner{
-    	height: 220px;
-    }
+	.login-banner{
+		height: 200px;
+	}
 }
 @media screen and (min-width: 1366px) {
-    .login-banner{
-    	height: 240px;
-    }
+	.login-banner{
+		height: 220px;
+	}
 }
 @media screen and (min-width: 1680px) {
-    .login-banner{
-    	height: 260px;
-    }
+	.login-banner{
+		height: 240px;
+	}
 }
 .login-banner{
-	height: 260px \9;
+	height: 240px \9;
 }
+/*修改*/
 .login-box{
 	width: 320px;
-	margin:0 auto;
+	margin:-60px/*修改*/ auto;
 	overflow-x: hidden;
 }
 .box-con{
@@ -179,45 +266,45 @@ li:after, div:after, ul:after{
 	background-color: #fff;
 }
 .a-tag:hover{
-    background-color: #aaa;
-    color: #fff;
-    text-decoration:none;
+	background-color: #aaa;
+	color: #fff;
+	text-decoration:none;
 }
 .a-tag i{
-    position: absolute;
-    right: 20px;
-    margin-top: 8px;
-    font-size: 24px;
-    color: #fff;
+	position: absolute;
+	right: 20px;
+	margin-top: 8px;
+	font-size: 24px;
+	color: #fff;
 }
 .a-tag:hover i{
-    right: 10px;
+	right: 10px;
 }
 .a-wx{
-    position: relative;
-    display: block;
-    height: 40px;
-    border: 1px #3CB034 solid;
-    text-align: center;
-    line-height: 40px;
-    color: #3CB034;
-    border-radius: 5px;
-    background-color: #fff;
+	position: relative;
+	display: block;
+	height: 40px;
+	border: 1px #3CB034 solid;
+	text-align: center;
+	line-height: 40px;
+	color: #3CB034;
+	border-radius: 5px;
+	background-color: #fff;
 }
 .a-wx:hover{
-    background-color: #3CB034;
-    color: #fff;
-    text-decoration:none;
+	background-color: #3CB034;
+	color: #fff;
+	text-decoration:none;
 }
 .a-wx i{
-    position: absolute;
-    right: 20px;
-    top: 0;
-    font-size: 24px;
-    color: #fff;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	font-size: 24px;
+	color: #fff;
 }
 .a-wx:hover i{
-    right: 10px;
+	right: 10px;
 }
 .blue-border{
 	border:1px #03a9f4 solid;
@@ -260,12 +347,12 @@ li:after, div:after, ul:after{
 	padding-top: 20px;
 	line-height: 14px;
 	text-align: center;
-    font-size: 14px;
+	font-size: 14px;
 	color: #808080;
 }
 .view-clause a{
 	color: #03a9f4;
-    font-size: 14px;
+	font-size: 14px;
 }
 .view-clause a:hover{
 	text-decoration: none;
@@ -295,24 +382,37 @@ a:hover{
 	text-decoration: none;
 }
 .form-group li{
-    display: inline;
+	display: inline;
 }
+/*修改*/
+.footer{
+	/*position: fixed;*/
+	/*left: 0;*/
+	/*bottom: 0;*/
+	/*width: 100%;*/
+	/*padding: 10px 0;*/
+	/*text-align: center;*/
+	/*line-height: 20px;*/
+	position:absolute;
+	z-index: 0;
+	bottom: 0;
+	left:0;
+	clear:both;
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: #2b3747;
+	color: #979fa8;
+	text-align: center;
+	line-height: 30px;
+	font-size: 13px;
+}
+.footer div{
+	color:#A6A6A6;
+	margin:0 0 0 10px;
 
-.login-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    line-height: 20px;
 }
-.login-footer div{
-    color:#A6A6A6;
-    margin:0 0 0 10px;
-
-}
-.login-footer div a{
-    color:#A6A6A6;
-    text-decoration : none;
+.footer div a{
+	color:#A6A6A6;
+	text-decoration : none;
 }

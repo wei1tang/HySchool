@@ -1,0 +1,533 @@
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color: rgb(240,242,245);
+}/*容器设置百分高度比，container在内容有或货没有的情况下能保持100%高度*/
+.container{
+    min-height: 100%;
+    position:relative;
+}
+/*----------- start header-------------*/
+.header {
+    position: fixed;
+    z-index: 999;/*设置重叠优先级*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+.header .header-content {
+    line-height: 60px;
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+}
+.header .header-content .logo {
+    font-size: 17px;
+    font-weight: 600;
+    float: left;
+    color: #00d8ff;
+    cursor: pointer;/*鼠标指向时改变光标*/
+}
+.header .header-content .logo img {
+    float: left;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.header .header-content .nav {
+    font-size: 14px;
+    float: left;
+    margin-left: 20px;
+}
+.header .header-content .nav .list {
+    font-weight: 500;
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    -webkit-transition: 0.3s;/* Safari 和 Chrome */
+    transition: 0.3s;/*CSS属性(none|all|属性)  持续时间  时间函数  延迟时间*/
+    opacity: 0.5;/*设置div元素不透明度*/
+    color: #2d3238;
+}
+.header .header-content .nav .list:hover,.header .header-content .nav .list:active {
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+}
+.header .header-content .sign {
+    font-size: 14px;
+    float: right;
+    margin-left: 20px;
+}
+.header .header-content .sign a{
+    text-decoration: none;
+}
+.header .header-content .me {
+    float: right;
+    overflow: hidden;
+    height: 100%;
+    margin-left: 20px;
+}
+.header .header-content .me .avatar-link {
+    margin-right: 20px;
+    opacity:0.5;
+    color: #2d3238;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    float:left;
+}
+.header .header-content .me .avatar-link:hover {
+    opacity: 1;
+}
+.header .header-content .me .avatar-link:active {
+    opacity: 1;
+}
+.header .header-content .me .avatar-link .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: .5em;
+    vertical-align: middle;/*垂直对齐一幅图像*/
+    border-radius: 20px;/*向 div 元素添加圆角边框：*/
+}
+
+.header .header-content .me .button-link{
+    float:left;
+}
+
+/*----------- end header-------------*/
+
+
+/*----------- start user-------------*/
+.user{
+    width:1000px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom:70px;
+}
+.user .left {
+    float: left;
+    width: 23%;
+}
+.user .left .level {
+    height: 190px;
+    text-align: center;
+    border-radius: 2px;
+    background: no-repeat top center/contain;
+    background-color: #fff;
+    background-image: url('../images/user-avatar_bg.png');
+    box-shadow: 2px 2px 2px #aaa;
+}
+.user .left .level .avatar {
+    position: relative;
+    top: 40px;
+    width: 80px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+}
+.user .left .level .level-content {
+    margin-top: 5px;
+}
+
+.user .left .nav {
+    margin-top: 15px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px #aaa;
+    overflow: hidden;
+}
+.user .left .nav> .item {
+    line-height: 50px;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding-left: 40px;
+    color: inherit;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: #fff;
+    cursor: pointer;/*鼠标指向时改变光标*/
+}
+.user .left .nav a:hover{
+    z-index: 1;
+    color: #fff;
+    border: none;
+    background-color: #2db7f5;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+/*鼠标移到侧边栏选项背景变为天蓝色*/
+
+
+
+.user .left .nav .active {
+     z-index: 1;
+     color: #fff;
+     border: none;
+     background-color: #2db7f5;
+     box-shadow: 2px 2px 2px #aaa;
+ }
+
+.user .left .nav i {
+    font-size: 1.1em;
+    margin-right: 8px;
+}
+
+.user .right {
+    float: left;
+    width: 76%;
+    margin-left: 1%;
+    margin-bottom: 70px;
+}
+.user .right .achieve {
+    box-sizing: border-box;
+    /*border-box	为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+    通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。&nbsp;&nbsp;&nbsp;*/
+    height: 190px;
+    padding: 20px;
+    border-radius: 2px;
+    background: no-repeat center/cover;
+    background-image: url('../images/user-achieve.png');
+    box-shadow: 2px 2px 2px #aaa;
+}
+.user .right .achieve .title {
+    font-size: 18px;
+}
+.user .right .achieve .achieve-content {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+}
+.user .right .achieve .achieve-content .item {
+    padding: 0 30px;
+    flex: 1;
+}
+.user .right .achieve .achieve-content .item .value {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.user .right .content {
+    margin-top: 15px;
+    padding: 13px 0 1px 0;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #aaa;
+}
+/*下面是四个选项卡对应内容的css样式*/
+/*一setting样式*/
+.user .right .content .setting{
+    text-align: center;
+    display: inline;
+}
+.user .right .content .setting .setting-item{
+    position: relative;
+    z-index: 1;
+    margin: 1em;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    /*list-style: none;ul里面消除li的点*/
+}
+.user .right .content .setting label{
+    display: inline;
+    padding: 0 1em;
+    box-sizing: border-box;
+    width: 40%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    text-align: right;
+}
+.user .right .content .setting  i{
+    color: darkorange;
+    margin-right: 5px;
+}
+.user .right .content .setting input{
+    display: inline;
+    padding: 0.8em;
+    box-sizing: border-box;
+    width: 60%;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #aaa;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+.user .right .content .setting input:focus,.user .right .content .setting input:hover {
+    outline: none;
+    background-color: #FFFFFF;
+    /*outline none无轮廓*/
+}
+/*一publish样式*/
+.publish{
+    text-align: left;
+    display: inline;
+}
+.publish .publish-item{
+    position: relative;
+    z-index: 1;
+    margin:8px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    overflow: hidden;
+    /*list-style: none;ul里面消除li的点*/
+}
+.publish .publish-item a{
+    text-decoration:none;
+    color:deepskyblue;
+}
+.publish .publish-item .title{
+    display: inline;
+    float:left;
+    padding: 5px 1em;
+    box-sizing: border-box;
+    width: 23%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    text-align: right;
+}
+.publish .publish-item .item-radio{
+     padding-top:5px;
+}
+.publish .publish-item i{
+    color: darkorange;
+    margin-right: 5px;
+}
+.publish .publish-item select,.publish .publish-item input[type=date]{
+    width:25%;
+}
+.publish .publish-item input[type=text],.publish .publish-item textarea{
+    display: inline;
+    width:50%;
+    padding: 5px 5px 5px 5px;
+    box-sizing: border-box;
+    border:1px solid rgb(169,169,169);
+    border-radius:5px;
+    background-color: #FFFFFF;
+    color: #5a5854;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+.publish .publish-item input:focus,.publish .publish-item input:hover{
+    background-color: #FFFFFF;
+    border:1px solid #b1e1e4;
+    box-sizing: border-box;
+}
+.publish .publish-item input[type=radio]{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px 5px 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    vertical-align: top;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.1) inset, 1px -1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.publish .publish-item input[type=radio]:focus{
+    outline: 0;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.1) inset, 1px -1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #52a8ec, 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
+}
+.publish .publish-item button{
+    width:85px;
+    height: 34px;
+}
+/*已发布物品published css*/
+.published{
+    text-align: left;
+    width:100%;
+    margin:8px;
+}
+.published>.title{
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-left: 15px;
+}
+.published table{
+    margin-left: 15px;
+    border-top: 1px solid rgb(236, 236, 236);
+    border-collapse:collapse;
+}
+.published table tr {
+    border-bottom: 1px solid rgb(236, 236, 236);
+    height:50px;
+    background: #FFF;
+}
+.published table .columns{
+    background-color: rgb(247,247,247);
+}
+.published table td, .published table th {
+    padding: 5px 10px;
+    font-size: 12px;
+    color: rgb(129,129,129);
+    width:170px;
+}
+.published table tr a{
+    float: left;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    color:  #00d8ff;
+    text-decoration: none;
+}
+.published table tr a:hover,.published table tr a:active {
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+    text-decoration: none;
+    color:#2d3238;
+}
+
+.published table tr .ant-divider {
+    float:left;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-right: 5px;
+    width: 1px;
+    height: 10px;
+    background: #000;
+}
+
+
+/*分页*/
+.published nav{
+    text-align: center;
+}
+
+/*-----------end published-------------*/
+
+/*-----------start aplied-------------*/
+.aplied{
+    text-align: left;
+    width:100%;
+    margin:8px;
+}
+.aplied>.title{
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-left: 15px;
+}
+.aplied table{
+    margin-left: 15px;
+    border-top: 1px solid rgb(236, 236, 236);
+    border-collapse:collapse;
+}
+.aplied table tr {
+    border-bottom: 1px solid rgb(236, 236, 236);
+    height:50px;
+    background: #FFF;
+}
+.aplied table .columns{
+    background-color: rgb(247,247,247);
+}
+.aplied table td, .aplied table th {
+    padding: 5px 10px;
+    font-size: 12px;
+    color: rgb(129,129,129);
+    width:170px;
+}
+.aplied table tr a{
+    float: left;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    color:  #00d8ff;
+    text-decoration: none;
+}
+.aplied table tr a:hover,.aplied table tr a:active {
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+    text-decoration: none;
+    color:#2d3238;
+}
+
+.aplied table tr .ant-divider {
+    float:left;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-right: 5px;
+    width: 1px;
+    height: 10px;
+    background: #000;
+}
+.aplied nav{
+    text-align: center;
+}
+/* 五星评价 */
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix{
+    display:inline-table;
+}
+.clearfix  li{
+    list-style-type:none;
+}
+.clearfix .level .level_solid,.clearfix .level .level_hollow{
+    float:left;
+    background-image:url("../images/user-icon.png");
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:15px;
+    height:15px;
+}
+.clearfix .level .level_solid{
+    background-position:0 0;
+}
+.clearfix .level .level_hollow{
+    background-position:-21px 0;
+}
+.clearfix .level i{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+/*-----------end aplied-------------*/
+
+/*下面是选项卡面板隐藏css*/
+.user .right .content .setting,.user .right .content .publish,.user .right .content .published,.user .right .content .aplied{
+    display: none;
+}
+.user .right .content .active {
+    display: block;
+
+}
+/*-----------end user-------------*/
+
+/*-----------start footer-------------*/
+.footer {
+    position:absolute;
+    z-index: 0;
+    bottom: 0;
+    left:0;
+    clear:both;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    background: #2b3747;
+    color: #979fa8;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+}
+.footer div{
+    color:#A6A6A6;
+    margin:0 0 0 10px;
+}
+.footer div a{
+    color:#A6A6A6;
+    text-decoration : none;
+}
+/*-----------end footer-------------*/
+
