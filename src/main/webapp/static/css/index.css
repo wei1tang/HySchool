@@ -28,7 +28,7 @@ html,body{
     font-size: 17px;
     font-weight: 600;
     float: left;
-    color: #00d8ff;
+    color: rgba(0,147,253,1);
 }
 .logo img {
     float: left;
