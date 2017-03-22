@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>交易市场</title>
-    <!--<%&#45;&#45;<link href="<%=request.getContextPath()%>/static/css/bootstrap.css" rel="stylesheet">&#45;&#45;%>-->
+    <%--<!--<%&#45;&#45;<link href="<%=request.getContextPath()%>/static/css/bootstrap.css" rel="stylesheet">&#45;&#45;%>-->--%>
 
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="../../static/css/index-search-form.css" /><!--搜索栏css-->
