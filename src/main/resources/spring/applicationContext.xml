@@ -11,19 +11,21 @@
     <context:component-scan base-package="com.hyschool" />
 
     <!--获取数据库配置文件-->
-    <context:property-placeholder location="classpath:properties/db.properties"/>
+    <context:property-placeholder location="classpath:properties/config.properties"/>
+
     <!--设置数据源c3p0-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.driver}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-        <property name="maxPoolSize" value="50"/>
-        <property name="minPoolSize" value="2"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="${db.hyschool.url}"/>
+        <property name="user" value="${db.hyschool.username}"/>
+        <property name="password" value="${db.hyschool.password}"/>
+        <property name="initialPoolSize" value="1"/>
+        <property name="maxPoolSize" value="2"/>
+        <property name="minPoolSize" value="1" />
         <property name="maxIdleTime" value="60"/>
     </bean>
 
-    <!--sqlsessionFactory-->
+    <!--sqlSessionFactory-->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
