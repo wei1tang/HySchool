@@ -451,15 +451,20 @@
                 <jdk>1.8</jdk>
             </activation>
             <properties>
+                <!--db config start-->
                 <db.hyschool.url>jdbc:mysql://127.0.0.1:3306/hyschooldb?characterEncoding=UTF-8</db.hyschool.url>
                 <db.hyschool.username>root</db.hyschool.username>
                 <db.hyschool.password>root</db.hyschool.password>
                 <db.initialPoolSize>5</db.initialPoolSize>
                 <db.maxPoolSize>50</db.maxPoolSize>
                 <db.minPoolSize>2</db.minPoolSize>
-                <db.maxIdleTime>60</db.maxIdleTime>
+                <db.maxIdleTime>600</db.maxIdleTime>
+                <db.acquireRetryAttempts>30</db.acquireRetryAttempts>
+                <!--db config end-->
+                <!--redis config satrt-->
                 <redis.server>127.0.0.1</redis.server>
                 <redis.port>6379</redis.port>
+                <!--redis config end-->
             </properties>
         </profile>
 
@@ -469,15 +474,20 @@
                 <jdk>1.7</jdk>
             </activation>
             <properties>
+                <!--db config start-->
                 <db.hyschool.url>jdbc:mysql://127.0.0.1:3306/hyschooldb?characterEncoding=UTF-8</db.hyschool.url>
                 <db.hyschool.username>root</db.hyschool.username>
                 <db.hyschool.password>root</db.hyschool.password>
                 <db.initialPoolSize>5</db.initialPoolSize>
                 <db.maxPoolSize>50</db.maxPoolSize>
                 <db.minPoolSize>2</db.minPoolSize>
-                <db.maxIdleTime>60</db.maxIdleTime>
+                <db.maxIdleTime>600</db.maxIdleTime>
+                <db.acquireRetryAttempts>30</db.acquireRetryAttempts>
+                <!--db config end-->
+                <!--redis config satrt-->
                 <redis.server>127.0.0.1</redis.server>
                 <redis.port>6379</redis.port>
+                <!--redis config end-->
             </properties>
         </profile>
         <profile>
@@ -486,15 +496,20 @@
                 <jdk>1.7</jdk>
             </activation>
             <properties>
+                <!--db config start-->
                 <db.hyschool.url>jdbc:mysql://127.0.0.1:3306/hyschooldb?characterEncoding=UTF-8</db.hyschool.url>
                 <db.hyschool.username>root</db.hyschool.username>
                 <db.hyschool.password>root</db.hyschool.password>
                 <db.initialPoolSize>5</db.initialPoolSize>
                 <db.maxPoolSize>50</db.maxPoolSize>
                 <db.minPoolSize>2</db.minPoolSize>
-                <db.maxIdleTime>60</db.maxIdleTime>
+                <db.maxIdleTime>600</db.maxIdleTime>
+                <db.acquireRetryAttempts>30</db.acquireRetryAttempts>
+                <!--db config end-->
+                <!--redis config satrt-->
                 <redis.server>127.0.0.1</redis.server>
                 <redis.port>6379</redis.port>
+                <!--redis config end-->
             </properties>
         </profile>
     </profiles>
