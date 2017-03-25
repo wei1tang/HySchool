@@ -19,6 +19,7 @@
     <script type="text/javascript" src="../../static/js/index-slider.js"></script><!--滑动图片js-->
     <script type="text/javascript" src="../../static/js/index-sider.js"></script><!--侧边栏js-->
     <script type="text/javascript" src="../../static/js/index-search.js"></script><!--搜索栏js-->
+    <script type="text/javascript" src="../../static/js/index-page.js"></script><!--分页js-->
 
 </head>
 
@@ -188,16 +189,7 @@
             </div>
         </div>
         <!-- 分页 开始 -->
-        <div class=" middle">
-            <div class="pagination">
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li class="active"><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-        </div>
+        <div id="page"></div>
         <!-- 分页 结束 -->
     </div>
     <div class="footer" id="footer">
@@ -254,7 +246,20 @@
 </div>
 
 <!--右边侧栏我要发布end-->
-
+<!-- 分页 开始 -->
+<script type="text/javascript">
+    $(function(){
+        $("#page").Page({
+            totalPages: 9,//分页总数
+            liNums: 8,//分页的数字按钮数(建议取奇数)
+            activeClass: 'activP', //active 类样式定义
+            callBack : function(page){
+                //console.log(page)
+            }
+        });
+    })
+</script>
+<!-- 分页 结束 -->
 
 </body>
 </html>
