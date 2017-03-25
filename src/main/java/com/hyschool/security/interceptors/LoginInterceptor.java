@@ -1,4 +1,4 @@
-package com.hyschool.interceptors;
+package com.hyschool.security.interceptors;
 
 import com.hyschool.util.CookieUtil;
 import com.hyschool.vip.bean.Vip;
@@ -29,8 +29,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
             return false;
         }
         String[] arr = name_email.split("|");
-        Vip vip = vipMapper.findVipByEmail(arr[1]);
-        request.getSession().setAttribute("vip",vip);
+        if (request.getSession().getAttribute("vip") == null){
+            Vip vip = vipMapper.findVipByEmail(arr[1]);
+            request.getSession().setAttribute("vip",vip);
+        }
         return true;
     }
 

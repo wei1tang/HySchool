@@ -1,4 +1,4 @@
-package com.hyschool.interceptors;
+package com.hyschool.security.interceptors;
 
 import com.hyschool.util.ConstantsUtil;
 import com.hyschool.util.CookieUtil;
@@ -24,7 +24,7 @@ public class AdminINterceptor extends HandlerInterceptorAdapter {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         String[] arr = name_email.split("|");
         Vip vip = vipMapper.findVipByEmail(arr[1]);
-        if (vip.getUserType() == ConstantsUtil.USER_ADMIN){
+        if (vip.getUserType() != ConstantsUtil.USER_ADMIN || vip.getUserType() != ConstantsUtil.USER_SUPER_ADMIN){
             String path = request.getContextPath();
             response.sendRedirect(path+"/index.html");
             return false;

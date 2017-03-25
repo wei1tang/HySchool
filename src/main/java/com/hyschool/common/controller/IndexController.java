@@ -19,6 +19,7 @@ import java.util.Map;
  * Created by LJW on 2017/1/12.
  */
 @Controller
+@RequestMapping("")
 public class IndexController {
 
     private static Logger logger = LoggerFactory.getLogger(IndexController.class);

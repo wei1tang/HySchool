@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * Created by LJW on 2017/3/22.
  */
 @Controller
-@RequestMapping("mvc")
+@RequestMapping("/mvc")
 public class MVCController {
 
 

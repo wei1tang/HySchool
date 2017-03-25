@@ -35,25 +35,17 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/order/*"/>
-            <mvc:mapping path="/business/*"/>
             <mvc:mapping path="/admin/*"/>
-            <bean class="com.hyschool.interceptors.LoginInterceptor"/>
-        </mvc:interceptor>
-
-        <mvc:interceptor>
-            <mvc:mapping path="/business/*"/>
-            <bean class="com.hyschool.interceptors.BusinessInterceptor"/>
+            <bean class="com.hyschool.security.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
 
         <mvc:interceptor>
             <mvc:mapping path="/admin/*"/>
-            <bean class="com.hyschool.interceptors.AdminINterceptor"/>
+            <bean class="com.hyschool.security.interceptors.AdminINterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
 
 </beans>
