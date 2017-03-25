@@ -10,6 +10,7 @@
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="../../static/css/index-search-form.css" /><!--搜索栏css-->
     <link href="../../static/css/index.css" type="text/css" rel="stylesheet"/><!--首页css-->
+
     <link href="../../static/css/index-slider-font.css" rel="stylesheet" type="text/css" /><!--四张照片滑动样式-->
     <link href="../../static/css/index-sider-style.css" rel="stylesheet" type="text/css" /><!--侧边栏样式-->
 
@@ -186,9 +187,18 @@
                 </div>
             </div>
         </div>
-        <div class="show-more">
-            <spain>显示更多</spain>
+        <!-- 分页 开始 -->
+        <div class=" middle">
+            <div class="pagination">
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li class="active"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
         </div>
+        <!-- 分页 结束 -->
     </div>
     <div class="footer" id="footer">
         <div>

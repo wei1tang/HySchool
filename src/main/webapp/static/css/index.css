@@ -200,17 +200,81 @@ html,body{
 .icons i {
     margin-right: 3px;
 }
-.show-more {
+/*分页*/
+.middle{
     clear: both;
-    text-align: center;
     padding: 15px 0;
-    color: #fff;
-    background: rgba(0, 0, 0, .3);
+    margin-top: 10px;
+}
+.middle ul,.middle li {
+    list-style: none;
+    display: inline;
+    padding-left: 0;
+}
+.middle li {
+    counter-increment: pagination;
+}
+.middle li:hover a {
+    color: #fdfdfd;
+    background-color: #00d8ff;
+    border: solid 1px #00d8ff;
+}
+.middle li.active a {
+    color: #fdfdfd;
+    background-color: #00d8ff;
+    border: solid 1px #00d8ff;
+}
+.middle li:nth-child(2) {
+    counter-reset: pagination;
+}
+.middle li a:after {
+    content: " " counter(pagination) " ";
+}
+.middle li a {
+    border: solid 1px #d6d6d6;
+    border-radius: 0.2rem;
+    color: #7d7d7d;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem;
+}
+.middle li:first-child a {
+    display: inline-block;
+}
+.middle li:first-child a:after {
+    content: "<";
+}
+.middle li:last-child a {
+    display: inline-block;
+}
+.middle li:last-child a:after {
+    content: ">";
+}
+.middle li:nth-child(2) a {
+    display: inline-block;
+}
+.middle li:nth-child(3) a {
+    display: inline-block;
+}
+.middle li:nth-child(4) a {
+    display: inline-block;
+}
+.middle li:nth-child(5) a {
+    display: inline-block;
+}
+.middle li:nth-last-child(2) a {
+    display: inline-block;
+}
+.middle li:nth-last-child(3) {
+    display: inline-block;
+}
+.middle li:nth-last-child(3):after {
+    padding: 0 1rem;
+    content: "...";
 }
 
-.show-more:hover {
-     cursor: pointer;
- }
 /*-----------end showlist-------------*/
 
 /*-----------start footer-------------*/
