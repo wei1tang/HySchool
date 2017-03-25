@@ -12,9 +12,11 @@ public final class ConstantsUtil {
     public static final String RESET_PASSWORD_SUBJECT = "重置密码";
 
     //register state
-    public static final Integer STATE_INVALID = 1;
+    public static final Integer VIP_STATE_INVALID = 1;
 
-    public static final Integer STATE_AVAILABLE = 2;
+    public static final Integer VIP_STATE_AVAILABLE = 2;
+
+    public static final Integer VIP_STATE_CLOSE = 3;
 
     //userType
     public static final Integer USER_VIP = 1;

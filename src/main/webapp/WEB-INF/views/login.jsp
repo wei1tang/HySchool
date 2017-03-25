@@ -173,7 +173,7 @@
 
 <div class="footer">
     <div>
-        <a href="" class="footer-entry" target="_blank">服务条款</a> |
+        <a href="${pageContext.request.contextPath}/about.html" class="footer-entry" target="_blank">服务条款</a> |
         <a href="" class="footer-entry" target="_blank">隐私政策</a> |
         <a href="" class="footer-entry" target="_blank">版权所有</a>
     </div>
