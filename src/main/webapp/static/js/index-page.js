@@ -55,7 +55,7 @@
         if(opts.hasNext){
             dataHtml += '<div class="next ">' + opts.next + '</div>';
         }
-
+        dataHtml += '<div class="pageskip">' + '共' + opts.totalPages + '页,到第'+ '<input type="text"/>' + '页'+'<button>确定</button>'+'</div>';
       // if(opts.hasNext){
       //     dataHtml += '<div class="next fr">' + opts.next + '</div>';
       // }
