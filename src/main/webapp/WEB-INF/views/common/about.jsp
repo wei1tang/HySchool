@@ -6,12 +6,12 @@
     <title>关于界面</title>
 
     <!--必要样式-->
-    <link href="../../static/css/about.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
-    <link href="../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
-    <link href="../../static/css/index-font-awesome.css" type="text/css" rel="stylesheet"/><!--按钮 css-->
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
+    <link href="/css/about.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
+    <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
+    <link href="../../../static/css/index-font-awesome.css" type="text/css" rel="stylesheet"/><!--按钮 css-->
+    <link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css">
 
-    <script src="../../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../../../static/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
     <div class="header">
         <div class="header-content">
             <div class="logo">
-                <img src="../../static/images/index-logo.png" class="" />二手交易网
+                <img src="../../../static/images/index-logo.png" class="" />二手交易网
             </div>
             <div class="nav">
                 <a class="list" >首页</a>
@@ -27,7 +27,7 @@
             </div>
             <div class="me">
                 <div class="avatar-link" title="user">
-                    <img src="../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
+                    <img src="../../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
                     Hello, {user.name}
                 </div>
                 <div class="button-link">
@@ -339,7 +339,7 @@
 </div>
 
 <!--选项卡js-->
-<script type="text/javascript" src="../../static/js/about-select-tab.js"></script>
+<script type="text/javascript" src="../../../static/js/about-select-tab.js"></script>
 <!--选项卡js-->
 
 </body>

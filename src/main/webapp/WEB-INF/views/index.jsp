@@ -192,9 +192,9 @@
     </div>
     <div class="footer" id="footer">
         <div>
-            <a href="about.jsp" class="footer-entry" target="_blank">服务条款</a> |
-            <a href="about.jsp" class="footer-entry" target="_blank">隐私政策</a> |
-            <a href="about.jsp" class="footer-entry" target="_blank">版权所有</a>
+            <a href="common/about.jsp" class="footer-entry" target="_blank">服务条款</a> |
+            <a href="common/about.jsp" class="footer-entry" target="_blank">隐私政策</a> |
+            <a href="common/about.jsp" class="footer-entry" target="_blank">版权所有</a>
         </div>
         <div>
             <span class="footer-entry last">华中科技大学花样校园毕设项目组保留所有权利。</span>
@@ -209,7 +209,7 @@
     <ul>
         <li><a href="${pageContext.request.contextPath}/vip/searchfor.html"><i class="fa fa-home fa-lg"></i><span class="nav-text">首页</span></a></li>
         <!--侧边栏鼠标未移动到其上时显示斜体字-->
-        <li><a href="searchfor.jsp"><i class="fa fa-bicycle fa-lg"></i><span class="nav-text">校园代步</span></a></li>
+        <li><a href="common/searchfor.jsp"><i class="fa fa-bicycle fa-lg"></i><span class="nav-text">校园代步</span></a></li>
 
         <li><a href="#"><i class="fa fa-phone fa-lg"></i><span class="nav-text">手机</span></a></li>
 

@@ -7,12 +7,12 @@
     <%--<!--<%&#45;&#45;<link href="<%=request.getContextPath()%>/static/css/bootstrap.css" rel="stylesheet">&#45;&#45;%>-->--%>
 
     <!--必要样式-->
-    <link rel="stylesheet" type="text/css" href="../../static/css/index-search-form.css" /><!--搜索栏css-->
-    <link href="../../static/css/searchfor.css" type="text/css" rel="stylesheet"/><!--首页css-->
+    <link rel="stylesheet" type="text/css" href="../../../static/css/index-search-form.css" /><!--搜索栏css-->
+    <link href="../../../static/css/searchfor.css" type="text/css" rel="stylesheet"/><!--首页css-->
 
-    <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script><!--jQuery样式-->
-    <script type="text/javascript" src="../../static/js/jquery-ui-1.10.4.min.js"></script><!--jQueryUI样式-->
-    <script type="text/javascript" src="../../static/js/index-search.js"></script><!--搜索栏js-->
+    <script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script><!--jQuery样式-->
+    <script type="text/javascript" src="../../../static/js/jquery-ui-1.10.4.min.js"></script><!--jQueryUI样式-->
+    <script type="text/javascript" src="../../../static/js/index-search.js"></script><!--搜索栏js-->
 
 </head>
 
@@ -32,7 +32,7 @@
     <div class="header">
         <div class="header-content">
             <div class="logo">
-                <img src="../../static/images/index-logo.png" class="" />二手交易网
+                <img src="../../../static/images/index-logo.png" class="" />二手交易网
             </div>
             <div class="nav">
                 <a class="list" >首页</a>
@@ -80,7 +80,7 @@
         <div class="list-totall">
             <div class="list-item">
                 <div class="img">
-                    <img src="../../static/images/index-project-img/1.png" class="img" />
+                    <img src="../../../static/images/index-project-img/1.png" class="img" />
                     <div class="introduction"><p>这台洗衣机使用1年</p></div>
                 </div>
                 <div class="list-content">
@@ -100,7 +100,7 @@
             </div>
             <div class="list-item">
                 <div class="img">
-                    <img src="../../static/images/index-project-img/2.png" class="img" />
+                    <img src="../../../static/images/index-project-img/2.png" class="img" />
                     <div class="introduction"><p>这台电脑使用1年</p></div>
                 </div>
                 <div class="list-content">
@@ -120,7 +120,7 @@
             </div>
             <div class="list-item">
                 <div class="img">
-                    <img src="../../static/images/index-project-img/3.png" class="img" />
+                    <img src="../../../static/images/index-project-img/3.png" class="img" />
                     <div class="introduction"><p>这手机使用1年</p></div>
                 </div>
                 <div class="list-content">
@@ -140,7 +140,7 @@
             </div>
             <div class="list-item">
                 <div class="img">
-                    <img src="../../static/images/index-project-img/3.png" class="img" />
+                    <img src="../../../static/images/index-project-img/3.png" class="img" />
                     <div class="introduction"><p>这台洗衣机使用1年</p></div>
                 </div>
                 <div class="list-content">

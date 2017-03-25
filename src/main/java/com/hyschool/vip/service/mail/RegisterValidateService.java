@@ -343,12 +343,12 @@ public class RegisterValidateService {
     public void processActivate(String email, String validateCode)throws ServiceException{
         Vip vip=vipMapper.findVipByEmail(email);
         if(vip!=null) {
-            if(vip.getState() == ConstantsUtil.STATE_INVALID) {
+            if(vip.getState() == ConstantsUtil.VIP_STATE_INVALID) {
                 Date currentTime = new Date();
                 if(currentTime.before(vip.getLastActivateTime())) {
                     VipValidate vipValidate = vipValidateMapper.findByEmail(email);
                     if(validateCode.equals(vipValidate == null? null : vipValidate.getValidateCode())) {
-                        vipMapper.activateVip(ConstantsUtil.STATE_AVAILABLE,email);
+                        vipMapper.activateVip(ConstantsUtil.VIP_STATE_AVAILABLE,email);
                         vipValidate.setValidateCode(null);
                         vipValidateMapper.updateVipValidate(vipValidate);
                     } else {

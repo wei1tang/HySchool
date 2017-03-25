@@ -20,12 +20,12 @@ public class VipServiceImpl implements VipService {
 
     @Override
     public Vip findAvailableVip(String email) {
-        return vipMapper.findVipWithState(email, ConstantsUtil.STATE_AVAILABLE);
+        return vipMapper.findVipWithState(email, ConstantsUtil.VIP_STATE_AVAILABLE);
     }
 
     @Override
     public Vip findInvalidVip(String email) {
-        return vipMapper.findVipWithState(email,ConstantsUtil.STATE_INVALID);
+        return vipMapper.findVipWithState(email,ConstantsUtil.VIP_STATE_INVALID);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class VipServiceImpl implements VipService {
         vip.setName(name);
         vip.setEmail(email);
         vip.setPassword(password);
-        vip.setState(ConstantsUtil.STATE_INVALID);
+        vip.setState(ConstantsUtil.VIP_STATE_INVALID);
         vip.setUserType(ConstantsUtil.USER_VIP);
         vip.setCreateTime(createTime);
         vipMapper.createVip(vip);

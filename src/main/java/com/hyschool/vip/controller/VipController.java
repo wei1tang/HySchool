@@ -111,19 +111,19 @@ public class VipController {
         if (!isValid){
             String message = "邮箱格式不正确";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
         if ((!password1.equals(password2))||password1.equals(null)||password2.equals(null)){
             String message = "密码输入不规范";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
 
         Vip availableVip = vipService.findAvailableVip(email);
         if (availableVip!=null){
             String message = "邮箱已存在，请直接登录。";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
         Vip invalidVip = vipService.findInvalidVip(email);
         if (invalidVip!=null){
@@ -133,7 +133,7 @@ public class VipController {
             vipService.updateInvalidVip(name,email,password1,date);
             vipValidateService.updateVipValidate(email,validateCode);
             registerValidateService.processRegister(email,validateCode);
-            return "activate_prompt";
+            return "vip/activate_prompt";
         }
 
         String validateCode = passwordManager.encryptPassword(email+System.currentTimeMillis());
@@ -143,17 +143,17 @@ public class VipController {
         vipService.createVip(name,email,password1,date);
         vipValidateService.createVipValidate(email,validateCode);
         registerValidateService.processRegister(email,validateCode);
-        return "activate_prompt";
+        return "vip/activate_prompt";
     }
 
     @RequestMapping(value = "/activate.html",method = RequestMethod.GET)
     public String activate(Model model,@RequestParam("email")String email, @RequestParam("validateCode")String validateCode){
         try {
             registerValidateService.processActivate(email , validateCode);//调用激活方法
-            return "activate_success";
+            return "vip/activate_success";
         } catch (ServiceException e) {
             model.addAttribute("message" , e.getMessage());
-            return  "activate_failure";
+            return "vip/activate_failure";
         }
     }
 
@@ -163,13 +163,13 @@ public class VipController {
         if (!isValid){
             String message = "邮箱格式不正确";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
         Vip vip = vipService.findAvailableVip(email);
         if (vip == null){
             String message = "邮箱不存在，请重新输入。";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
         //生成验证码，发邮箱进行改密码
         String validateCode = passwordManager.encryptPassword(email+System.currentTimeMillis());
@@ -190,18 +190,18 @@ public class VipController {
                 Date currentTime = new Date();
                 if(currentTime.before(vip.getResetLastActivateTime())) {
                     model.addAttribute("email",email);
-                    return "reset_password";
+                    return "vip/reset_password";
                 }
             }else {
                 String message = "邮箱账号不存在。";
                 model.addAttribute("message",message);
-                return "register_error";
+                return "vip/register_error";
             }
         }
 
         String message = "验证码已过期。";
         model.addAttribute("message",message);
-        return "register_error";
+        return "vip/register_error";
     }
 
     @RequestMapping(value = "/resetPassword.html",method = RequestMethod.POST)
@@ -210,7 +210,7 @@ public class VipController {
         if ((!password1.equals(password2))||password1.equals(null)||password2.equals(null)){
             String message = "密码输入不规范";
             model.addAttribute("message",message);
-            return "register_error";
+            return "vip/register_error";
         }
         password1 = passwordManager.encryptPassword(password1);
         vipService.resetPassword(password1,email);

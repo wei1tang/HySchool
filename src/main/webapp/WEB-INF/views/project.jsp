@@ -73,7 +73,7 @@
                     </li>
                     <li class="detail-seller">
                         <div class="name"><span>卖家</span></div>
-                        <a href="personal.jsp" target="_blank">
+                        <a href="vip/personal.jsp" target="_blank">
                             <div class="value">
                                 <span class="value-name">阿澈</span>
                                 <img class="detail-grade" src="../../static/images/project-ico_lv6.png" alt="等级显示">

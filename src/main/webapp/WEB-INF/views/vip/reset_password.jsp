@@ -13,9 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>密码重置</title>
-    <link href="../../static/css/font/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link href="../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
-    <link href="../../static/css/login.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../static/css/font/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
+    <link href="../../../static/css/login.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -70,7 +70,7 @@
 
 
 
-<script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script>
 
 </body>
 </html>
