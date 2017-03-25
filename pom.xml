@@ -347,7 +347,7 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <resources>
-            <!--表示把java目录下的有关xml文件,properties文件编译/打包的时候放在resource目录下-->
+            <!--表示把resources目录下的有关xml文件,properties文件编译/打包,与com同级-->
             <resource>
                 <filtering>false</filtering>
                 <directory>src/main/resources</directory>
