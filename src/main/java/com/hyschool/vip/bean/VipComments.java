@@ -9,7 +9,7 @@ public class VipComments {
 
     private String buyerEmail;
 
-    private Double star;
+    private Double starRating;
 
     private Integer state;
 
@@ -41,12 +41,12 @@ public class VipComments {
         this.buyerEmail = buyerEmail == null ? null : buyerEmail.trim();
     }
 
-    public Double getStar() {
-        return star;
+    public Double getStarRating() {
+        return starRating;
     }
 
-    public void setStar(Double star) {
-        this.star = star;
+    public void setStarRating(Double starRating) {
+        this.starRating = starRating;
     }
 
     public Integer getState() {

@@ -15,7 +15,7 @@ public class Order {
 
     private Integer sumMoney;
 
-    private Byte payMode;
+    private Boolean payMode;
 
     private Date createTime;
 
@@ -25,9 +25,11 @@ public class Order {
 
     private Date vipConfirmTime;
 
+    private Boolean isPay;
+
     private String paySerialsNumber;
 
-    private Byte isDelete;
+    private Boolean isDelete;
 
     private Date deleteTime;
 
@@ -79,11 +81,11 @@ public class Order {
         this.sumMoney = sumMoney;
     }
 
-    public Byte getPayMode() {
+    public Boolean getPayMode() {
         return payMode;
     }
 
-    public void setPayMode(Byte payMode) {
+    public void setPayMode(Boolean payMode) {
         this.payMode = payMode;
     }
 
@@ -119,6 +121,14 @@ public class Order {
         this.vipConfirmTime = vipConfirmTime;
     }
 
+    public Boolean getIsPay() {
+        return isPay;
+    }
+
+    public void setIsPay(Boolean isPay) {
+        this.isPay = isPay;
+    }
+
     public String getPaySerialsNumber() {
         return paySerialsNumber;
     }
@@ -127,11 +137,11 @@ public class Order {
         this.paySerialsNumber = paySerialsNumber == null ? null : paySerialsNumber.trim();
     }
 
-    public Byte getIsDelete() {
+    public Boolean getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(Byte isDelete) {
+    public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
     }
 

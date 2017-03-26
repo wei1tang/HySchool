@@ -9,9 +9,13 @@ public class VipApprove {
 
     private String realName;
 
-    private Byte gender;
+    private Boolean gender;
 
     private Integer phone;
+
+    private String provinceCode;
+
+    private String cityCode;
 
     private String school;
 
@@ -45,11 +49,11 @@ public class VipApprove {
         this.realName = realName == null ? null : realName.trim();
     }
 
-    public Byte getGender() {
+    public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(Byte gender) {
+    public void setGender(Boolean gender) {
         this.gender = gender;
     }
 
@@ -59,6 +63,22 @@ public class VipApprove {
 
     public void setPhone(Integer phone) {
         this.phone = phone;
+    }
+
+    public String getProvinceCode() {
+        return provinceCode;
+    }
+
+    public void setProvinceCode(String provinceCode) {
+        this.provinceCode = provinceCode == null ? null : provinceCode.trim();
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode == null ? null : cityCode.trim();
     }
 
     public String getSchool() {

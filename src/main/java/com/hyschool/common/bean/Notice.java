@@ -15,11 +15,11 @@ public class Notice {
 
     private String url;
 
-    private Byte haveRead;
+    private Boolean haveRead;
 
-    private Byte idDelete;
+    private Boolean isDelete;
 
-    private Byte idPublicAll;
+    private Boolean isPublicAll;
 
     private Date createTime;
 
@@ -73,28 +73,28 @@ public class Notice {
         this.url = url == null ? null : url.trim();
     }
 
-    public Byte getHaveRead() {
+    public Boolean getHaveRead() {
         return haveRead;
     }
 
-    public void setHaveRead(Byte haveRead) {
+    public void setHaveRead(Boolean haveRead) {
         this.haveRead = haveRead;
     }
 
-    public Byte getIdDelete() {
-        return idDelete;
+    public Boolean getIsDelete() {
+        return isDelete;
     }
 
-    public void setIdDelete(Byte idDelete) {
-        this.idDelete = idDelete;
+    public void setIsDelete(Boolean isDelete) {
+        this.isDelete = isDelete;
     }
 
-    public Byte getIdPublicAll() {
-        return idPublicAll;
+    public Boolean getIsPublicAll() {
+        return isPublicAll;
     }
 
-    public void setIdPublicAll(Byte idPublicAll) {
-        this.idPublicAll = idPublicAll;
+    public void setIsPublicAll(Boolean isPublicAll) {
+        this.isPublicAll = isPublicAll;
     }
 
     public Date getCreateTime() {

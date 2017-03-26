@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyschool.vip.dao.VipCommentsMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipComments">
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="saller_email" property="sallerEmail" jdbcType="VARCHAR"/>
-        <result column="buyer_email" property="buyerEmail" jdbcType="VARCHAR"/>
-        <result column="star" property="star" jdbcType="DOUBLE"/>
-        <result column="state" property="state" jdbcType="INTEGER"/>
-        <result column="content" property="content" jdbcType="VARCHAR"/>
-        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="saller_email" jdbcType="VARCHAR" property="sallerEmail"/>
+        <result column="buyer_email" jdbcType="VARCHAR" property="buyerEmail"/>
+        <result column="star_rating" jdbcType="DOUBLE" property="starRating"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 </mapper>

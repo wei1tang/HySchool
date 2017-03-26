@@ -9,7 +9,7 @@ public class VipGoodsCollections {
 
     private Integer goodsId;
 
-    private Byte isDelete;
+    private Boolean isDelete;
 
     private Date createTime;
 
@@ -37,11 +37,11 @@ public class VipGoodsCollections {
         this.goodsId = goodsId;
     }
 
-    public Byte getIsDelete() {
+    public Boolean getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(Byte isDelete) {
+    public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
     }
 

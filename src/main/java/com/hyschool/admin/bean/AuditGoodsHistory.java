@@ -9,7 +9,7 @@ public class AuditGoodsHistory {
 
     private Integer goodsId;
 
-    private Byte isPass;
+    private Boolean isPass;
 
     private String reason;
 
@@ -39,11 +39,11 @@ public class AuditGoodsHistory {
         this.goodsId = goodsId;
     }
 
-    public Byte getIsPass() {
+    public Boolean getIsPass() {
         return isPass;
     }
 
-    public void setIsPass(Byte isPass) {
+    public void setIsPass(Boolean isPass) {
         this.isPass = isPass;
     }
 

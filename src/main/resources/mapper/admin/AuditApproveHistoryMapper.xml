@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyschool.admin.dao.AuditApproveHistoryMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.admin.bean.AuditApproveHistory">
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="admin_email" property="adminEmail" jdbcType="VARCHAR"/>
-        <result column="vip_email" property="vipEmail" jdbcType="VARCHAR"/>
-        <result column="is_pass" property="isPass" jdbcType="TINYINT"/>
-        <result column="reason" property="reason" jdbcType="VARCHAR"/>
-        <result column="audit_time" property="auditTime" jdbcType="TIMESTAMP"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="admin_email" jdbcType="VARCHAR" property="adminEmail"/>
+        <result column="vip_email" jdbcType="VARCHAR" property="vipEmail"/>
+        <result column="is_pass" jdbcType="BIT" property="isPass"/>
+        <result column="reason" jdbcType="VARCHAR" property="reason"/>
+        <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime"/>
     </resultMap>
 
 </mapper>

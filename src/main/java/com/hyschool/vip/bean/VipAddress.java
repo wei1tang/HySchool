@@ -19,9 +19,9 @@ public class VipAddress {
 
     private String name;
 
-    private Byte isDefault;
+    private Boolean isDefault;
 
-    private Byte isDelete;
+    private Boolean isDelete;
 
     private Date createTime;
 
@@ -91,19 +91,19 @@ public class VipAddress {
         this.name = name == null ? null : name.trim();
     }
 
-    public Byte getIsDefault() {
+    public Boolean getIsDefault() {
         return isDefault;
     }
 
-    public void setIsDefault(Byte isDefault) {
+    public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
 
-    public Byte getIsDelete() {
+    public Boolean getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(Byte isDelete) {
+    public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
     }
 

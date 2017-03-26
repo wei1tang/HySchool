@@ -21,8 +21,6 @@ public class Goods {
 
     private String transactionAddress;
 
-    private Byte isOffTheShelf;
-
     private Date createTime;
 
     private Date onlineTime;
@@ -99,14 +97,6 @@ public class Goods {
 
     public void setTransactionAddress(String transactionAddress) {
         this.transactionAddress = transactionAddress == null ? null : transactionAddress.trim();
-    }
-
-    public Byte getIsOffTheShelf() {
-        return isOffTheShelf;
-    }
-
-    public void setIsOffTheShelf(Byte isOffTheShelf) {
-        this.isOffTheShelf = isOffTheShelf;
     }
 
     public Date getCreateTime() {

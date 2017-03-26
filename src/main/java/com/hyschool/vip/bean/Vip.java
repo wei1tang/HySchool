@@ -14,7 +14,7 @@ public class Vip {
 
     private Integer state;
 
-    private Integer starRating;
+    private Double starRating;
 
     private Integer userType;
 
@@ -66,11 +66,11 @@ public class Vip {
         this.state = state;
     }
 
-    public Integer getStarRating() {
+    public Double getStarRating() {
         return starRating;
     }
 
-    public void setStarRating(Integer starRating) {
+    public void setStarRating(Double starRating) {
         this.starRating = starRating;
     }
 

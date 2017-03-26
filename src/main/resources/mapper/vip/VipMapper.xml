@@ -7,7 +7,7 @@
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="state" jdbcType="INTEGER" property="state"/>
-        <result column="star_rating" jdbcType="INTEGER" property="starRating"/>
+        <result column="star_rating" jdbcType="DOUBLE" property="starRating"/>
         <result column="user_type" jdbcType="INTEGER" property="userType"/>
         <result column="birthday" jdbcType="DATE" property="birthday"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

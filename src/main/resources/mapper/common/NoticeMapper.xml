@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyschool.common.dao.NoticeMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Notice">
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="to_email" property="toEmail" jdbcType="VARCHAR"/>
-        <result column="from_email" property="fromEmail" jdbcType="VARCHAR"/>
-        <result column="content" property="content" jdbcType="VARCHAR"/>
-        <result column="type" property="type" jdbcType="INTEGER"/>
-        <result column="url" property="url" jdbcType="VARCHAR"/>
-        <result column="have_read" property="haveRead" jdbcType="TINYINT"/>
-        <result column="id_delete" property="idDelete" jdbcType="TINYINT"/>
-        <result column="id_public_all" property="idPublicAll" jdbcType="TINYINT"/>
-        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
-        <result column="read_time" property="readTime" jdbcType="TIMESTAMP"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="to_email" jdbcType="VARCHAR" property="toEmail"/>
+        <result column="from_email" jdbcType="VARCHAR" property="fromEmail"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="have_read" jdbcType="BIT" property="haveRead"/>
+        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="is_public_all" jdbcType="BIT" property="isPublicAll"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="read_time" jdbcType="TIMESTAMP" property="readTime"/>
     </resultMap>
 </mapper>
