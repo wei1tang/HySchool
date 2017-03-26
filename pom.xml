@@ -342,7 +342,6 @@
     <!--jar包依赖 end-->
 
 
-
     <!--设置项目编译级别等设置 start-->
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -384,7 +383,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${maven-war-plugin.version}</version>
                 <configuration>
-                <warName>${war-name.version}</warName>
+                    <warName>${war-name.version}</warName>
                 </configuration>
             </plugin>
 
@@ -421,7 +420,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
-             </plugin>
+            </plugin>
 
             <!--mybatis 逆向工程插件-->
             <plugin>

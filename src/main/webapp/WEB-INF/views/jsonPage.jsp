@@ -21,13 +21,12 @@
 <script language="JavaScript">
     function check() {
         var name = $.sessionStorage.getItem("key");
-        if (name === ""){
+        if (name === "") {
         }
     }
 </script>
 
 <body>
-
 
 
 <button class="cause-icon">jsonDemoGET</button>
@@ -44,20 +43,20 @@
 <script src="<%=request.getContextPath()%>/static/js/jquery-3.1.1.min.js"></script>
 <script>
 
-    $(document).ready(function(){
+    $(document).ready(function () {
 
     });
 
     /*ajax的表单post*/
     $(function () {
         $("#formDemoSubmit").click(
-            function (){
+            function () {
                 console.log($("#formDemo").serialize());
                 $.ajax({
-                    type:"POST",
-                    data:$("#formDemo").serialize(),
-                    url:"${pageContext.request.contextPath}/jsonForm.html",
-                    dataType:"json",
+                    type: "POST",
+                    data: $("#formDemo").serialize(),
+                    url: "${pageContext.request.contextPath}/jsonForm.html",
+                    dataType: "json",
                     success: function (json) {
                         $("#formReturn").text(json.message);
                         //window.location.href = json.href;
@@ -72,11 +71,11 @@
         $(".cause-icon").click(
             function () {
                 $.ajax({
-                    type:"GET",
-                    url:"${pageContext.request.contextPath}/json.html",
-                    dataType:"json",
-                    success: function(data){
-                        if(data && data.status) {
+                    type: "GET",
+                    url: "${pageContext.request.contextPath}/json.html",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data && data.status) {
                             if (null != data.str && "" != $.trim(data.str)) {
                                 $(".cause-icon").text(decodeURIComponent(data.str));
                             }
@@ -89,15 +88,15 @@
         $(".cause-icon-post").click(
             function () {
                 var dataAjax = {
-                    demo:"POST SUCCESS!"
+                    demo: "POST SUCCESS!"
                 }
                 $.ajax({
-                    type:"POST",
-                    data:dataAjax,
-                    url:"${pageContext.request.contextPath}/json.html",
-                    dataType:"json",
-                    success: function(data){
-                        if(data && data.status) {
+                    type: "POST",
+                    data: dataAjax,
+                    url: "${pageContext.request.contextPath}/json.html",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data && data.status) {
                             if (null != data.demo && "" != $.trim(data.demo)) {
                                 $(".cause-icon-post").text(decodeURIComponent(data.demo));
                             }
@@ -110,7 +109,7 @@
         //加上下面代码,ajax才能post
         var token = $("meta[name='_csrf']").attr("content");
         var header = $("meta[name='_csrf_header']").attr("content");
-        $(document).ajaxSend(function(e, xhr, options) {
+        $(document).ajaxSend(function (e, xhr, options) {
             xhr.setRequestHeader(header, token);
         });
 
