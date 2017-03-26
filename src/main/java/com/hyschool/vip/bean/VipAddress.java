@@ -19,7 +19,7 @@ public class VipAddress {
 
     private String name;
 
-    private Byte default;
+    private Byte is_Default;
 
     private Byte isDelete;
 
@@ -91,12 +91,12 @@ public class VipAddress {
         this.name = name == null ? null : name.trim();
     }
 
-    public Byte getDefault() {
-        return default;
+    public Byte getIs_Default() {
+        return is_Default;
     }
 
-    public void setDefault(Byte default) {
-        this.default = default;
+    public void setIs_Default(Byte is_Default) {
+        this.is_Default = is_Default;
     }
 
     public Byte getIsDelete() {

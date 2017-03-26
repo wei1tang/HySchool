@@ -197,7 +197,7 @@ CREATE TABLE `vip_address` (
   `postcode`      VARCHAR(6)        DEFAULT NULL,
   `phone`         VARCHAR(11)  NOT NULL,
   `name`          VARCHAR(255) NOT NULL,
-  `default`       TINYINT(4)   NOT NULL,
+  `is_default`    TINYINT(4)   NOT NULL,
   `is_delete`     TINYINT(4)        DEFAULT NULL,
   `create_time`   TIMESTAMP    NULL DEFAULT NULL,
   `delete_time`   TIMESTAMP    NULL DEFAULT NULL,
