@@ -32,11 +32,43 @@
 
 <button class="cause-icon">jsonDemoGET</button>
 <button class="cause-icon-post">jsonDemoPOST</button>
+<br>
+<br>
+<form id="formDemo">
+    <input type="text" name="name" value="lv jinwang">
+    <input type="text" name="email" value="769707043@qq.com">
+    <input type="button" id="formDemoSubmit" value="提交">
+</form>
+<div id="formReturn"></div>
 
 <script src="<%=request.getContextPath()%>/static/js/jquery-3.1.1.min.js"></script>
 <script>
-    $(function () {
 
+    $(document).ready(function(){
+
+    });
+
+    /*ajax的表单post*/
+    $(function () {
+        $("#formDemoSubmit").click(
+            function (){
+                console.log($("#formDemo").serialize());
+                $.ajax({
+                    type:"POST",
+                    data:$("#formDemo").serialize(),
+                    url:"${pageContext.request.contextPath}/jsonForm.html",
+                    dataType:"json",
+                    success: function (json) {
+                        $("#formReturn").text(json.message);
+                        //window.location.href = json.href;
+                    },
+                    error: function (json) {
+                        $("#formReturn").text(json.message)
+                    }
+                });
+            });
+
+        /*ajax的get请求*/
         $(".cause-icon").click(
             function () {
                 $.ajax({
@@ -53,8 +85,7 @@
                 });
             });
 
-
-
+        /*ajax的封装数据post请求*/
         $(".cause-icon-post").click(
             function () {
                 var dataAjax = {

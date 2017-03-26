@@ -14,14 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/mvc")
 public class MVCController {
 
-
-    @RequestMapping("/demo")
-    public String demo(){
-
-        return null;
-    }
-
-
     @RequestMapping(value = "/redirect.html", method = RequestMethod.GET)
     public String flash(@RequestParam("flash") String flash, RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("flash", flash);
