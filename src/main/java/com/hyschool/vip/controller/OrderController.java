@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class OrderController {
 
     @RequestMapping(value = "/list.html",method = RequestMethod.GET)
-    String confirm(){
+    public String confirm(){
         return "order_list";
     }
 

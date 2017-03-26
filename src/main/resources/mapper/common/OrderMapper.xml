@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hyschool.common.dao.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Order" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_number" property="orderNumber" jdbcType="INTEGER" />
+    <result column="vip_email" property="vipEmail" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="sum_money" property="sumMoney" jdbcType="INTEGER" />
+    <result column="pay_mode" property="payMode" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="accept_time" property="acceptTime" jdbcType="TIMESTAMP" />
+    <result column="shop_confirm_time" property="shopConfirmTime" jdbcType="TIMESTAMP" />
+    <result column="vip_confirm_time" property="vipConfirmTime" jdbcType="TIMESTAMP" />
+    <result column="pay_serials_number" property="paySerialsNumber" jdbcType="VARCHAR" />
+    <result column="is__delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="delete_time" property="deleteTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>
