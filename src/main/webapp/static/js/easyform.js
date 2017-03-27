@@ -498,8 +498,8 @@
         },
         blue: {
             color: "rgba(255,255,255,1)",
-            "background-color": "rgba(51,153,204,0.8)",
-            "border": "1px solid rgba(102,153,204,1)",
+            "background-color": "rgba(0,147,253,1)",
+            "border": "1px solid rgba(0,147,253,1)",
             "border-radius": 5
         },
         red: {
