@@ -14,6 +14,8 @@ public class Vip {
 
     private Integer state;
 
+    private Double starRating;
+
     private Integer userType;
 
     private Date birthday;
@@ -62,6 +64,14 @@ public class Vip {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Double getStarRating() {
+        return starRating;
+    }
+
+    public void setStarRating(Double starRating) {
+        this.starRating = starRating;
     }
 
     public Integer getUserType() {

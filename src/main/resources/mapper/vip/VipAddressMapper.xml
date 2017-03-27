@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyschool.vip.dao.VipAddressMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipAddress">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="vip_email" jdbcType="INTEGER" property="vipEmail"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="province_code" jdbcType="VARCHAR" property="provinceCode"/>
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>
+        <result column="postcode" jdbcType="VARCHAR" property="postcode"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="is_default" jdbcType="BIT" property="isDefault"/>
+        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
+    </resultMap>
+</mapper>

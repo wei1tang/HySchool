@@ -40,7 +40,7 @@
                 </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
-                    <button type="submit" class="tran pr">登 录</button>
+                    <button type="submit" class="tran pr" id="login">登 录</button>
                 </div>
             </form>
 
@@ -227,6 +227,13 @@
         $('.signup').easyform();
         $('.forgot').easyform();
 
+    });
+
+    //激活回车键登录
+    $(document).keyup(function(event){
+        if(event.keyCode ==13){
+            $("#login").trigger("click");
+        }
     });
 
 </script>
