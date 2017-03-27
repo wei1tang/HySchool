@@ -27,7 +27,7 @@ html,body{
     margin: 0 auto;
 }
 .header .logo {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
     float: left;
     color: #00d8ff;
@@ -40,7 +40,7 @@ html,body{
     margin-right: 10px;
 }
 .header .nav {
-    font-size: 14px;
+    font-size: 18px;
     float: left;
     margin-left: 20px;
 }
@@ -59,7 +59,7 @@ html,body{
     box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
 }
 .header .sign {
-    font-size: 14px;
+    font-size: 18px;
     float: right;
     margin-left: 20px;
 }

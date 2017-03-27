@@ -6,7 +6,7 @@
     <title>关于界面</title>
 
     <!--必要样式-->
-    <link href="/css/about.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
+    <link href="../../../static/css/about.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
     <link href="../../../static/css/index-font-awesome.css" type="text/css" rel="stylesheet"/><!--按钮 css-->
     <link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css">
@@ -16,30 +16,8 @@
 <body>
 
 <div class="container">
-    <div class="header">
-        <div class="header-content">
-            <div class="logo">
-                <img src="../../../static/images/index-logo.png" class="" />二手交易网
-            </div>
-            <div class="nav">
-                <a class="list" >首页</a>
-                <a class="list" >关于</a>
-            </div>
-            <div class="me">
-                <div class="avatar-link" title="user">
-                    <img src="../../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
-                    Hello, {user.name}
-                </div>
-                <div class="button-link">
-                    <a href="#" class="button button-primary button-rounded button-small">退出登录</a>
-                </div>
-            </div>
-            <!--<div class="sign">-->
-            <!--<a class="list" >登录</a>-->
-            <!--<a class="list" >注册</a>-->
-            <!--</div>-->
-        </div>
-    </div>
+
+    <%@include file="../public/header-user.jsp"%>
 
     <div class="about">
 
@@ -325,17 +303,7 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div>
-            <a href="#" class="footer-entry" target="_blank">服务条款</a> |
-            <a href="#" class="footer-entry" target="_blank">隐私政策</a> |
-            <a href="#" class="footer-entry" target="_blank">版权所有</a>
-            <!--修改-->
-        </div>
-        <div>
-            <span class="footer-entry last">华中科技大学花样校园毕设项目组保留所有权利。</span>
-        </div>
-    </div>
+    <%@include file="../public/footer.jsp"%>
 </div>
 
 <!--选项卡js-->

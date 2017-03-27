@@ -22,40 +22,7 @@
 
 <div class="login-banner"></div>
 
-<div class="header">
-    <div class="header-content">
-        <div class="logo">
-            <img src="../../static/images/index-logo.png" class="" />二手交易网
-        </div>
-        <div class="nav">
-            <a class="list" >首页</a>
-            <a class="list" >关于</a>
-        </div>
-        <%--<!--添加搜索-->--%>
-        <%--<form onSubmit="submitFn(this, event);">--%>
-            <%--<div class="search-wrapper">--%>
-                <%--<div class="input-holder">--%>
-                    <%--<input type="text" class="search-input" placeholder="请输入关键词" />--%>
-                    <%--<button class="search-icon" onClick="searchToggle(this, event);"><span></span></button>--%>
-                <%--</div>--%>
-                <%--<span class="close" onClick="searchToggle(this, event);"></span>--%>
-            <%--</div>--%>
-        <%--</form>--%>
-        <!--<div class="me">-->
-        <!--<div class="avatar-link" title="user">-->
-        <!--<img src="index-avatar.png" class="avatar" alt="avatar"/>-->
-        <!--Hello, {user.name}-->
-        <!--</div>-->
-        <!--<Button type="primary" onClick={this.logout}>退出登录</Button>-->
-        <!--</div>-->
-        <div class="sign">
-            <a class="list" href="${pageContext.request.contextPath}/vip/login.html">登录</a>
-            <%--<br>--%>
-            <%--${test}--%>
-            <a class="list" href="${pageContext.request.contextPath}/vip/logout.html">注册</a>
-        </div>
-    </div>
-</div>
+<%@include file="public/header.jsp"%>
 
 <div class="login-box">
     <div class="box-con tran">
@@ -171,18 +138,7 @@
     </div>
 </div>
 
-<div class="footer">
-    <div>
-        <a href="${pageContext.request.contextPath}/about.html" class="footer-entry" target="_blank">服务条款</a> |
-        <a href="" class="footer-entry" target="_blank">隐私政策</a> |
-        <a href="" class="footer-entry" target="_blank">版权所有</a>
-    </div>
-    <div>
-        <span class="footer-entry last">华中科技大学花样校园毕设项目组保留所有权利。</span>
-    </div>
-</div>
-
-
+<%@include file="public/footer.jsp"%>
 
 <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 <script>

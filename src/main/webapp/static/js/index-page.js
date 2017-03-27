@@ -9,8 +9,8 @@
     activeClass: 'active' ,//active类
     firstPage: '首页',//首页按钮名称
     lastPage: '末页',//末页按钮名称
-    prv: '«',//前一页按钮名称
-    next: '»',//后一页按钮名称
+    prv: '上一页',//前一页按钮名称
+    next: '下一页',//后一页按钮名称
     hasFirstPage: true,//是否有首页按钮
     hasLastPage: true,//是否有末页按钮
     hasPrv: true,//是否有前一页按钮

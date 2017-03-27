@@ -76,7 +76,7 @@ li:after, div:after, ul:after{
 	margin: 0 auto;
 }
 .logo {
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 600;
 	float: left;
 	color: #00d8ff;
@@ -88,7 +88,7 @@ li:after, div:after, ul:after{
 	margin-right: 10px;
 }
 .nav {
-	font-size: 14px;
+	font-size: 18px;
 	float: left;
 	margin-left: 20px;
 }
@@ -107,7 +107,7 @@ li:after, div:after, ul:after{
 	box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
 }
 .sign {
-	font-size: 14px;
+	font-size: 18px;
 	float: right;
 	margin-left: 20px;
 }
