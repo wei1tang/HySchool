@@ -92,21 +92,8 @@
             </div>
         </div>
 
-        <div class="product-comment">
-            <div class="comment-input">
-                <p>来评论一下吧!</p>
-                <div class="comment-message" contentEditable='true'></div>
-                <div class="comment-button">
-                    <a href="#" class="button button-primary button-rounded button-small submit">发表</a>
-                </div>
-            </div>
-            <!--qq end-->
-            <!--msgCon begin-->
-            <div class="msgCon">
-
-            </div>
-
-        </div>
+        <%--评论--%>
+        <%@include file="public/comment.jsp"%>
 
     </div>
 
@@ -117,24 +104,6 @@
 <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../../static/js/project-photo-viewer.js"></script>
 
-<script type="text/javascript">
 
-    //点击发表按扭，发表内容
-    $("a.submit").click(function(){
-
-        var txt=$(".comment-message").html();
-        if(txt==""){
-            $('.comment-message').focus();//自动获取焦点
-            return;
-        }
-        $(".msgCon").prepend(
-            "<div class='msgBox'>" +
-            "<dl>" + "<dt>" +
-            "<img src='../../static/images/index-avatar.png' width='50' height='50'/>" +
-            "</dt><dd>用户一</dd>" +
-            "</dl><div class='msgTxt'>"+txt+"</div></div>");
-    });
-
-</script>
 </body>
 </html>

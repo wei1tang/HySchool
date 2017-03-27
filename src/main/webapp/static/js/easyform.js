@@ -492,7 +492,7 @@
     var themes = {
         black: {
             color: "rgba(238,238,238,1)",
-            "background-color": "rgba(75,75,75,0.8",
+            "background-color": "rgba(75,75,75,0.8)",
             "border": "1px solid rgba(75,75,75,1)",
             "border-radius": 5
         },

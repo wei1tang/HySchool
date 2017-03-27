@@ -1,0 +1,134 @@
+#articleComment{
+	width: 64%;
+	border-radius: 2px;
+	box-shadow: 2px 2px 2px #aaa;
+	background-color: #f2f2f2;
+	margin-top: 10px;
+	padding-top:10px;
+	margin-bottom: 70px;
+}
+
+#articleComment .text{
+	font-size:12px;
+	color:#666;
+	line-height:45px;
+	text-indent:20px;
+}
+/*commentItems begin*/
+#commentItems{
+	width:600px;
+	min-height:150px;
+	margin:0 auto;
+}
+#articleComment .comment{
+	background:#fff;
+	/*padding:10px;*/
+	margin-top:10px;
+}
+
+#commentItems .comment .avatar{
+	display: block;
+	margin: 10px 5px 0 10px;
+	width:50px;
+	height:50px;
+	float:left;
+}
+#commentItems .comment .avatar img{
+	border-radius:25px;
+	width:50px;
+	height:50px;
+}
+#commentItems .content{
+	display: block;
+	width:600px;
+	min-height:50px;
+	height: 150px;
+	font-size:12px;
+}
+#commentItems .content .author{
+	display: inline-block;
+	margin-top: 10px;
+	line-height: 40px;
+	height:40px;
+	/*width:150px;*/
+	float:left;
+}
+#commentItems .content .author span{
+	font-size:16px;
+	color: #00d8ff;
+}
+#commentItems .content .metadata{
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 10px;
+	line-height: 40px;
+	height:40px;
+	width:350px;
+	float:left;
+	font-size: 12px;
+}
+#commentItems .content .text{
+	float:left;
+	height:50px;
+	width:500px;
+}
+#commentItems .content .actions{
+	float:left;
+	height:20px;
+	width:600px;
+}
+#commentItems .content .actions a{
+	float:left;
+	margin-left: 65px;
+	height:20px;
+	opacity: 0.5;/*设置div元素不透明度*/
+	color: rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	outline: 0 none;
+	text-decoration: none;
+	transition: all 0.5s ease 0s;
+}
+
+#commentItems .content .actions a:hover,#commentItems .content .actions a:active {
+	opacity: 1;
+}
+
+#articleComment #commentItems >.comment > .comments {
+	margin-left: 50px;
+}
+/*commentItems end*/
+#commentFrom{
+	width:600px;
+	height:170px;
+	background:#fff;/*背景颜色*/
+	margin:20px 20px 0 20px;
+	border-radius:5px;/*Html5 圆角*/
+}
+
+#articleComment .contentField{
+	width:560px;
+	height:80px;
+	margin:10px auto;
+	outline:none;
+}
+#articleComment .contentField #commentContent{
+	width:560px;
+	height:70px;
+	margin-top:10px;
+	outline:none;
+	border:1px solid #ddd; /*粗细 风格 颜色*/
+}
+
+.reply-form .button{
+	width:108px;
+	height:35px;
+	margin:10px auto 10px;
+	position:relative;/*相对，参考对象*/
+	left: 40%;
+}
+#replyBox .small-form .contentField{
+	width:500px;
+}
+#replyBox .small-form .contentField #commentContent{
+	width:500px;
+}
