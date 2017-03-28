@@ -15,6 +15,7 @@
     <link href="../../static/css/font/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/login.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="${contextPath}/static/images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
