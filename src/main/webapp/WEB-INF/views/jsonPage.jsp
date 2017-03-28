@@ -73,6 +73,7 @@
                 $.ajax({
                     type: "GET",
                     url: "${pageContext.request.contextPath}/json.html",
+                    //data: {newsId:id},
                     dataType: "json",
                     success: function (data) {
                         if (data && data.status) {
