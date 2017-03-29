@@ -1,10 +1,8 @@
 package com.hyschool.common.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -39,6 +37,14 @@ public class MVCController {
     public String showForward(@RequestParam("flash")String flash){
         System.out.println(flash);//success
         return "login";
+    }
+
+
+
+    @RequestMapping(path="/owners/{ownerId}}", method=RequestMethod.GET)
+    public String findOwner(@PathVariable("ownerId") String theOwner, Model model) {
+        // 具体的方法代码…
+        return null;
     }
 
 }

@@ -22,10 +22,22 @@
     <mvc:default-servlet-handler />
 
     <!-- deal the static resources， css， js， imgs -->
-    <mvc:resources mapping="/css/**" location="/static/css/"/>
-    <mvc:resources mapping="/images/**" location="/static/images/"/>
-    <mvc:resources mapping="/fonts/**" location="/static/fonts/"/>
-    <mvc:resources mapping="/js/**" location="/static/js/"/>
+    <mvc:resources mapping="/css/**" location="/static/css/">
+        <mvc:cache-control max-age="3600" cache-public="true"/>
+    </mvc:resources>
+
+    <mvc:resources mapping="/images/**" location="/static/images/">
+        <mvc:cache-control max-age="3600" cache-public="true"/>
+    </mvc:resources>
+
+    <mvc:resources mapping="/fonts/**" location="/static/fonts/">
+        <mvc:cache-control max-age="3600" cache-public="true"/>
+    </mvc:resources>
+
+    <mvc:resources mapping="/js/**" location="/static/js/">
+        <mvc:cache-control max-age="3600" cache-public="true"/>
+    </mvc:resources>
+
 
     <!-- ViewResolver接口解析视图的简单实现UrlBasedViewResolver的子类InternalResourceViewResolver -->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -35,6 +47,8 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+
+    <!--拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/order/*"/>
