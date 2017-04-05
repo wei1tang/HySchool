@@ -67,7 +67,7 @@
                 <form class="setting active" action="${pageContext.request.contextPath}/vip/changeInfo" method="post" id="tab-1">
                     <div class="setting-item">
                         <label for="email"><i>*</i>邮&nbsp;&nbsp;&nbsp;箱：</label>
-                        <input type="text" value="${vip.email}" id="email" disabled>
+                        <input type="text" value="${vip.email}" id="email" easyform="email;real-time" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;" disabled>
                     </div>
                     <div class="setting-item">
                         <label for="name"><i>*</i>用户名：</label>
