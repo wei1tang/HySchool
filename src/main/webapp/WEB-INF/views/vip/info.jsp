@@ -71,7 +71,7 @@
                     </div>
                     <div class="setting-item">
                         <label for="name"><i>*</i>用户名：</label>
-                        <input type="text" value="${vip.name}" id="name" easyform="length:4-16;char-chinese;real-time;" message="用户名必须为4—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
+                        <input type="text" value="${vip.name}" id="name" easyform="length:1-16;char-chinese;real-time;" message="用户名必须为1—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="setting-item">
