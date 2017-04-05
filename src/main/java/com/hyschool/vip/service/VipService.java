@@ -20,4 +20,6 @@ public interface VipService {
     void updateResetPasswordTime(Date resetPasswordTime,String email);
 
     void resetPassword(String password,String email);
+
+    void updateInfo(Vip vip);
 }

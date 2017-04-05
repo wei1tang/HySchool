@@ -15,4 +15,9 @@
         <result column="online_time" jdbcType="TIMESTAMP" property="onlineTime"/>
         <result column="off_the_shelf_time" jdbcType="TIMESTAMP" property="offTheShelfTime"/>
     </resultMap>
+
+    <select id="byCategoryCode" resultMap="BaseResultMap">
+        SELECT * FROM goods WHERE category_id=#{categoryId,jdbaType=INTEGER} limit #{start},#{pageSize}
+    </select>
+
 </mapper>

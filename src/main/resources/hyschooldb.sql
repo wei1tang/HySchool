@@ -142,7 +142,7 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `id`                 INT(11)      NOT NULL,
   `order_number`       INT(11)      NOT NULL,
-  `vip_email`          VARCHAR(255) NOT NULL,
+  `vip_id`             INT(11)      NOT NULL,
   `state`              INT(1)       NOT NULL
   COMMENT '订单状态，默认为0,0代表未付款，1代表用户付款商家未接单，2代表商家接单未发货，3配送中，4商家确定收货，5用户确认收货未评价完成订单，6用户已评价(可选择性操作)，-1退单',
   `notes`              VARCHAR(255)          DEFAULT NULL
