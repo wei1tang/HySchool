@@ -9,7 +9,6 @@
 
     <!--必要样式-->
     <link href="../../static/css/index.css" type="text/css" rel="stylesheet"/><!--首页css-->
-    <link rel="icon" href="${contextPath}/static/images/favicon.ico" type="image/x-icon"/>
     <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script><!--jQuery样式-->
     <script type="text/javascript" src="../../static/js/jquery-ui-1.10.4.min.js"></script><!--jQueryUI样式-->
 

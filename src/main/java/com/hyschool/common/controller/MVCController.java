@@ -12,13 +12,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/mvc")
 public class MVCController {
 
-    @RequestMapping(value = "/redirect.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
     public String flash(@RequestParam("flash") String flash, RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("flash", flash);
-        return "redirect:/mvc/showRedirect.html";//拼接url
+        return "redirect:/mvc/showRedirect";//拼接url
     }
 
-    @RequestMapping(value = "/showRedirect.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/showRedirect", method = RequestMethod.GET)
     public String showFlash(@ModelAttribute("flash")String flash){
         System.out.println(flash);
         return "login";
@@ -28,7 +28,7 @@ public class MVCController {
 
 
 
-    @RequestMapping(value = "/forward.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/forward", method = RequestMethod.GET)
     public String forward(){
         return "forward:/mvc/showForward.html";
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CommonController {
 
-    @RequestMapping("/about.html")
+    @RequestMapping("/about")
     public String about(){
         return "common/about";
     }

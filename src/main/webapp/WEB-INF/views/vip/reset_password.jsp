@@ -29,7 +29,7 @@
 
         <!-- 密码重置 -->
         <div class="forgot f-l">
-            <form action="${pageContext.request.contextPath}/vip/resetPassword.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/resetPassword" method="post">
                 <div class="form-group">
                     <input type="text" name="email" value="${email}" style="background-color: #c2c2c2" readonly>
                 </div>
@@ -49,7 +49,7 @@
             <div class="from-line"></div>
 
             <div class="form-group">
-                <a href="/vip/login.html" class="move-login a-tag tran blue-border">已有帐号？登录<i class="icon-circle-arrow-right tran"></i></a>
+                <a href="/vip/login" class="move-login a-tag tran blue-border">已有帐号？登录<i class="icon-circle-arrow-right tran"></i></a>
             </div>
         </div>
 

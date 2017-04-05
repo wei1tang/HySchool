@@ -47,15 +47,15 @@ public class VipController {
 
     private static Logger logger = LoggerFactory.getLogger(VipController.class);
 
-    @RequestMapping(value = "/login.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String goLogin(HttpServletRequest request){
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         if (name_email!=null && !name_email.equals(""))
-            return "redirect:/index.html";
+            return "redirect:/index";
         return "login";
     }
 
-    @RequestMapping(value = "/login.html",method = RequestMethod.POST)
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String doLogin(@RequestParam("email")String email, @RequestParam("password")String password,
                           Model model, HttpServletResponse response, HttpSession session) throws UnsupportedEncodingException {
         String error;
@@ -83,10 +83,10 @@ public class VipController {
         CookieUtil.addLoginCookie(response,vip);
         session.setAttribute("vip",vip);
         logger.info("Vip:  "+vip.getName()+"|"+vip.getEmail()+"  成功登录!");
-        return "redirect:/index.html";
+        return "redirect:/index";
     }
 
-    @RequestMapping(value = "logout.html",method = RequestMethod.GET)
+    @RequestMapping(value = "logout",method = RequestMethod.GET)
     public String logout(HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         CookieUtil.removeLoginCookie(response);
@@ -94,17 +94,17 @@ public class VipController {
             name_email = URLDecoder.decode(name_email, ConstantsUtil.ENCODING);
             logger.info("Vip:  "+name_email+"  成功登出!");
         }
-        return "redirect:/index.html";
+        return "redirect:/index";
     }
 
-    @RequestMapping(value = "/register.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/register",method = RequestMethod.GET)
     public String goRegister(Model model){
         String type = "register";
         model.addAttribute("type",type);
         return "login";
     }
 
-    @RequestMapping(value = "/register.html",method = RequestMethod.POST)
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
     public String doRegister(Model model, @RequestParam("email")String email, @RequestParam("name")String name,
                              @RequestParam("password1")String password1, @RequestParam("password2")String password2){
         boolean isValid = EmailValidator.getInstance().isValid(email);
@@ -146,7 +146,7 @@ public class VipController {
         return "vip/activate_prompt";
     }
 
-    @RequestMapping(value = "/activate.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/activate",method = RequestMethod.GET)
     public String activate(Model model,@RequestParam("email")String email, @RequestParam("validateCode")String validateCode){
         try {
             registerValidateService.processActivate(email , validateCode);//调用激活方法
@@ -157,7 +157,7 @@ public class VipController {
         }
     }
 
-    @RequestMapping(value = "/forgotPassword.html",method = RequestMethod.POST)
+    @RequestMapping(value = "/forgotPassword",method = RequestMethod.POST)
     public String goForgotPassword(Model model,@RequestParam("email")String email){
         boolean isValid = EmailValidator.getInstance().isValid(email);
         if (!isValid){
@@ -180,7 +180,7 @@ public class VipController {
         return "login";
     }
 
-    @RequestMapping(value = "/resetPassword.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
     public String goResetPassword(Model model, @RequestParam("validateCode")String validateCode){
         VipValidate vipValidate = vipValidateService.findByValidateCode(validateCode);
         String email = vipValidate == null? null : vipValidate.getEmail();
@@ -204,7 +204,7 @@ public class VipController {
         return "vip/register_error";
     }
 
-    @RequestMapping(value = "/resetPassword.html",method = RequestMethod.POST)
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
     public String doResetPassword(Model model,@RequestParam("email")String email,@RequestParam("password1")String password1,
                                   @RequestParam("password2")String password2){
         if ((!password1.equals(password2))||password1.equals(null)||password2.equals(null)){
@@ -219,7 +219,7 @@ public class VipController {
     }
 
 
-
+//    @RequestMapping(value = "/info")
 
 
 

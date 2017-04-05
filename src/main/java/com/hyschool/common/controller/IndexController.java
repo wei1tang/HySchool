@@ -15,7 +15,7 @@ public class IndexController {
 
     private static Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    @RequestMapping(value = "/index.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String goIndex(Model model){
         model.addAttribute("test","test");
         return "index";

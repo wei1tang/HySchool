@@ -60,7 +60,6 @@ public class SendEmailUtil {
             msg.setFrom(new InternetAddress(nick+" <"+FROM+">"));
             InternetAddress[] address = {new InternetAddress(toEmail)};
             msg.setRecipients(Message.RecipientType.TO, address);
-            //msg.setSubject("重置密码");
             msg.setSubject(subject);
             msg.setSentDate(new Date());
             msg.setContent(page , "text/html;charset=utf-8");

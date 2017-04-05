@@ -36,10 +36,10 @@
         <!--<Button type="primary" onClick={this.logout}>退出登录</Button>-->
         <!--</div>-->
         <div class="sign">
-            <a class="list" href="${pageContext.request.contextPath}/vip/login.html">登录</a>
+            <a class="list" href="${pageContext.request.contextPath}/vip/login">登录</a>
             <%--<br>--%>
             <%--${test}--%>
-            <a class="list" href="${pageContext.request.contextPath}/vip/logout.html">注册</a>
+            <a class="list" href="${pageContext.request.contextPath}/vip/logout">注册</a>
         </div>
     </div>
 </div>

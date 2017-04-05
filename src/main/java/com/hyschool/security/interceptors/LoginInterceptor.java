@@ -25,7 +25,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         if (name_email == null || name_email.equals("")){
             String path = request.getContextPath();
-            response.sendRedirect(path+"/vip/login.html");
+            response.sendRedirect(path+"/vip/login");
             return false;
         }
         String[] arr = name_email.split("|");

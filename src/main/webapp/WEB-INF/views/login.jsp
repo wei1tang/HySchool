@@ -15,7 +15,6 @@
     <link href="../../static/css/font/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/login.css" type="text/css" rel="stylesheet"/>
-    <link rel="icon" href="${contextPath}/static/images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
 
         <!-- 登录 -->
         <div class="login-con f-l">
-            <form action="${pageContext.request.contextPath}/vip/login.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/login" method="post">
                 <div class="form-group">
                     <span>${error}</span>
                     <input type="text" name="email" placeholder="邮箱" id="email1" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
@@ -70,7 +69,7 @@
 
         <!-- 邮箱注册 -->
         <div class="signup f-l">
-            <form action="${pageContext.request.contextPath}/vip/register.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/register" method="post">
 
                 <div class="signup-email">
                     <div class="form-group">
@@ -114,7 +113,7 @@
 
         <!-- 忘记密码 -->
         <div class="forgot f-l">
-            <form action="${pageContext.request.contextPath}/vip/forgotPassword.html" method="post">
+            <form action="${pageContext.request.contextPath}/vip/forgotPassword" method="post">
                 <div class="form-group">
                     <input type="text" placeholder="邮箱"  name="email" id="email3" easyform="email" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                 </div>
