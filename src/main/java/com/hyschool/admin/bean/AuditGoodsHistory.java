@@ -5,7 +5,7 @@ import java.util.Date;
 public class AuditGoodsHistory {
     private Integer id;
 
-    private String adminEmail;
+    private Integer adminId;
 
     private Integer goodsId;
 
@@ -23,12 +23,12 @@ public class AuditGoodsHistory {
         this.id = id;
     }
 
-    public String getAdminEmail() {
-        return adminEmail;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdminEmail(String adminEmail) {
-        this.adminEmail = adminEmail == null ? null : adminEmail.trim();
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
     public Integer getGoodsId() {

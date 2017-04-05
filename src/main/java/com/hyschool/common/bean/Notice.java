@@ -5,9 +5,9 @@ import java.util.Date;
 public class Notice {
     private Integer id;
 
-    private String toEmail;
+    private Integer toId;
 
-    private String fromEmail;
+    private Integer fromId;
 
     private String content;
 
@@ -18,8 +18,6 @@ public class Notice {
     private Boolean haveRead;
 
     private Boolean isDelete;
-
-    private Boolean isPublicAll;
 
     private Date createTime;
 
@@ -33,20 +31,20 @@ public class Notice {
         this.id = id;
     }
 
-    public String getToEmail() {
-        return toEmail;
+    public Integer getToId() {
+        return toId;
     }
 
-    public void setToEmail(String toEmail) {
-        this.toEmail = toEmail == null ? null : toEmail.trim();
+    public void setToId(Integer toId) {
+        this.toId = toId;
     }
 
-    public String getFromEmail() {
-        return fromEmail;
+    public Integer getFromId() {
+        return fromId;
     }
 
-    public void setFromEmail(String fromEmail) {
-        this.fromEmail = fromEmail == null ? null : fromEmail.trim();
+    public void setFromId(Integer fromId) {
+        this.fromId = fromId;
     }
 
     public String getContent() {
@@ -87,14 +85,6 @@ public class Notice {
 
     public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
-    }
-
-    public Boolean getIsPublicAll() {
-        return isPublicAll;
-    }
-
-    public void setIsPublicAll(Boolean isPublicAll) {
-        this.isPublicAll = isPublicAll;
     }
 
     public Date getCreateTime() {

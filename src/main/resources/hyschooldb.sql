@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2017-03-26 23:21:41
+Date: 2017-04-05 13:54:23
 */
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -20,16 +20,16 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_approve_history`;
 CREATE TABLE `audit_approve_history` (
-  `id`          INT(11)      NOT NULL,
-  `admin_email` VARCHAR(255) NOT NULL
+  `id`         INT(11)      NOT NULL,
+  `admin_id`   INT(11)      NOT NULL
   COMMENT '审核管理员的邮箱',
-  `vip_email`   VARCHAR(255) NOT NULL
+  `vip_id`     INT(11)      NOT NULL
   COMMENT '被审核的邮箱',
-  `is_pass`     TINYINT(1)   NOT NULL DEFAULT '0'
+  `is_pass`    TINYINT(1)   NOT NULL DEFAULT '0'
   COMMENT '是否通过，0不通过，1通过',
-  `reason`      VARCHAR(255) NOT NULL
+  `reason`     VARCHAR(255) NOT NULL
   COMMENT '审核原因',
-  `audit_time`  TIMESTAMP    NULL     DEFAULT NULL
+  `audit_time` TIMESTAMP    NULL     DEFAULT NULL
   COMMENT '审核时间',
   PRIMARY KEY (`id`)
 )
@@ -42,12 +42,12 @@ CREATE TABLE `audit_approve_history` (
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_goods_history`;
 CREATE TABLE `audit_goods_history` (
-  `id`          INT(11)      NOT NULL,
-  `admin_email` VARCHAR(255) NOT NULL,
-  `goods_id`    INT(11)      NOT NULL,
-  `is_pass`     TINYINT(1)   NOT NULL DEFAULT '0',
-  `reason`      VARCHAR(255) NOT NULL,
-  `audit_time`  TIMESTAMP    NULL     DEFAULT NULL,
+  `id`         INT(11)      NOT NULL,
+  `admin_id`   INT(11)      NOT NULL,
+  `goods_id`   INT(11)      NOT NULL,
+  `is_pass`    TINYINT(1)   NOT NULL DEFAULT '0',
+  `reason`     VARCHAR(255) NOT NULL,
+  `audit_time` TIMESTAMP    NULL     DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
   `id`                  INT(11)      NOT NULL,
   `category_id`         INT(5)       NOT NULL,
-  `vip_email`           VARCHAR(255) NOT NULL,
+  `vip_id`              INT(11)      NOT NULL,
   `name`                VARCHAR(255) NOT NULL,
   `state`               INT(1)       NOT NULL
   COMMENT '商品的状态，待发布，提交审核，已驳回，已发布，已被购买，已完成交易，已下架。',
@@ -106,8 +106,8 @@ DROP TABLE IF EXISTS `goods_comments`;
 CREATE TABLE `goods_comments` (
   `id`          INT(11)      NOT NULL,
   `goods_id`    INT(11)      NOT NULL,
-  `maker_email` VARCHAR(255) NOT NULL,
-  `reply_email` VARCHAR(255)      DEFAULT NULL,
+  `maker_id`    INT(11)      NOT NULL,
+  `reply_id`    INT(11)           DEFAULT NULL,
   `content`     VARCHAR(255) NOT NULL,
   `create_time` TIMESTAMP    NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -120,17 +120,16 @@ CREATE TABLE `goods_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
-  `id`            INT(11)      NOT NULL,
-  `to_email`      VARCHAR(255) NOT NULL,
-  `from_email`    VARCHAR(255)          DEFAULT NULL,
-  `content`       VARCHAR(255) NOT NULL,
-  `type`          INT(1)       NOT NULL,
-  `url`           VARCHAR(255) NOT NULL,
-  `have_read`     TINYINT(1)   NOT NULL DEFAULT '0',
-  `is_delete`     TINYINT(1)   NOT NULL DEFAULT '0',
-  `is_public_all` TINYINT(1)   NOT NULL DEFAULT '0',
-  `create_time`   TIMESTAMP    NULL     DEFAULT NULL,
-  `read_time`     TIMESTAMP    NULL     DEFAULT NULL,
+  `id`          INT(11)      NOT NULL,
+  `to_id`       INT(11)      NOT NULL,
+  `from_id`     INT(11)               DEFAULT NULL,
+  `content`     VARCHAR(255) NOT NULL,
+  `type`        INT(1)       NOT NULL,
+  `url`         VARCHAR(255) NOT NULL,
+  `have_read`   TINYINT(1)   NOT NULL DEFAULT '0',
+  `is_delete`   TINYINT(1)   NOT NULL DEFAULT '0',
+  `create_time` TIMESTAMP    NULL     DEFAULT NULL,
+  `read_time`   TIMESTAMP    NULL     DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -200,6 +199,7 @@ CREATE TABLE `vip` (
   `state`               INT(1)       NOT NULL,
   `star_rating`         DOUBLE                DEFAULT NULL,
   `user_type`           INT(1)       NOT NULL,
+  `self_introduction`   VARCHAR(255)          DEFAULT NULL,
   `birthday`            DATE                  DEFAULT NULL,
   `create_time`         TIMESTAMP    NULL     DEFAULT NULL,
   `update_time`         TIMESTAMP    NULL     DEFAULT NULL,
@@ -216,7 +216,7 @@ CREATE TABLE `vip` (
 DROP TABLE IF EXISTS `vip_address`;
 CREATE TABLE `vip_address` (
   `id`            INT(11)      NOT NULL,
-  `vip_email`     INT(11)      NOT NULL,
+  `vip_id`        INT(11)      NOT NULL,
   `address`       VARCHAR(255)          DEFAULT NULL
   COMMENT '详细地址',
   `province_code` VARCHAR(6)            DEFAULT NULL
@@ -243,7 +243,7 @@ CREATE TABLE `vip_address` (
 DROP TABLE IF EXISTS `vip_approve`;
 CREATE TABLE `vip_approve` (
   `id`            INT(11)      NOT NULL,
-  `email`         VARCHAR(255) NOT NULL,
+  `vip_id`        INT(11)      NOT NULL,
   `real_name`     VARCHAR(255) NOT NULL,
   `gender`        TINYINT(1)   NOT NULL DEFAULT '0',
   `phone`         INT(11)      NOT NULL,
@@ -263,15 +263,15 @@ CREATE TABLE `vip_approve` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_comments`;
 CREATE TABLE `vip_comments` (
-  `id`           INT(11)      NOT NULL,
-  `saller_email` VARCHAR(255) NOT NULL,
-  `buyer_email`  VARCHAR(255) NOT NULL,
-  `star_rating`  DOUBLE       NOT NULL
+  `id`          INT(11)      NOT NULL,
+  `saller_id`   INT(11)      NOT NULL,
+  `buyer_id`    INT(11)      NOT NULL,
+  `star_rating` DOUBLE       NOT NULL
   COMMENT '星级，所有用户的星级平均数是发布人的星级',
-  `state`        INT(1)       NOT NULL
+  `state`       INT(1)       NOT NULL
   COMMENT '能否进行评价用',
-  `content`      VARCHAR(255) NOT NULL,
-  `create_time`  TIMESTAMP    NULL DEFAULT NULL,
+  `content`     VARCHAR(255) NOT NULL,
+  `create_time` TIMESTAMP    NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -283,11 +283,11 @@ CREATE TABLE `vip_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_goods_collections`;
 CREATE TABLE `vip_goods_collections` (
-  `id`          INT(11)      NOT NULL,
-  `email`       VARCHAR(255) NOT NULL,
-  `goods_id`    INT(11)      NOT NULL,
-  `is_delete`   TINYINT(1)        DEFAULT '0',
-  `create_time` TIMESTAMP    NULL DEFAULT NULL,
+  `id`          INT(11)   NOT NULL,
+  `vip_id`      INT(11)   NOT NULL,
+  `goods_id`    INT(11)   NOT NULL,
+  `is_delete`   TINYINT(1)     DEFAULT '0',
+  `create_time` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -299,14 +299,14 @@ CREATE TABLE `vip_goods_collections` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_messages_board`;
 CREATE TABLE `vip_messages_board` (
-  `id`          INT(11)      NOT NULL,
-  `owner_email` VARCHAR(255) NOT NULL,
-  `from_email`  VARCHAR(255) NOT NULL,
-  `content`     VARCHAR(255)      DEFAULT NULL,
-  `is_delete`   TINYINT(1)        DEFAULT '0'
+  `id`          INT(11)   NOT NULL,
+  `owner_id`    INT(11)   NOT NULL,
+  `from_id`     INT(11)   NOT NULL,
+  `content`     VARCHAR(255)   DEFAULT NULL,
+  `is_delete`   TINYINT(1)     DEFAULT '0'
   COMMENT '用户可以删除留言，是否删除',
-  `create_time` TIMESTAMP    NULL DEFAULT NULL,
-  `delete_time` TIMESTAMP    NULL DEFAULT NULL,
+  `create_time` TIMESTAMP NULL DEFAULT NULL,
+  `delete_time` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB

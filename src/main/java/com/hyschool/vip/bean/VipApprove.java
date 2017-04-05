@@ -5,7 +5,7 @@ import java.util.Date;
 public class VipApprove {
     private Integer id;
 
-    private String email;
+    private Integer vipId;
 
     private String realName;
 
@@ -33,12 +33,12 @@ public class VipApprove {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getVipId() {
+        return vipId;
     }
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
     }
 
     public String getRealName() {

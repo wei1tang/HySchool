@@ -219,10 +219,18 @@ public class VipController {
     }
 
 
-//    @RequestMapping(value = "/info")
+    @RequestMapping(value = "/info")
+    public String vipInfo(HttpSession session, Model model){
+        Vip vip = (Vip) session.getAttribute("vip");
+        model.addAttribute("vip", vip);
+        return "vip/info";
+    }
 
+    @RequestMapping(value = "/changeInfo", method = RequestMethod.POST)
+    public String changeInfo(@RequestParam("name") String name, @RequestParam("selfIntroduction") String selfIntroduction){
 
-
+        return "vip/info";
+    }
 
 
 }

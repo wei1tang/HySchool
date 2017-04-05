@@ -7,7 +7,7 @@ public class Goods {
 
     private Integer categoryId;
 
-    private String vipEmail;
+    private Integer vipId;
 
     private String name;
 
@@ -43,12 +43,12 @@ public class Goods {
         this.categoryId = categoryId;
     }
 
-    public String getVipEmail() {
-        return vipEmail;
+    public Integer getVipId() {
+        return vipId;
     }
 
-    public void setVipEmail(String vipEmail) {
-        this.vipEmail = vipEmail == null ? null : vipEmail.trim();
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
     }
 
     public String getName() {

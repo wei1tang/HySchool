@@ -5,7 +5,7 @@ import java.util.Date;
 public class VipAddress {
     private Integer id;
 
-    private Integer vipEmail;
+    private Integer vipId;
 
     private String address;
 
@@ -35,12 +35,12 @@ public class VipAddress {
         this.id = id;
     }
 
-    public Integer getVipEmail() {
-        return vipEmail;
+    public Integer getVipId() {
+        return vipId;
     }
 
-    public void setVipEmail(Integer vipEmail) {
-        this.vipEmail = vipEmail;
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
     }
 
     public String getAddress() {

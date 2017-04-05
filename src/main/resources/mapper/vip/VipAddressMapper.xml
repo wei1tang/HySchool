@@ -3,7 +3,7 @@
 <mapper namespace="com.hyschool.vip.dao.VipAddressMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipAddress">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="vip_email" jdbcType="INTEGER" property="vipEmail"/>
+        <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="address" jdbcType="VARCHAR" property="address"/>
         <result column="province_code" jdbcType="VARCHAR" property="provinceCode"/>
         <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>

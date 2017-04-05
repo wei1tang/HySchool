@@ -3,7 +3,7 @@
 <mapper namespace="com.hyschool.vip.dao.VipGoodsCollectionsMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipGoodsCollections">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
         <result column="is_delete" jdbcType="BIT" property="isDelete"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

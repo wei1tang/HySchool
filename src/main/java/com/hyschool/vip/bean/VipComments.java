@@ -5,9 +5,9 @@ import java.util.Date;
 public class VipComments {
     private Integer id;
 
-    private String sallerEmail;
+    private Integer sallerId;
 
-    private String buyerEmail;
+    private Integer buyerId;
 
     private Double starRating;
 
@@ -25,20 +25,20 @@ public class VipComments {
         this.id = id;
     }
 
-    public String getSallerEmail() {
-        return sallerEmail;
+    public Integer getSallerId() {
+        return sallerId;
     }
 
-    public void setSallerEmail(String sallerEmail) {
-        this.sallerEmail = sallerEmail == null ? null : sallerEmail.trim();
+    public void setSallerId(Integer sallerId) {
+        this.sallerId = sallerId;
     }
 
-    public String getBuyerEmail() {
-        return buyerEmail;
+    public Integer getBuyerId() {
+        return buyerId;
     }
 
-    public void setBuyerEmail(String buyerEmail) {
-        this.buyerEmail = buyerEmail == null ? null : buyerEmail.trim();
+    public void setBuyerId(Integer buyerId) {
+        this.buyerId = buyerId;
     }
 
     public Double getStarRating() {

@@ -64,19 +64,16 @@
             </div>
             <div class="content">
                 <!--个人信息设置-->
-                <form class="setting active" action="" method="post" id="tab-1">
+                <form class="setting active" action="${pageContext.request.contextPath}/vip/changeInfo" method="post" id="tab-1">
                     <div class="setting-item">
-                        <label for="emailname"><i>*</i>邮&nbsp;&nbsp;&nbsp;箱：</label>
-                        <input type="text" value="1@qq.com" id="emailname" disabled>
+                        <label for="email"><i>*</i>邮&nbsp;&nbsp;&nbsp;箱：</label>
+                        <input type="text" value="${vip.email}" id="email" disabled>
                     </div>
                     <div class="setting-item">
-                        <label for="username"><i>*</i>用户名：</label>
-                        <input type="text" value="测试账号" id="username" easyform="length:4-16;char-chinese;real-time;" message="用户名必须为4—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
+                        <label for="name"><i>*</i>用户名：</label>
+                        <input type="text" value="${vip.name}" id="name" easyform="length:4-16;char-chinese;real-time;" message="用户名必须为4—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
                     </div>
-                    <div class="setting-item">
-                        <label for="telname"><i>*</i>手机号：</label>
-                        <input type="text" value="18202744817" id="telname" easyform="length:11;uint:1;real-time" message="电话必须为11位正整数,以1开头" easytip="disappear:lost-focus;theme:blue;">
-                    </div>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="setting-item">
                         <button  class="button button-primary button-rounded button-small" type="submit">确定</button>
                     </div>

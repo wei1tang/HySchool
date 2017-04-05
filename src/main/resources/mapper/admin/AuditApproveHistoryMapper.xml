@@ -3,8 +3,8 @@
 <mapper namespace="com.hyschool.admin.dao.AuditApproveHistoryMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.admin.bean.AuditApproveHistory">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="admin_email" jdbcType="VARCHAR" property="adminEmail"/>
-        <result column="vip_email" jdbcType="VARCHAR" property="vipEmail"/>
+        <result column="admin_id" jdbcType="INTEGER" property="adminId"/>
+        <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="is_pass" jdbcType="BIT" property="isPass"/>
         <result column="reason" jdbcType="VARCHAR" property="reason"/>
         <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime"/>

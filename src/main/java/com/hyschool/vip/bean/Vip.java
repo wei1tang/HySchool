@@ -18,6 +18,8 @@ public class Vip {
 
     private Integer userType;
 
+    private String selfIntroduction;
+
     private Date birthday;
 
     private Date createTime;
@@ -80,6 +82,14 @@ public class Vip {
 
     public void setUserType(Integer userType) {
         this.userType = userType;
+    }
+
+    public String getSelfIntroduction() {
+        return selfIntroduction;
+    }
+
+    public void setSelfIntroduction(String selfIntroduction) {
+        this.selfIntroduction = selfIntroduction;
     }
 
     public Date getBirthday() {

@@ -5,9 +5,9 @@ import java.util.Date;
 public class VipMessagesBoard {
     private Integer id;
 
-    private String ownerEmail;
+    private Integer ownerId;
 
-    private String fromEmail;
+    private Integer fromId;
 
     private String content;
 
@@ -25,20 +25,20 @@ public class VipMessagesBoard {
         this.id = id;
     }
 
-    public String getOwnerEmail() {
-        return ownerEmail;
+    public Integer getOwnerId() {
+        return ownerId;
     }
 
-    public void setOwnerEmail(String ownerEmail) {
-        this.ownerEmail = ownerEmail == null ? null : ownerEmail.trim();
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
     }
 
-    public String getFromEmail() {
-        return fromEmail;
+    public Integer getFromId() {
+        return fromId;
     }
 
-    public void setFromEmail(String fromEmail) {
-        this.fromEmail = fromEmail == null ? null : fromEmail.trim();
+    public void setFromId(Integer fromId) {
+        this.fromId = fromId;
     }
 
     public String getContent() {

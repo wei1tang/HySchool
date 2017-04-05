@@ -5,9 +5,9 @@ import java.util.Date;
 public class AuditApproveHistory {
     private Integer id;
 
-    private String adminEmail;
+    private Integer adminId;
 
-    private String vipEmail;
+    private Integer vipId;
 
     private Boolean isPass;
 
@@ -23,20 +23,20 @@ public class AuditApproveHistory {
         this.id = id;
     }
 
-    public String getAdminEmail() {
-        return adminEmail;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdminEmail(String adminEmail) {
-        this.adminEmail = adminEmail == null ? null : adminEmail.trim();
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
-    public String getVipEmail() {
-        return vipEmail;
+    public Integer getVipId() {
+        return vipId;
     }
 
-    public void setVipEmail(String vipEmail) {
-        this.vipEmail = vipEmail == null ? null : vipEmail.trim();
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
     }
 
     public Boolean getIsPass() {

@@ -7,9 +7,9 @@ public class GoodsComments {
 
     private Integer goodsId;
 
-    private String makerEmail;
+    private Integer makerId;
 
-    private String replyEmail;
+    private Integer replyId;
 
     private String content;
 
@@ -31,20 +31,20 @@ public class GoodsComments {
         this.goodsId = goodsId;
     }
 
-    public String getMakerEmail() {
-        return makerEmail;
+    public Integer getMakerId() {
+        return makerId;
     }
 
-    public void setMakerEmail(String makerEmail) {
-        this.makerEmail = makerEmail == null ? null : makerEmail.trim();
+    public void setMakerId(Integer makerId) {
+        this.makerId = makerId;
     }
 
-    public String getReplyEmail() {
-        return replyEmail;
+    public Integer getReplyId() {
+        return replyId;
     }
 
-    public void setReplyEmail(String replyEmail) {
-        this.replyEmail = replyEmail == null ? null : replyEmail.trim();
+    public void setReplyId(Integer replyId) {
+        this.replyId = replyId;
     }
 
     public String getContent() {

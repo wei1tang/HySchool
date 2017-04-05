@@ -4,7 +4,7 @@
     <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Order">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="order_number" jdbcType="INTEGER" property="orderNumber"/>
-        <result column="vip_email" jdbcType="VARCHAR" property="vipEmail"/>
+        <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="notes" jdbcType="VARCHAR" property="notes"/>
         <result column="sum_money" jdbcType="INTEGER" property="sumMoney"/>

@@ -7,7 +7,7 @@ public class Order {
 
     private Integer orderNumber;
 
-    private String vipEmail;
+    private Integer vipId;
 
     private Integer state;
 
@@ -49,12 +49,12 @@ public class Order {
         this.orderNumber = orderNumber;
     }
 
-    public String getVipEmail() {
-        return vipEmail;
+    public Integer getVipId() {
+        return vipId;
     }
 
-    public void setVipEmail(String vipEmail) {
-        this.vipEmail = vipEmail == null ? null : vipEmail.trim();
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
     }
 
     public Integer getState() {
