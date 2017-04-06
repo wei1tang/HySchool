@@ -69,5 +69,13 @@
         UPDATE vip set password=#{password,jdbcType=VARCHAR} WHERE email=#{email,jdbcType=VARCHAR}
     </update>
 
+    <update id="updateInfo" parameterType="vip">
+        UPDATE vip
+        <set>
+            name=#{name,jdbcType=VARCHAR},
+            self_introduction=#{selfIntroduction,jdbcType=VARCHAR}
+        </set>
+        WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
 
 </mapper>

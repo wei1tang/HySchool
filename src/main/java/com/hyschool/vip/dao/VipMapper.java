@@ -24,4 +24,6 @@ public interface VipMapper {
 
     void resetPassword(@Param("password")String password,@Param("email")String email);
 
+    void updateInfo(Vip vip);
+
 }

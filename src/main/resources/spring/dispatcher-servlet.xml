@@ -51,8 +51,10 @@
     <!--拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
+            <mvc:mapping path="/vip/**"/>
             <mvc:mapping path="/order/*"/>
             <mvc:mapping path="/admin/*"/>
+            <mvc:exclude-mapping path="/vip/login/**"/>
             <bean class="com.hyschool.security.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
 

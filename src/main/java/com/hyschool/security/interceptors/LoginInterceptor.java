@@ -28,7 +28,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
             response.sendRedirect(path+"/vip/login");
             return false;
         }
-        String[] arr = name_email.split("|");
+        String[] arr = name_email.split("_");
         if (request.getSession().getAttribute("vip") == null){
             Vip vip = vipMapper.findVipByEmail(arr[1]);
             request.getSession().setAttribute("vip",vip);

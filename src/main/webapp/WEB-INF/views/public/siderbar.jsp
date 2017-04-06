@@ -24,27 +24,27 @@
         <!--侧边栏鼠标未移动到其上时显示斜体字-->
         <li><a href="common/searchfor.jsp"><i class="fa fa-bicycle fa-lg"></i><span class="nav-text">校园代步</span></a></li>
 
-        <li><a href="#"><i class="fa fa-phone fa-lg"></i><span class="nav-text">手机</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-phone fa-lg"></i><span class="nav-text">手机</span></a></li>
 
-        <li><a href="#"><i class="fa fa-desktop fa-lg"></i><span class="nav-text">电脑</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-desktop fa-lg"></i><span class="nav-text">电脑</span></a></li>
 
-        <li><a href="#"><i class="fa fa-headphones fa-lg"></i><span class="nav-text">数码配件</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-headphones fa-lg"></i><span class="nav-text">数码配件</span></a></li>
 
-        <li><a href="#"><i class="fa fa-camera-retro fa-lg"></i><span class="nav-text">数码</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-camera-retro fa-lg"></i><span class="nav-text">数码</span></a></li>
 
-        <li><a href="#"><i class="fa fa-television fa-lg"></i><span class="nav-text">电器</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-television fa-lg"></i><span class="nav-text">电器</span></a></li>
 
-        <li><a href="#"><i class="fa fa-soccer-ball-o fa-lg"></i><span class="nav-text">运动健身</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-soccer-ball-o fa-lg"></i><span class="nav-text">运动健身</span></a></li>
 
-        <li><a href="#"><i class="fa fa-umbrella fa-lg"></i><span class="nav-text">衣物伞帽</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-umbrella fa-lg"></i><span class="nav-text">衣物伞帽</span></a></li>
 
-        <li><a href="#"><i class="fa fa-book fa-lg"></i><span class="nav-text">图书教材</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-book fa-lg"></i><span class="nav-text">图书教材</span></a></li>
 
-        <li><a href="#"><i class="fa fa-money fa-lg"></i><span class="nav-text">租赁</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-money fa-lg"></i><span class="nav-text">租赁</span></a></li>
 
-        <li class="has-subnav"><a href="#"><i class="fa fa-gamepad fa-lg"></i><span class="nav-text">生活娱乐</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-gamepad fa-lg"></i><span class="nav-text">生活娱乐</span></a></li>
 
-        <li><a href="#"><i class="fa fa-cube fa-lg"></i><span class="nav-text">其他</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/category/1"><i class="fa fa-cube fa-lg"></i><span class="nav-text">其他</span></a></li>
     </ul>
     <ul class="logout">
         <li><a href="#"><i class="fa fa-lightbulb-o fa-lg"></i><span class="nav-text">加入我们</span></a></li>

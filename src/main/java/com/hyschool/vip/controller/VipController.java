@@ -227,9 +227,13 @@ public class VipController {
     }
 
     @RequestMapping(value = "/changeInfo", method = RequestMethod.POST)
-    public String changeInfo(@RequestParam("name") String name, @RequestParam("selfIntroduction") String selfIntroduction){
-
-        return "vip/info";
+    public String changeInfo(@RequestParam("name") String name, @RequestParam("selfIntroduction") String selfIntroduction,
+                            HttpSession session){
+        Vip vip = (Vip) session.getAttribute("vip");
+        vip.setName(name);
+        vip.setSelfIntroduction(selfIntroduction);
+        vipService.updateInfo(vip);
+        return "redirect:/vip/info";
     }
 
 

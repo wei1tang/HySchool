@@ -59,4 +59,9 @@ public class VipServiceImpl implements VipService {
     public void resetPassword(String password, String email) {
         vipMapper.resetPassword(password,email);
     }
+
+    @Override
+    public void updateInfo(Vip vip) {
+        vipMapper.updateInfo(vip);
+    }
 }

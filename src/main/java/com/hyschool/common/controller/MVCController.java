@@ -41,7 +41,7 @@ public class MVCController {
 
 
 
-    @RequestMapping(path="/owners/{ownerId}}", method=RequestMethod.GET)
+    @RequestMapping(path="/owners/{ownerId}", method=RequestMethod.GET)
     public String findOwner(@PathVariable("ownerId") String theOwner, Model model) {
         // 具体的方法代码…
         return null;

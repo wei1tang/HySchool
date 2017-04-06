@@ -69,11 +69,15 @@
                 <form class="setting active" action="${pageContext.request.contextPath}/vip/changeInfo" method="post" id="tab-1">
                     <div class="setting-item">
                         <label for="email"><i>*</i>邮&nbsp;&nbsp;&nbsp;箱：</label>
-                        <input type="text" value="${vip.email}" id="email" easyform="email;real-time" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;" disabled>
+                        <input type="text" value="${vip.email}" id="email" name="email" disabled>
                     </div>
                     <div class="setting-item">
                         <label for="name"><i>*</i>用户名：</label>
-                        <input type="text" value="${vip.name}" id="name" easyform="length:1-16;char-chinese;real-time;" message="用户名必须为1—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
+                        <input type="text" value="${vip.name}" id="name" name="name" easyform="length:1-16;char-chinese;real-time;" message="用户名必须为1—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
+                    </div>
+                    <div class="setting-item">
+                        <label for="selfIntroduction"><i>*</i>个人简介：</label>
+                        <input type="text" value="${vip.selfIntroduction}" id="selfIntroduction" name="selfIntroduction">
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="setting-item">
