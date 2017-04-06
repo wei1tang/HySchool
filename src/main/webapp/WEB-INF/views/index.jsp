@@ -43,86 +43,28 @@
         </div>
 
         <div class="list-totall">
-            <div class="list-item">
-                <div class="img">
-                    <img src="../../static/images/index-project-img/1.png" class="img" href="project.jsp" />
-                    <div class="introduction"><p>这台洗衣机使用1年</p></div>
-                </div>
-                <div class="list-content">
-                    <div class="name">项目名1-1</div>
-                    <div class="money"><span style="color: #c7c7c7">￥</span>5000</div>
-                    <div class="deadline">交付时间: 2017/01/13</div>
-                    <div class="roles-icons">
-                        <div class="roles">
-                            <span class="type">电器</span>
-                        </div>
-                        <div class="icons">
-                            <span><i class="fa fa-eye fa-lg"></i>3</span>
-                            <span><i class="fa fa-comment fa-lg"></i>0</span>
+            <c:forEach var="goods" items="${goodsList}">
+                <div class="list-item">
+                    <div class="img">
+                        <img src="" class="img" href="project.jsp" />
+                        <div class="introduction"><p>${goods.description}</p></div>
+                    </div>
+                    <div class="list-content">
+                        <div class="name">${goods.name}</div>
+                        <div class="money"><span style="color: #c7c7c7">￥</span>${goods.price}</div>
+                        <div class="deadline">上架时间: ${goods.formatOnlineTime}</div>
+                        <div class="roles-icons">
+                            <div class="roles">
+                                <span class="type">${goods.category}</span>
+                            </div>
+                            <div class="icons">
+                                <span><i class="fa fa-eye fa-lg"></i>${goods.uv}</span>
+                                <span><i class="fa fa-comment fa-lg"></i>${goods.totalComments}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="list-item">
-                <div class="img">
-                    <img src="../../static/images/index-project-img/2.png" class="img" />
-                    <div class="introduction"><p>这台电脑使用1年</p></div>
-                </div>
-                <div class="list-content">
-                    <div class="name">项目名1-2</div>
-                    <div class="money"><span style="color: #c7c7c7">￥</span>50000</div>
-                    <div class="deadline">交付时间: 2017/01/13</div>
-                    <div class="roles-icons">
-                        <div class="roles">
-                            <span class="type">电器</span>
-                        </div>
-                        <div class="icons">
-                            <span><i class="fa fa-eye fa-lg"></i>3</span>
-                            <span><i class="fa fa-comment fa-lg"></i>0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="list-item">
-                <div class="img">
-                    <img src="../../static/images/index-project-img/3.png" class="img" />
-                    <div class="introduction"><p>这手机使用1年</p></div>
-                </div>
-                <div class="list-content">
-                    <div class="name">项目名1-3</div>
-                    <div class="money"><span style="color: #c7c7c7">￥</span>30000</div>
-                    <div class="deadline">交付时间: 2017/01/13</div>
-                    <div class="roles-icons">
-                        <div class="roles">
-                            <span class="type">手机</span>
-                        </div>
-                        <div class="icons">
-                            <span><i class="fa fa-eye fa-lg"></i>3</span>
-                            <span><i class="fa fa-comment fa-lg"></i>0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="list-item">
-                <div class="img">
-                    <img src="../../static/images/index-project-img/3.png" class="img" />
-                    <div class="introduction"><p>这台洗衣机使用1年</p></div>
-                </div>
-                <div class="list-content">
-                    <div class="name">项目名1-4</div>
-                    <div class="money"><span style="color: #c7c7c7">￥</span>5000</div>
-                    <div class="deadline">交付时间: 2017/01/13</div>
-                    <div class="roles-icons">
-                        <div class="roles">
-                            <span class="type">电器</span>
-                        </div>
-                        <div class="icons">
-                            <span><i class="fa fa-eye fa-lg"></i>3</span>
-                            <span><i class="fa fa-comment fa-lg"></i>0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
         <!-- 分页 开始 -->
         <div id="page"></div>
