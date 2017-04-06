@@ -224,6 +224,99 @@ html,body{
 }
 /*-----------end showlist-------------*/
 
+
+/*分页*/
+#page {
+    clear: both;
+    width: 100%;
+    height:40px;
+    text-align: center;
+    padding: 10px 0 10px 15%;
+    margin: 20px 0;
+}
+#page .pagingUl {
+    float: left;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#page .pagingUl li {
+    display: inline-block;
+    width: 40px;
+    background: #fff;
+    text-align: center;
+    margin-right: 5px;
+}
+
+#page .pagingUl li a {
+    cursor: pointer;
+    border: solid 1px #d6d6d6;
+    border-radius: 5px;
+    color: #7d7d7d;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+#page .prv,#page .next {
+    float: left;
+    display: inline;
+    height: 40px;
+    width: 70px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #000000;
+    border-radius: 5px;
+    background: #fff;
+    border: solid 1px #d6d6d6;
+}
+#page .prv {
+    margin-right: 10px;
+}
+#page .first,#page .last {
+    float: left;
+    display: inline;
+    height: 40px;
+    width: 40px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    background: #fff;
+    color: #000000;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: solid 1px #d6d6d6;
+}
+#page .prv:hover,#page .next:hover,#page .first:hover,#page .last:hover,#page .pagingUl li a:hover,#page .activP,#page .pageskip button:hover {
+    color: #fdfdfd;
+    background-color: rgba(0,147,253,1);
+    border: solid 1px rgba(0,147,253,1);
+}
+#page .pageskip{
+    font-size: 12px;
+    float:left;
+    display: inline;
+    height: 40px;
+    margin-left: 5px;
+    line-height: 40px;
+}
+#page .pageskip input{
+    width: 30px;
+}
+#page .pageskip button{
+    border: solid 1px #d6d6d6;
+    color: #000000;
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
 /*-----------start footer-------------*/
 .footer {
     position:absolute;
