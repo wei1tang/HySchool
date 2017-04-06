@@ -7,9 +7,11 @@
     <title>用户界面</title>
 
     <!--必要样式-->
-    <link href="../../../static/css/user.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
+    <link href="../../../static/css/user.css" type="text/css" rel="stylesheet"/><!--用户界面css-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
     <link href="../../../static/css/index-font-awesome.css" type="text/css" rel="stylesheet"/><!--按钮 css-->
+
+    <link href="../../../static/css/webuploader.css" type="text/css" rel="stylesheet"/><!--多图上传css-->
 
     <!--上传照片-->
     <script src="../../../static/js/jquery-3.1.1.min.js"></script>
@@ -75,6 +77,10 @@
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="setting-item">
+                        <span class="title"><i>*</i>头像上传</span>
+                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#avatar-modal" >图片上传</button>
+                    </div>
+                    <div class="setting-item">
                         <button  class="button button-primary button-rounded button-small" type="submit">确定</button>
                     </div>
                 </form>
@@ -133,8 +139,12 @@
                         <input type="text" class="form-control"  id="item-email" placeholder="" easyform="email;real-time" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;">
                     </div>
                     <div class="publish-item">
-                        <span class="title"><i>*</i>图片上传</span>
-                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#avatar-modal" >图片上传</button>
+                        <!--dom结构部分-->
+                        <div id="uploader-demo">
+                            <!--用来存放item-->
+                            <div id="fileList" class="uploader-list"></div>
+                            <div id="filePicker">选择图片</div>
+                        </div>
                     </div>
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
@@ -314,85 +324,12 @@
     <%@include file="../public/footer.jsp"%>
 </div>
 
+<%@include file="../public/upload-photo.jsp"%>
+
 <!--选项卡js-->
 <script type="text/javascript" src="../../../static/js/user-select-tab.js"></script>
 <!--选项卡js-->
 
-<!--上传图片pho-->
-<div class="user_pic" style="margin: 10px;">
-    <img src=""/>
-</div>
-<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <!--<form class="avatar-form" action="upload-logo.php" enctype="multipart/form-data" method="post">-->
-            <form class="avatar-form">
-                <div class="modal-header">
-                    <button class="close" data-dismiss="modal" type="button">&times;</button>
-                    <h4 class="modal-title" id="avatar-modal-label">上传图片</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="avatar-body">
-                        <div class="avatar-upload">
-                            <input class="avatar-src" name="avatar_src" type="hidden">
-                            <input class="avatar-data" name="avatar_data" type="hidden">
-                            <label for="avatarInput" style="line-height: 35px;">图片上传</label>
-                            <button class="btn btn-danger"  type="button" style="height: 35px;" onClick="$('input[id=avatarInput]').click();">请选择图片</button>
-                            <span id="avatar-name"></span>
-                            <input class="avatar-input hide" id="avatarInput" name="avatar_file" type="file"></div>
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="avatar-wrapper"></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="avatar-preview preview-lg" id="imageHead"></div>
-                                <!--<div class="avatar-preview preview-md"></div>
-                        <div class="avatar-preview preview-sm"></div>-->
-                            </div>
-                        </div>
-                        <div class="row avatar-btns">
-                            <div class="col-md-4">
-                                <div class="btn-group">
-                                    <button class="btn btn-danger fa fa-undo" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"> 向左旋转</button>
-                                </div>
-                                <div class="btn-group">
-                                    <button class="btn  btn-danger fa fa-repeat" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"> 向右旋转</button>
-                                </div>
-                            </div>
-                            <div class="col-md-5" style="text-align: right;">
-                                <button class="btn btn-danger fa fa-arrows" data-method="setDragMode" data-option="move" type="button" title="移动">
-							            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)">
-							            </span>
-                                </button>
-                                <button type="button" class="btn btn-danger fa fa-search-plus" data-method="zoom" data-option="0.1" title="放大图片">
-							            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, 0.1)">
-							              <!--<span class="fa fa-search-plus"></span>-->
-							            </span>
-                                </button>
-                                <button type="button" class="btn btn-danger fa fa-search-minus" data-method="zoom" data-option="-0.1" title="缩小图片">
-							            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;zoom&quot;, -0.1)">
-							              <!--<span class="fa fa-search-minus"></span>-->
-							            </span>
-                                </button>
-                                <button type="button" class="btn btn-danger fa fa-refresh" data-method="reset" title="重置图片">
-                                                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;reset&quot;)" aria-describedby="tooltip866214">
-                                                            </span>
-                                </button>
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-danger btn-block avatar-save fa fa-save" type="button" data-dismiss="modal"> 保存修改</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
-<script src="../../../static/js/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="../../../static/js/user-upload-pho.js"></script>
-<!--结束上传pho-->
 
 <!--星级评价-->
 <script type="text/javascript" src="../../../static/js/user-star-eval.js"></script>
@@ -400,14 +337,16 @@
 
 <script src="../../../static/js/easyform.js"></script><!--表单验证-->
 <script>
-
-    $(document).ready(function ()
-
-    {
+    $(document).ready(function () {
         $('#tab-1').easyform();
         $('#tab-2').easyform();
     });
 
 </script>
+
+<%--多图上传js--%>
+<script src="../../../static/js/webuploader.js"></script>
+<script src="../../../static/js/user-up.js"></script>
+
 </body>
 </html>

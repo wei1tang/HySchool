@@ -7,6 +7,7 @@ html,body{
 .container{
     min-height: 100%;
     position:relative;
+    background-color: white;
 }
 /*----------- start header-------------*/
 .header {
@@ -215,6 +216,7 @@ html,body{
     border-radius: 2px;
     background-color: #fff;
     box-shadow: 2px 2px 2px #aaa;
+    background-image: url('../images/user-achieve.png');
 }
 /*下面是四个选项卡对应内容的css样式*/
 /*一setting样式*/
@@ -241,6 +243,17 @@ html,body{
     font-weight: bold;
     font-size: 70.25%;
     text-align: right;
+}
+.user .right .content .setting span{
+    display: inline;
+    padding: 0 1em;
+    box-sizing: border-box;
+    width: 40%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    text-align: right;
+    margin-left:-49%;
 }
 .user .right .content .setting  i{
     color: darkorange;
