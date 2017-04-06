@@ -14,6 +14,8 @@
     <script type="text/javascript" src="../../../static/js/jquery-ui-1.10.4.min.js"></script><!--jQueryUI样式-->
     <script type="text/javascript" src="../../../static/js/index-search.js"></script><!--搜索栏js-->
 
+    <script type="text/javascript" src="../../../static/js/index-page.js"></script><!--分页js-->
+
 </head>
 
 <script language="JavaScript">
@@ -128,14 +130,28 @@
                 </div>
             </div>
         </div>
-        <div class="show-more">
-            <spain>显示更多</spain>
-        </div>
+        <!-- 分页 开始 -->
+        <div id="page"></div>
+        <!-- 分页 结束 -->
     </div>
     <%@include file="../public/footer.jsp"%>
 
 </div>
 
+<!-- 分页 开始 -->
+<script type="text/javascript">
+    $(function(){
+        $("#page").Page({
+            totalPages: 40,//分页总数
+            liNums: 8,//分页的数字按钮数(建议取奇数)
+            activeClass: 'activP', //active 类样式定义
+            callBack : function(page){
+                //console.log(page)
+            }
+        });
+    })
+</script>
+<!-- 分页 结束 -->
 
 </body>
 </html>
