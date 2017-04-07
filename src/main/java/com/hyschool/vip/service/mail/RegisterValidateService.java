@@ -30,7 +30,7 @@ public class RegisterValidateService {
         ///邮件的内容
         StringBuffer sbPage = new StringBuffer();
         StringBuffer sbHref = new StringBuffer();
-        sbHref.append("http://localhost:8080/vip/activate.html?email=");
+        sbHref.append("http://localhost:8080/vip/activate?email=");
         sbHref.append(email);
         sbHref.append("&validateCode=");
         sbHref.append(validateCode);

@@ -43,7 +43,12 @@
             <mvc:mapping path="/vip/**"/>
             <mvc:mapping path="/order/*"/>
             <mvc:mapping path="/admin/*"/>
-            <mvc:exclude-mapping path="/vip/login/**"/>
+            <mvc:exclude-mapping path="/vip/login"/>
+            <mvc:exclude-mapping path="/vip/logout"/>
+            <mvc:exclude-mapping path="/vip/register"/>
+            <mvc:exclude-mapping path="/vip/forgotPassword"/>
+            <mvc:exclude-mapping path="/vip/resetPassword"/>
+            <mvc:exclude-mapping path="/vip/activate"/>
             <bean class="com.hyschool.security.interceptors.LoginInterceptor"/>
         </mvc:interceptor>
 

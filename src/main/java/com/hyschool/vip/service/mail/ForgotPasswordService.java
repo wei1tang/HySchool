@@ -22,7 +22,7 @@ public class ForgotPasswordService {
         ///邮件的内容
         StringBuffer sbPage = new StringBuffer();
         StringBuffer sbHref = new StringBuffer();
-        sbHref.append("http://localhost:8080/vip/resetPassword.html?validateCode=");
+        sbHref.append("http://localhost:8080/vip/resetPassword?validateCode=");
         sbHref.append(validateCode);
         String strHref = sbHref.toString();
 
