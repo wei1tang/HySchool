@@ -183,7 +183,7 @@ html,body{
 }
 .roles-icons .roles {
     font-size: 12px;
-    width: 70%;
+    width: 50%;
     float: left;
     vertical-align: middle;
     white-space: nowrap;
@@ -191,7 +191,7 @@ html,body{
     overflow: hidden;
 }
 .roles-icons .icons {
-    width: 30%;
+    width: 50%;
     float: left;
     text-align: right;
 }
