@@ -19,6 +19,10 @@ public class Goods {
 
     private String description;
 
+    private Integer uv;
+
+    private Integer totalComments;
+
     private String transactionAddress;
 
     private Date createTime;
@@ -26,6 +30,11 @@ public class Goods {
     private Date onlineTime;
 
     private Date offTheShelfTime;
+
+    //额外添加的页面展示元素
+    private String category;
+
+    private String formatOnlineTime;
 
     public Integer getId() {
         return id;
@@ -91,6 +100,22 @@ public class Goods {
         this.description = description == null ? null : description.trim();
     }
 
+    public Integer getUv() {
+        return uv;
+    }
+
+    public void setUv(Integer uv) {
+        this.uv = uv;
+    }
+
+    public Integer getTotalComments() {
+        return totalComments;
+    }
+
+    public void setTotalComments(Integer totalComments) {
+        this.totalComments = totalComments;
+    }
+
     public String getTransactionAddress() {
         return transactionAddress;
     }
@@ -121,5 +146,21 @@ public class Goods {
 
     public void setOffTheShelfTime(Date offTheShelfTime) {
         this.offTheShelfTime = offTheShelfTime;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getFormatOnlineTime() {
+        return formatOnlineTime;
+    }
+
+    public void setFormatOnlineTime(String formatOnlineTime) {
+        this.formatOnlineTime = formatOnlineTime;
     }
 }

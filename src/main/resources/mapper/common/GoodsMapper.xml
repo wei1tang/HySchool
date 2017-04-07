@@ -9,15 +9,21 @@
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="price" jdbcType="DOUBLE" property="price"/>
         <result column="stock" jdbcType="INTEGER" property="stock"/>
+        <result column="uv" jdbcType="INTEGER" property="uv"/>
         <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="total_comments" jdbcType="INTEGER" property="totalComments"/>
         <result column="transaction_address" jdbcType="VARCHAR" property="transactionAddress"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="online_time" jdbcType="TIMESTAMP" property="onlineTime"/>
         <result column="off_the_shelf_time" jdbcType="TIMESTAMP" property="offTheShelfTime"/>
     </resultMap>
 
-    <select id="byCategoryCode" resultMap="BaseResultMap">
-        SELECT * FROM goods WHERE category_id=#{categoryId,jdbaType=INTEGER} limit #{start},#{pageSize}
+    <select id="byCategoryId" resultMap="BaseResultMap">
+        SELECT * FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} limit #{start},#{pageSize}
+    </select>
+
+    <select id="countByCategoryId" resultType="INTEGER" parameterType="INTEGER">
+        SELECT COUNT(*) FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER}
     </select>
 
 </mapper>
