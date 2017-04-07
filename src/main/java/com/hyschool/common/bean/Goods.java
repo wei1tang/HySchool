@@ -19,6 +19,10 @@ public class Goods {
 
     private String description;
 
+    private Integer uv;
+
+    private Integer totalComments;
+
     private String transactionAddress;
 
     private Date createTime;
@@ -40,14 +44,6 @@ public class Goods {
         this.id = id;
     }
 
-    public Integer getVipId() {
-        return vipId;
-    }
-
-    public void setVipId(Integer vipId) {
-        this.vipId = vipId;
-    }
-
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -56,12 +52,20 @@ public class Goods {
         this.categoryId = categoryId;
     }
 
+    public Integer getVipId() {
+        return vipId;
+    }
+
+    public void setVipId(Integer vipId) {
+        this.vipId = vipId;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
     public Integer getState() {
@@ -93,7 +97,23 @@ public class Goods {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Integer getUv() {
+        return uv;
+    }
+
+    public void setUv(Integer uv) {
+        this.uv = uv;
+    }
+
+    public Integer getTotalComments() {
+        return totalComments;
+    }
+
+    public void setTotalComments(Integer totalComments) {
+        this.totalComments = totalComments;
     }
 
     public String getTransactionAddress() {
@@ -101,7 +121,7 @@ public class Goods {
     }
 
     public void setTransactionAddress(String transactionAddress) {
-        this.transactionAddress = transactionAddress;
+        this.transactionAddress = transactionAddress == null ? null : transactionAddress.trim();
     }
 
     public Date getCreateTime() {
