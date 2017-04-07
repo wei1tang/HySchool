@@ -7,7 +7,9 @@ public class Order {
 
     private Integer orderNumber;
 
-    private Integer vipId;
+    private Integer vipBuyerId;
+
+    private Integer vipSellerId;
 
     private Integer state;
 
@@ -29,8 +31,6 @@ public class Order {
 
     private String paySerialsNumber;
 
-    private Boolean isDelete;
-
     private Date deleteTime;
 
     public Integer getId() {
@@ -49,12 +49,20 @@ public class Order {
         this.orderNumber = orderNumber;
     }
 
-    public Integer getVipId() {
-        return vipId;
+    public Integer getVipBuyerId() {
+        return vipBuyerId;
     }
 
-    public void setVipId(Integer vipId) {
-        this.vipId = vipId;
+    public void setVipBuyerId(Integer vipBuyerId) {
+        this.vipBuyerId = vipBuyerId;
+    }
+
+    public Integer getVipSellerId() {
+        return vipSellerId;
+    }
+
+    public void setVipSellerId(Integer vipSellerId) {
+        this.vipSellerId = vipSellerId;
     }
 
     public Integer getState() {
@@ -70,7 +78,7 @@ public class Order {
     }
 
     public void setNotes(String notes) {
-        this.notes = notes == null ? null : notes.trim();
+        this.notes = notes;
     }
 
     public Integer getSumMoney() {
@@ -89,20 +97,20 @@ public class Order {
         this.payMode = payMode;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
     public Date getAcceptTime() {
         return acceptTime;
     }
 
     public void setAcceptTime(Date acceptTime) {
         this.acceptTime = acceptTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getShopConfirmTime() {
@@ -121,12 +129,12 @@ public class Order {
         this.vipConfirmTime = vipConfirmTime;
     }
 
-    public Boolean getIsPay() {
+    public Boolean getPay() {
         return isPay;
     }
 
-    public void setIsPay(Boolean isPay) {
-        this.isPay = isPay;
+    public void setPay(Boolean pay) {
+        isPay = pay;
     }
 
     public String getPaySerialsNumber() {
@@ -134,15 +142,7 @@ public class Order {
     }
 
     public void setPaySerialsNumber(String paySerialsNumber) {
-        this.paySerialsNumber = paySerialsNumber == null ? null : paySerialsNumber.trim();
-    }
-
-    public Boolean getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+        this.paySerialsNumber = paySerialsNumber;
     }
 
     public Date getDeleteTime() {

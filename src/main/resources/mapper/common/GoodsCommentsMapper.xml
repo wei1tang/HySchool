@@ -4,8 +4,9 @@
     <resultMap id="BaseResultMap" type="com.hyschool.common.bean.GoodsComments">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
-        <result column="maker_id" jdbcType="INTEGER" property="makerId"/>
-        <result column="reply_id" jdbcType="INTEGER" property="replyId"/>
+        <result column="vip_id" jdbcType="INTEGER" property="vip_id"/>
+        <result column="star_rating" jdbcType="DOUBLE" property="star_rating"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="content" jdbcType="VARCHAR" property="content"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>

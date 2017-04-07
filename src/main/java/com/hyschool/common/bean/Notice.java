@@ -23,6 +23,24 @@ public class Notice {
 
     private Date readTime;
 
+    private Boolean is_public_all;
+
+    public Boolean getIs_public_all() {
+        return is_public_all;
+    }
+
+    public void setIs_public_all(Boolean is_public_all) {
+        this.is_public_all = is_public_all;
+    }
+
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
+    }
+
     public Integer getId() {
         return id;
     }

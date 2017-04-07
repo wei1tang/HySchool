@@ -3,8 +3,8 @@
 <mapper namespace="com.hyschool.common.dao.NoticeMapper">
     <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Notice">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="to_id" jdbcType="INTEGER" property="toId"/>
-        <result column="from_id" jdbcType="INTEGER" property="fromId"/>
+        <result column="to_vip_id" jdbcType="INTEGER" property="toId"/>
+        <result column="from_vip_id" jdbcType="INTEGER" property="fromId"/>
         <result column="content" jdbcType="VARCHAR" property="content"/>
         <result column="type" jdbcType="INTEGER" property="type"/>
         <result column="url" jdbcType="VARCHAR" property="url"/>

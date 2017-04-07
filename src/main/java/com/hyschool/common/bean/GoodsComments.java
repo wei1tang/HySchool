@@ -7,13 +7,15 @@ public class GoodsComments {
 
     private Integer goodsId;
 
-    private Integer makerId;
+    private Integer vip_id;
 
-    private Integer replyId;
+    private Double star_rating;
 
     private String content;
 
     private Date createTime;
+
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -31,20 +33,20 @@ public class GoodsComments {
         this.goodsId = goodsId;
     }
 
-    public Integer getMakerId() {
-        return makerId;
+    public Integer getVip_id() {
+        return vip_id;
     }
 
-    public void setMakerId(Integer makerId) {
-        this.makerId = makerId;
+    public void setVip_id(Integer vip_id) {
+        this.vip_id = vip_id;
     }
 
-    public Integer getReplyId() {
-        return replyId;
+    public Double getStar_rating() {
+        return star_rating;
     }
 
-    public void setReplyId(Integer replyId) {
-        this.replyId = replyId;
+    public void setStar_rating(Double star_rating) {
+        this.star_rating = star_rating;
     }
 
     public String getContent() {
@@ -52,7 +54,7 @@ public class GoodsComments {
     }
 
     public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+        this.content = content;
     }
 
     public Date getCreateTime() {
@@ -61,5 +63,13 @@ public class GoodsComments {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

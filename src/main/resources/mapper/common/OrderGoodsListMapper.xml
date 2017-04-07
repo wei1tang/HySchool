@@ -5,8 +5,5 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="order_id" jdbcType="INTEGER" property="orderId"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
-        <result column="goods_count" jdbcType="INTEGER" property="goodsCount"/>
-        <result column="sum_money" jdbcType="DOUBLE" property="sumMoney"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 </mapper>

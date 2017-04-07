@@ -9,12 +9,6 @@ public class OrderGoodsList {
 
     private Integer goodsId;
 
-    private Integer goodsCount;
-
-    private Double sumMoney;
-
-    private Date createTime;
-
     public Integer getId() {
         return id;
     }
@@ -37,29 +31,5 @@ public class OrderGoodsList {
 
     public void setGoodsId(Integer goodsId) {
         this.goodsId = goodsId;
-    }
-
-    public Integer getGoodsCount() {
-        return goodsCount;
-    }
-
-    public void setGoodsCount(Integer goodsCount) {
-        this.goodsCount = goodsCount;
-    }
-
-    public Double getSumMoney() {
-        return sumMoney;
-    }
-
-    public void setSumMoney(Double sumMoney) {
-        this.sumMoney = sumMoney;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
     }
 }

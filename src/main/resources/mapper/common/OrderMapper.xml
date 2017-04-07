@@ -4,10 +4,12 @@
     <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Order">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="order_number" jdbcType="INTEGER" property="orderNumber"/>
-        <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
+        <result column="vip_buyer_id" jdbcType="INTEGER" property="vipBuyerId"/>
+        <result column="vip_seller_id" jdbcType="INTEGER" property="vipSellerId"/>
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="notes" jdbcType="VARCHAR" property="notes"/>
         <result column="sum_money" jdbcType="INTEGER" property="sumMoney"/>
+        <result column="goods_count" jdbcType="INTEGER" property="goodsCount"/>
         <result column="pay_mode" jdbcType="BIT" property="payMode"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="accept_time" jdbcType="TIMESTAMP" property="acceptTime"/>
@@ -15,7 +17,6 @@
         <result column="vip_confirm_time" jdbcType="TIMESTAMP" property="vipConfirmTime"/>
         <result column="is_pay" jdbcType="BIT" property="isPay"/>
         <result column="pay_serials_number" jdbcType="VARCHAR" property="paySerialsNumber"/>
-        <result column="is__delete" jdbcType="BIT" property="isDelete"/>
         <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
     </resultMap>
 </mapper>

@@ -205,6 +205,7 @@ CREATE TABLE `vip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `self_introduction` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
   `star_rating` double DEFAULT NULL,
@@ -250,7 +251,7 @@ CREATE TABLE `vip_address` (
 DROP TABLE IF EXISTS `vip_approve`;
 CREATE TABLE `vip_approve` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `vip_id` int(11) NOT NULL,
   `real_name` varchar(255) NOT NULL,
   `gender` tinyint(1) NOT NULL DEFAULT '0',
   `phone` int(11) NOT NULL,
