@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by LJW on 2017/4/5.
  */
-public enum Category {
+public enum CategoryEnum {
 
     CAMPUS_RIDE(1, "校园代步"),
     MOBILE_PHONE(2, "手机"),
@@ -22,11 +22,11 @@ public enum Category {
     ENTERTAINMENT(11, "生活娱乐"),
     OTHERS(12, "其他");
 
-    public static final Map<Integer, Category> CATEGORIES;
+    public static final Map<Integer, CategoryEnum> CATEGORIES;
 
     static {
-        Map<Integer, Category> map = new LinkedHashMap<>();
-        for (Category category : Category.values()) {
+        Map<Integer, CategoryEnum> map = new LinkedHashMap<>();
+        for (CategoryEnum category : CategoryEnum.values()) {
             map.put(category.getCode(), category);
         }
         CATEGORIES = Collections.unmodifiableMap(map);
@@ -36,12 +36,12 @@ public enum Category {
 
     private String description;
 
-    Category(Integer code, String description){
+    CategoryEnum(Integer code, String description){
         this.code = code;
         this.description = description;
     }
 
-    public static Category getByCode(Integer code) {
+    public static CategoryEnum getByCode(Integer code) {
         return CATEGORIES.get(Integer.valueOf(code));
     }
 
@@ -53,8 +53,4 @@ public enum Category {
         return description;
     }
 
-    public static void main(String[] args) {
-        System.out.println(CATEGORIES);
-        System.out.println(CATEGORIES.get(2).getDescription());
-    }
 }

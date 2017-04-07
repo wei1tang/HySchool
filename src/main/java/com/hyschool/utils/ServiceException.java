@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 public class ServiceException extends Exception {
 

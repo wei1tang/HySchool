@@ -2,8 +2,9 @@ package com.hyschool.common.controller;
 
 import com.hyschool.common.bean.Goods;
 import com.hyschool.common.service.GoodsService;
-import com.hyschool.enums.Category;
-import com.hyschool.util.PageUtil;
+import com.hyschool.enums.CategoryEnum;
+import com.hyschool.utils.DateUtil;
+import com.hyschool.utils.PageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,7 +26,7 @@ public class IndexController {
     @Autowired
     GoodsService goodsService;
 
-    public static final int DEFAULT_CATEGORY_ID = 1;
+    private static final int DEFAULT_CATEGORY_ID = 1;
 
     private static Logger logger = LoggerFactory.getLogger(IndexController.class);
 
@@ -42,14 +41,10 @@ public class IndexController {
         }
         Integer start = PageUtil.getStartOfPage(pageNo, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         List<Goods> goodsList = goodsService.byCategoryId(categoryId, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
-        for (Goods goods : goodsList){
-            goods.setCategory((Category.getByCode(goods.getCategoryId())).getDescription());
-            Date onlineTime = goods.getOnlineTime();
-            goods.setFormatOnlineTime(new SimpleDateFormat("yyyy-MM-dd").format(onlineTime));
-        }
-        Integer total = goodsService.countByCategoryId(categoryId);
+        Integer count = goodsService.countByCategoryId(categoryId);
+        Integer pageCount = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         model.addAttribute("pageNo", pageNo);
-        model.addAttribute("total", total);
+        model.addAttribute("pageCount", pageCount);
         model.addAttribute("goodsList", goodsList);
         return "index";
     }

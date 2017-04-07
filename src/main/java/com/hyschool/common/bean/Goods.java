@@ -34,7 +34,7 @@ public class Goods {
     //额外添加的页面展示元素
     private String category;
 
-    private String formatOnlineTime;
+    private String onlineTimeFormatted;
 
     public Integer getId() {
         return id;
@@ -156,11 +156,11 @@ public class Goods {
         this.category = category;
     }
 
-    public String getFormatOnlineTime() {
-        return formatOnlineTime;
+    public String getOnlineTimeFormatted() {
+        return onlineTimeFormatted;
     }
 
-    public void setFormatOnlineTime(String formatOnlineTime) {
-        this.formatOnlineTime = formatOnlineTime;
+    public void setOnlineTimeFormatted(String onlineTimeFormatted) {
+        this.onlineTimeFormatted = onlineTimeFormatted;
     }
 }

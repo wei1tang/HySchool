@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 /**
  * Created by LJW on 2017/4/5.

@@ -1,6 +1,6 @@
 package com.hyschool.vip.service.impl;
 
-import com.hyschool.util.ConstantsUtil;
+import com.hyschool.utils.ConstantsUtil;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.dao.VipMapper;
 import com.hyschool.vip.service.VipService;

@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 public final class ConstantsUtil {
 	
@@ -8,22 +8,22 @@ public final class ConstantsUtil {
 
 	//发送邮件主题
     public static final String REGISTER_SUBJECT = "欢迎使用 HySchool,请确认邮箱";
-
     public static final String RESET_PASSWORD_SUBJECT = "重置密码";
 
     //register state
     public static final Integer VIP_STATE_INVALID = 1;
-
     public static final Integer VIP_STATE_AVAILABLE = 2;
-
     public static final Integer VIP_STATE_CLOSE = 3;
 
     //userType
     public static final Integer USER_VIP = 1;
-
     public static final Integer USER_ADMIN = 2;
-
     public static final Integer USER_SUPER_ADMIN = 3;
 
     public static final String ENCODING = "UTF-8";
+
+    //图片存储路径
+    public static final String GOODS_IMAGES_URL = "E:";
+    public static final String VIP_APPROVE_IMAGES_URL = "";
+    public static final String  VIP_AVATAR_IMAGES_URL= "";
 }

@@ -1,6 +1,6 @@
 package com.hyschool.security.interceptors;
 
-import com.hyschool.util.CookieUtil;
+import com.hyschool.utils.CookieUtil;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.dao.VipMapper;
 import org.springframework.beans.factory.annotation.Autowired;

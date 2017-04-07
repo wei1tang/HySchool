@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -17,6 +17,7 @@ public class SendEmailUtil {
 
     /**
      * 获取Session
+     *
      * @return
      */
     private static Session getSession() {
