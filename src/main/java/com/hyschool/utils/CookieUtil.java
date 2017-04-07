@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 import com.hyschool.vip.bean.Vip;
 
@@ -21,6 +21,7 @@ public class CookieUtil {
 
     /**
      * 添加登录cookie
+     *
      * @param response
      * @param vip
      */
@@ -43,6 +44,7 @@ public class CookieUtil {
 
     /**
      * 得到登录的用户邮箱
+     *
      * @param request
      * @return
      */
@@ -71,6 +73,7 @@ public class CookieUtil {
 
     /**
      * 删除登录cookie
+     *
      * @param response
      */
     public static void removeLoginCookie(HttpServletResponse response) {

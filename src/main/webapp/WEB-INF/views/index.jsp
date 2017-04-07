@@ -52,7 +52,7 @@
                     <div class="list-content">
                         <div class="name">${goods.name}</div>
                         <div class="money"><span style="color: #c7c7c7">￥</span>${goods.price}</div>
-                        <div class="deadline">上架时间: ${goods.formatOnlineTime}</div>
+                        <div class="deadline">上架时间: ${goods.onlineTimeFormatted}</div>
                         <div class="roles-icons">
                             <div class="roles">
                                 <span class="type">${goods.category}</span>

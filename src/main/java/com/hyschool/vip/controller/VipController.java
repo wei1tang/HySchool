@@ -1,9 +1,9 @@
 package com.hyschool.vip.controller;
 
 import com.hyschool.security.PasswordManager;
-import com.hyschool.util.ConstantsUtil;
-import com.hyschool.util.CookieUtil;
-import com.hyschool.util.ServiceException;
+import com.hyschool.utils.ConstantsUtil;
+import com.hyschool.utils.CookieUtil;
+import com.hyschool.utils.ServiceException;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.bean.VipValidate;
 import com.hyschool.vip.service.VipService;
@@ -139,7 +139,6 @@ public class VipController {
         String validateCode = passwordManager.encryptPassword(email+System.currentTimeMillis());
         password1 = passwordManager.encryptPassword(password1);
         Date date = new Date();
-        //java.sql.Date sqldDate = new java.sql.Date(date.getTime());
         vipService.createVip(name,email,password1,date);
         vipValidateService.createVipValidate(email,validateCode);
         registerValidateService.processRegister(email,validateCode);

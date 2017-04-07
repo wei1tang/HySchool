@@ -1,4 +1,4 @@
-package com.hyschool.util;
+package com.hyschool.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +15,7 @@ public class SpringUtil implements ApplicationContextAware {
 
     /**
      * 根据名字获得bean
+     *
      * @param name
      * @return
      */

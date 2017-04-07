@@ -1,9 +1,9 @@
 package com.hyschool.vip.service.mail;
 
 
-import com.hyschool.util.ConstantsUtil;
-import com.hyschool.util.SendEmailUtil;
-import com.hyschool.util.ServiceException;
+import com.hyschool.utils.ConstantsUtil;
+import com.hyschool.utils.SendEmailUtil;
+import com.hyschool.utils.ServiceException;
 import org.springframework.stereotype.Service;
 
 /**
