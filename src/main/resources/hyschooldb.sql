@@ -205,7 +205,7 @@ CREATE TABLE `vip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `self_introduction` varchar(255) NOT NULL,
+  `self_introduction` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
   `star_rating` double DEFAULT NULL,
