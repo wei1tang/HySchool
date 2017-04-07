@@ -13,7 +13,7 @@
             <img src="../../static/images/index-logo.png" class=""/>二手交易网
         </div>
         <div class="nav">
-            <a class="list">首页</a>
+            <a href="${pageContext.request.contextPath}/index" class="list">首页</a>
             <a class="list">关于</a>
         </div>
 

@@ -23,7 +23,11 @@ public final class ConstantsUtil {
     public static final String ENCODING = "UTF-8";
 
     //图片存储路径
-    public static final String GOODS_IMAGES_URL = "E:";
-    public static final String VIP_APPROVE_IMAGES_URL = "";
-    public static final String  VIP_AVATAR_IMAGES_URL= "";
+    public static final String GOODS_IMAGES_URL = "E://HySchool//images//goods-images//";
+    public static final String VIP_APPROVE_IMAGES_URL = "E://HySchool//images//vip-approve-images//";
+    public static final String  VIP_AVATAR_IMAGES_URL= "E://HySchool//images//vip-avatar-images//";
+
+    //商品状态
+    public static final Integer GOODS_CREATED = 1;
+//    public static final Integer GOODS_
 }

@@ -14,9 +14,9 @@
 
 <div class="footer" id="footer">
     <div>
-        <a href="common/about.jsp" class="footer-entry" target="_blank">服务条款</a> |
-        <a href="common/about.jsp" class="footer-entry" target="_blank">隐私政策</a> |
-        <a href="common/about.jsp" class="footer-entry" target="_blank">版权所有</a>
+        <a href="${pageContext.request.contextPath}/about" class="footer-entry" target="_blank">服务条款</a> |
+        <a href="${pageContext.request.contextPath}/about" class="footer-entry" target="_blank">隐私政策</a> |
+        <a href="${pageContext.request.contextPath}/about" class="footer-entry" target="_blank">版权所有</a>
     </div>
     <div>
         <span class="footer-entry last">华中科技大学花样校园毕设项目组保留所有权利。</span>
