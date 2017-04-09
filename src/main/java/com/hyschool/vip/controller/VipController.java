@@ -47,6 +47,13 @@ public class VipController {
 
     private static Logger logger = LoggerFactory.getLogger(VipController.class);
 
+
+    /**
+     * get返回登录页面
+     *
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String goLogin(HttpServletRequest request){
         String name_email = CookieUtil.getLoginVipNameEmail(request);
@@ -55,6 +62,18 @@ public class VipController {
         return "login";
     }
 
+
+    /**
+     * 登录验证
+     *
+     * @param email
+     * @param password
+     * @param model
+     * @param response
+     * @param session
+     * @return
+     * @throws UnsupportedEncodingException
+     */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String doLogin(@RequestParam("email")String email, @RequestParam("password")String password,
                           Model model, HttpServletResponse response, HttpSession session) throws UnsupportedEncodingException {
@@ -86,6 +105,15 @@ public class VipController {
         return "redirect:/index";
     }
 
+
+    /**
+     * 登出
+     *
+     * @param response
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
+     */
     @RequestMapping(value = "logout",method = RequestMethod.GET)
     public String logout(HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
@@ -97,6 +125,13 @@ public class VipController {
         return "redirect:/index";
     }
 
+
+    /**
+     * get返回注册界面
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/register",method = RequestMethod.GET)
     public String goRegister(Model model){
         String type = "register";
@@ -104,6 +139,17 @@ public class VipController {
         return "login";
     }
 
+
+    /**
+     * 注册验证
+     *
+     * @param model
+     * @param email
+     * @param name
+     * @param password1
+     * @param password2
+     * @return
+     */
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     public String doRegister(Model model, @RequestParam("email")String email, @RequestParam("name")String name,
                              @RequestParam("password1")String password1, @RequestParam("password2")String password2){
@@ -145,6 +191,15 @@ public class VipController {
         return "vip/activate_prompt";
     }
 
+
+    /**
+     * 点击邮箱链接进行get激活邮箱
+     *
+     * @param model
+     * @param email
+     * @param validateCode
+     * @return
+     */
     @RequestMapping(value = "/activate",method = RequestMethod.GET)
     public String activate(Model model,@RequestParam("email")String email, @RequestParam("validateCode")String validateCode){
         try {
@@ -156,6 +211,14 @@ public class VipController {
         }
     }
 
+
+    /**
+     * post方法给邮箱发修改密码的链接
+     *
+     * @param model
+     * @param email
+     * @return
+     */
     @RequestMapping(value = "/forgotPassword",method = RequestMethod.POST)
     public String goForgotPassword(Model model,@RequestParam("email")String email){
         boolean isValid = EmailValidator.getInstance().isValid(email);
@@ -179,6 +242,14 @@ public class VipController {
         return "login";
     }
 
+
+    /**
+     * 点击邮箱链接进入修改密码界面
+     *
+     * @param model
+     * @param validateCode
+     * @return
+     */
     @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
     public String goResetPassword(Model model, @RequestParam("validateCode")String validateCode){
         VipValidate vipValidate = vipValidateService.findByValidateCode(validateCode);
@@ -203,6 +274,16 @@ public class VipController {
         return "vip/register_error";
     }
 
+
+    /**
+     * 修改密码
+     *
+     * @param model
+     * @param email
+     * @param password1
+     * @param password2
+     * @return
+     */
     @RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
     public String doResetPassword(Model model,@RequestParam("email")String email,@RequestParam("password1")String password1,
                                   @RequestParam("password2")String password2){
@@ -218,6 +299,13 @@ public class VipController {
     }
 
 
+    /**
+     * 个人信息页面
+     *
+     * @param session
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/info")
     public String vipInfo(HttpSession session, Model model){
         Vip vip = (Vip) session.getAttribute("vip");
@@ -225,6 +313,15 @@ public class VipController {
         return "vip/info";
     }
 
+
+    /**
+     * 修改个人信息
+     *
+     * @param name
+     * @param selfIntroduction
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/changeInfo", method = RequestMethod.POST)
     public String changeInfo(@RequestParam("name") String name, @RequestParam("selfIntroduction") String selfIntroduction,
                             HttpSession session){

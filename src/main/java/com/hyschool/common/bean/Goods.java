@@ -1,6 +1,7 @@
 package com.hyschool.common.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Goods {
     private Integer id;
@@ -35,6 +36,10 @@ public class Goods {
     private String category;
 
     private String onlineTimeFormatted;
+
+    private String coverImageUrl;
+
+    private List<String> imagesUrlList;
 
     public Integer getId() {
         return id;
@@ -162,5 +167,21 @@ public class Goods {
 
     public void setOnlineTimeFormatted(String onlineTimeFormatted) {
         this.onlineTimeFormatted = onlineTimeFormatted;
+    }
+
+    public String getCoverImageUrl() {
+        return coverImageUrl;
+    }
+
+    public void setCoverImageUrl(String coverImageUrl) {
+        this.coverImageUrl = coverImageUrl;
+    }
+
+    public List<String> getImagesUrlList() {
+        return imagesUrlList;
+    }
+
+    public void setImagesUrlList(List<String> imagesUrlList) {
+        this.imagesUrlList = imagesUrlList;
     }
 }

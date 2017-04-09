@@ -19,7 +19,7 @@ public class VipApprove {
 
     private String school;
 
-    private String picutreUrl;
+    private String imageUrl;
 
     private Integer state;
 
@@ -89,12 +89,12 @@ public class VipApprove {
         this.school = school == null ? null : school.trim();
     }
 
-    public String getPicutreUrl() {
-        return picutreUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setPicutreUrl(String picutreUrl) {
-        this.picutreUrl = picutreUrl == null ? null : picutreUrl.trim();
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Integer getState() {

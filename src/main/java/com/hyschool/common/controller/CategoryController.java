@@ -3,8 +3,6 @@ package com.hyschool.common.controller;
 import com.hyschool.common.bean.Goods;
 import com.hyschool.common.service.GoodsService;
 import com.hyschool.utils.PageUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,29 +13,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * Created by LJW on 2017/1/12.
+ * Created by LJW on 2017/4/9.
  */
 @Controller
-public class IndexController {
+public class CategoryController {
 
     @Autowired
     GoodsService goodsService;
 
-    private static Logger logger = LoggerFactory.getLogger(IndexController.class);
-
 
     /**
-     * 只显示主页的第一页
+     * 根据category的id显示第一页商品
      *
+     * @param categoryId
      * @param model
      * @return
      */
-    @RequestMapping(value = {"/","/index"},method = RequestMethod.GET)
-    public String goIndex(Model model){
+    @RequestMapping(value = "/category{categoryId}", method = RequestMethod.GET)
+    public String byCategoryId(@PathVariable("categoryId") Integer categoryId, Model model){
+        if (categoryId == null || categoryId < 1 || categoryId > 12){
+            categoryId = PageUtil.DEFAULT_CATEGORY_ID;
+        }
         Integer pageNo = PageUtil.DEFAULT_PAGE_NO;
         Integer start = PageUtil.getStartOfPage(pageNo, PageUtil.Goods_DEFAULT_PAGE_SIZE);
-        List<Goods> goodsList = goodsService.byCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
-        Integer count = goodsService.countByCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID);
+        List<Goods> goodsList = goodsService.byCategoryAndPass(categoryId, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        Integer count = goodsService.countByCategoryAndPass(categoryId);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
@@ -45,27 +45,32 @@ public class IndexController {
         return "index";
     }
 
+
     /**
-     * restful风格的主页分页显示
+     * 根据categoryId和pageNo生成分页
      *
+     * @param categoryId
      * @param pageNo
      * @param model
      * @return
      */
-    @RequestMapping(value = "/index/pno{pageNo}",method = RequestMethod.GET)
-    public String goIndex(@PathVariable("pageNo") Integer pageNo, Model model){
+    @RequestMapping(value = "/category{categoryId}/pno{pageNo}", method = RequestMethod.GET)
+    public String byIdAndPageNo(@PathVariable("categoryId") Integer categoryId,
+                                @PathVariable("pageNo") Integer pageNo, Model model){
+        if (categoryId == null || categoryId < 1 || categoryId > 12){
+            categoryId = PageUtil.DEFAULT_CATEGORY_ID;
+        }
         if (pageNo == null || pageNo < 1){
             pageNo = PageUtil.DEFAULT_PAGE_NO;
         }
         Integer start = PageUtil.getStartOfPage(pageNo, PageUtil.Goods_DEFAULT_PAGE_SIZE);
-        List<Goods> goodsList = goodsService.byCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
-        Integer count = goodsService.countByCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID);
+        List<Goods> goodsList = goodsService.byCategoryAndPass(categoryId, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        Integer count = goodsService.countByCategoryAndPass(categoryId);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("goodsList", goodsList);
         return "index";
     }
-
 
 }

@@ -46,7 +46,7 @@
             <c:forEach var="goods" items="${goodsList}">
                 <div class="list-item">
                     <div class="img">
-                        <img src="" class="img" href="project.jsp" />
+                        <img src="${goods.coverImageUrl}" class="img" href="project.jsp" />
                         <div class="introduction"><p>${goods.description}</p></div>
                     </div>
                     <div class="list-content">
@@ -86,7 +86,7 @@
 <script type="text/javascript">
     $(function(){
         $("#page").Page({
-            totalPages: 40,//分页总数
+            totalPages: ${totalPages},//分页总数
             liNums: 8,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
             callBack : function(page){

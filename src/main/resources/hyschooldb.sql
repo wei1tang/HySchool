@@ -78,7 +78,7 @@ CREATE TABLE `goods` (
   `vip_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `state` int(1) NOT NULL COMMENT '商品的状态，待发布，提交审核，已驳回，已发布，已被购买，已完成交易，已下架。',
-  `price` double(5,2) NOT NULL,
+  `price` double(11,2) NOT NULL,
   `stock` int(5) NOT NULL COMMENT '库存量，不知道用不用的着，二手街一般为1',
   `description` varchar(255) DEFAULT NULL,
   `transaction_address` varchar(255) DEFAULT NULL COMMENT '交易地点，线上或某个学校',

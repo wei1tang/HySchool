@@ -10,7 +10,7 @@
         <result column="province_code" jdbcType="VARCHAR" property="provinceCode"/>
         <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>
         <result column="school" jdbcType="VARCHAR" property="school"/>
-        <result column="picutre_url" jdbcType="VARCHAR" property="picutreUrl"/>
+        <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>

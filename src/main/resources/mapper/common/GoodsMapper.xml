@@ -16,12 +16,12 @@
         <result column="off_the_shelf_time" jdbcType="TIMESTAMP" property="offTheShelfTime"/>
     </resultMap>
 
-    <select id="byCategoryId" resultMap="BaseResultMap">
-        SELECT * FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} limit #{start},#{pageSize}
+    <select id="byCategoryAndState" resultMap="BaseResultMap">
+        SELECT * FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER} limit #{start},#{pageSize}
     </select>
 
-    <select id="countByCategoryId" resultType="INTEGER" parameterType="INTEGER">
-        SELECT COUNT(*) FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER}
+    <select id="countByCategoryAndState" resultType="INTEGER" parameterType="INTEGER">
+        SELECT COUNT(*) FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER}
     </select>
 
 </mapper>

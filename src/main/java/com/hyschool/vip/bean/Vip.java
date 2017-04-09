@@ -18,6 +18,8 @@ public class Vip {
 
     private Integer userType;
 
+    private String avatarUrl;
+
     private String selfIntroduction;
 
     private Date birthday;
@@ -82,6 +84,14 @@ public class Vip {
 
     public void setUserType(Integer userType) {
         this.userType = userType;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public String getSelfIntroduction() {
