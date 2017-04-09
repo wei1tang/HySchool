@@ -22,6 +22,11 @@ public final class ConstantsUtil {
 
     public static final String ENCODING = "UTF-8";
 
+    //stringUserType
+    public static final String STRING_USER_VIP = "普通用户";
+    public static final String STRING_USER_ADMIN = "管理员";
+    public static final String STRING_USER_SUPER_ADMIN = "超级管理员";
+
     //图片存储路径
     public static final String GOODS_IMAGES_URL = "/images/goods-images/";
     public static final String VIP_APPROVE_IMAGES_URL = "/images/vip-approve-images/";

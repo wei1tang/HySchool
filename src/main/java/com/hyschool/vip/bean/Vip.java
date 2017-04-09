@@ -30,6 +30,17 @@ public class Vip {
 
     private Date resetPasswordTime;
 
+    //userType的String显示
+    private String stringUserType;
+
+    public String getStringUserType() {
+        return stringUserType;
+    }
+
+    public void setStringUserType(String stringUserType) {
+        this.stringUserType = stringUserType;
+    }
+
     public Integer getId() {
         return id;
     }

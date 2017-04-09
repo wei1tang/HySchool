@@ -20,14 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_approve_history`;
 CREATE TABLE `audit_approve_history` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
   `admin_id` int(11) NOT NULL COMMENT '审核管理员的id',
   `vip_id` int(11) NOT NULL COMMENT '被审核的id',
   `is_pass` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否通过，0不通过，1通过',
   `reason` varchar(255) NOT NULL COMMENT '审核原因',
   `audit_time` timestamp NULL DEFAULT NULL COMMENT '审核时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip认证审核记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 auto_increment=0 COMMENT='vip认证审核记录';
 
 -- ----------------------------
 -- Records of audit_approve_history
