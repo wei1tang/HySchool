@@ -34,7 +34,6 @@ public class AdminController {
     @RequestMapping(value = "/superAdmin",method = RequestMethod.GET)
     public String goAuditAdmin(Model model){
         List<Vip> vipList= vipService.findVipAll();
-        Vip vip = vipList.get(0);
         for (int i = 0; i <vipList.size() ; i++) {
             if (vipList.get(i).getUserType()== ConstantsUtil.USER_VIP)
                 vipList.get(i).setStringUserType(ConstantsUtil.STRING_USER_VIP);

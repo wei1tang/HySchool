@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50713
+Source Server         : local
+Source Server Version : 50716
 Source Host           : localhost:3306
 Source Database       : hyschooldb
 
 Target Server Type    : MYSQL
-Target Server Version : 50713
+Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2017-04-05 23:24:58
+Date: 2017-04-10 00:42:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,18 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_approve_history`;
 CREATE TABLE `audit_approve_history` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) NOT NULL COMMENT '审核管理员的id',
   `vip_id` int(11) NOT NULL COMMENT '被审核的id',
   `is_pass` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否通过，0不通过，1通过',
   `reason` varchar(255) NOT NULL COMMENT '审核原因',
   `audit_time` timestamp NULL DEFAULT NULL COMMENT '审核时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 auto_increment=0 COMMENT='vip认证审核记录';
-
--- ----------------------------
--- Records of audit_approve_history
--- ----------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip认证审核记录';
 
 -- ----------------------------
 -- Table structure for audit_goods_history
@@ -48,10 +44,6 @@ CREATE TABLE `audit_goods_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='发布的商品审核记录';
 
 -- ----------------------------
--- Records of audit_goods_history
--- ----------------------------
-
--- ----------------------------
 -- Table structure for categories
 -- ----------------------------
 DROP TABLE IF EXISTS `categories`;
@@ -63,10 +55,6 @@ CREATE TABLE `categories` (
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='栏目，直接用枚举类';
-
--- ----------------------------
--- Records of categories
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for goods
@@ -89,10 +77,6 @@ CREATE TABLE `goods` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of goods
--- ----------------------------
-
--- ----------------------------
 -- Table structure for goods_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_comments`;
@@ -108,8 +92,17 @@ CREATE TABLE `goods_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of goods_comments
+-- Table structure for goods_images
 -- ----------------------------
+DROP TABLE IF EXISTS `goods_images`;
+CREATE TABLE `goods_images` (
+  `id` int(11) NOT NULL,
+  `goods_id` int(11) NOT NULL,
+  `image_url` varchar(255) NOT NULL,
+  `state` int(1) NOT NULL,
+  `create_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for notice
@@ -129,10 +122,6 @@ CREATE TABLE `notice` (
   `read_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of notice
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for order
@@ -159,10 +148,6 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of order
--- ----------------------------
-
--- ----------------------------
 -- Table structure for order_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `order_comments`;
@@ -179,10 +164,6 @@ CREATE TABLE `order_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='完成订单后对发布人(店家)的评价';
 
 -- ----------------------------
--- Records of order_comments
--- ----------------------------
-
--- ----------------------------
 -- Table structure for order_goods_list
 -- ----------------------------
 DROP TABLE IF EXISTS `order_goods_list`;
@@ -194,10 +175,6 @@ CREATE TABLE `order_goods_list` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of order_goods_list
--- ----------------------------
-
--- ----------------------------
 -- Table structure for vip
 -- ----------------------------
 DROP TABLE IF EXISTS `vip`;
@@ -205,21 +182,18 @@ CREATE TABLE `vip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `self_introduction` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
   `star_rating` double DEFAULT NULL,
   `user_type` int(1) NOT NULL,
+  `avatar_url` varchar(255) DEFAULT NULL,
+  `self_introduction` varchar(255) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL,
   `reset_password_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of vip
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vip_address
@@ -242,10 +216,6 @@ CREATE TABLE `vip_address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户的收货地址';
 
 -- ----------------------------
--- Records of vip_address
--- ----------------------------
-
--- ----------------------------
 -- Table structure for vip_approve
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_approve`;
@@ -258,15 +228,11 @@ CREATE TABLE `vip_approve` (
   `province_code` varchar(6) NOT NULL,
   `city_code` varchar(6) NOT NULL,
   `school` varchar(50) NOT NULL,
-  `picutre_url` varchar(255) NOT NULL,
+  `image_url` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of vip_approve
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for vip_goods_collections
@@ -280,10 +246,6 @@ CREATE TABLE `vip_goods_collections` (
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip的个人商品收藏';
-
--- ----------------------------
--- Records of vip_goods_collections
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for vip_messages_board
@@ -301,10 +263,6 @@ CREATE TABLE `vip_messages_board` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='留言板，设计不完全';
 
 -- ----------------------------
--- Records of vip_messages_board
--- ----------------------------
-
--- ----------------------------
 -- Table structure for vip_validate
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_validate`;
@@ -313,7 +271,3 @@ CREATE TABLE `vip_validate` (
   `validate_code` varchar(255) DEFAULT NULL COMMENT '激活码',
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='注册修改密码用的激活码表';
-
--- ----------------------------
--- Records of vip_validate
--- ----------------------------

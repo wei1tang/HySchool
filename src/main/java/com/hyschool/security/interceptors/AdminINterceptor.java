@@ -22,9 +22,9 @@ public class AdminINterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
-        String[] arr = name_email.split("|");
+        String[] arr = name_email.split("_");
         Vip vip = vipMapper.findVipByEmail(arr[1]);
-        if (vip.getUserType() != ConstantsUtil.USER_ADMIN || vip.getUserType() != ConstantsUtil.USER_SUPER_ADMIN){
+        if (vip.getUserType() != ConstantsUtil.USER_ADMIN && vip.getUserType() != ConstantsUtil.USER_SUPER_ADMIN){
             String path = request.getContextPath();
             response.sendRedirect(path+"/index");
             return false;
