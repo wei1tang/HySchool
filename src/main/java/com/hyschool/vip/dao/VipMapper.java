@@ -14,6 +14,10 @@ public interface VipMapper {
 
     Vip findVipByEmail(@Param("email")String email);
 
+    Vip findVipById(@Param("vipId")Integer vipId);
+
+    List<Vip>  findVipAll();
+
     void createVip(Vip vip);
 
     void updateInvalidVip(Vip vip);
@@ -25,5 +29,9 @@ public interface VipMapper {
     void resetPassword(@Param("password")String password,@Param("email")String email);
 
     void updateInfo(Vip vip);
+
+    void resetType(Vip vip);
+
+
 
 }

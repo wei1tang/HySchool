@@ -35,6 +35,14 @@
         SELECT * FROM vip WHERE email=#{email,jdbcType=VARCHAR}
     </select>
 
+    <select id="findVipById" parameterType="Integer" resultType="vip">
+        SELECT * FROM vip WHERE id=#{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="findVipAll"  resultMap="BaseResultMap">
+        SELECT * FROM vip WHERE user_type!=3
+    </select>
+
     <insert id="createVip" parameterType="vip">
         INSERT INTO vip (email,password,name,state,user_type,create_time)
         VALUES (
@@ -76,6 +84,10 @@
             self_introduction=#{selfIntroduction,jdbcType=VARCHAR}
         </set>
         WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+    <update id="resetType" parameterType="vip">
+        UPDATE vip set user_Type=#{userType,jdbcType=INTEGER} WHERE email=#{email,jdbcType=VARCHAR}
     </update>
 
 </mapper>

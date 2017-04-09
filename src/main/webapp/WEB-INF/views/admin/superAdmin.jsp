@@ -1,18 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tangwei
-  Date: 2017/3/27
-  Time: 下午2:07
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>超级管理员界面</title>
-
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
     <!--必要样式-->
     <link href="../../../static/css/superAdmin.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--bootstrapcss-->
@@ -21,7 +16,6 @@
     <script type="text/javascript" src="../../../static/js/index-page.js"></script><!--分页js-->
 
 </head>
-<body>
 
 
 <div class="container">
@@ -33,47 +27,27 @@
         </div>
         <table>
             <tr class="columns">
-                <th class="name">用户名</th>
                 <th class="num">用户账号</th>
+                <th class="name">用户名</th>
                 <th class="status">用户类型</th>
                 <th class="operation">操作</th>
             </tr>
-            <tr>
-                <td>管理员一</td>
-                <td>00001</td>
-                <td>管理员</td>
-                <td>
+            <c:forEach var="vip" items="${vipList}">
+            <h id="test1">test1</h>
+                <tr>
+                    <td id="vipId">${vip.id}</td>
+                    <td id="vipName">${vip.name}</td>
+                    <td id="vipType">${vip.stringUserType}</td>
+                    <td>
                     <span>
-                    <a href="#" >提升管理员</a>
+                    <a id="setAdmin"  >提升管理员</a>
                     <span class="ant-divider"></span>
-                    <a href="#">取消管理员</a>
+                    <a id="removeAdmin" >取消管理员</a>
                     </span>
-                </td>
-            </tr>
-            <tr>
-                <td>用户二</td>
-                <td>00002</td>
-                <td>普通用户</td>
-                <td>
-                    <span>
-                    <a href="#" >提升管理员</a>
-                    <span class="ant-divider"></span>
-                    <a href="#">取消管理员</a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>用户三</td>
-                <td>00003</td>
-                <td>管理员</td>
-                <td>
-                    <span>
-                    <a href="#" >提升管理员</a>
-                    <span class="ant-divider"></span>
-                    <a href="#">取消管理员</a>
-                    </span>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+            </c:forEach>
+
         </table>
         <!-- 分页 开始 -->
         <div id="page"></div>
@@ -84,7 +58,72 @@
 
 </div>
 
+<!--ajax json实现-->
+<script>
+    $(document).ready(function () {
+    });
 
+    $(function(){
+        $("#setAdmin").click(
+                function(){
+                    $.ajax({
+                        type:"POST",
+                        data:{vipId:$("#vipId").val()},
+                        dataType: "json",
+                        url: "${pageContext.request.contextPath}/admin/superAdmin",
+                        success: function (data){
+                            $("#vipType").val(data.stringUserType);
+                            $("#test1").val("sss");
+                        }
+                    });
+            }
+        );
+        $("#removeAdmin").click(
+                function(){
+                    $.ajax({
+                        type:"GET",
+                        dataType: "json",
+                        success: function (data){
+                            alert("do this")
+                            $("#vipType").val(data.stringUserType);
+                        }
+                    });
+                }
+        );
+
+        var token = $("meta[name='_csrf']").attr("content");
+        var header = $("meta[name='_csrf_header']").attr("content");
+        $(document).ajaxSend(function (e, xhr, options) {
+            xhr.setRequestHeader(header, token);
+        });
+    });
+
+
+</script>
+<%--<!--ajax(非json)-->
+<script type="text/javascript" >
+    function changeType() {
+
+        //发送ajax 更新请求 并处理
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    document.getElementById("vipType").innerHTML = request.responseText;
+                }
+                else {
+                    alert("error");
+                }
+            }
+        }
+        request.open("POST", "admin/superAdmin");
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        var vipId = document.getElementById("vipId").value;
+        request.send(vipId);
+
+    }
+
+</script>--%>
 <!-- 分页 开始 -->
 <script type="text/javascript">
     $(function(){

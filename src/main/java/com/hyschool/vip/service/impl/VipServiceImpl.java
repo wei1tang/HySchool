@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by LJW on 2017/1/15.
@@ -26,6 +27,11 @@ public class VipServiceImpl implements VipService {
     @Override
     public Vip findInvalidVip(String email) {
         return vipMapper.findVipWithState(email,ConstantsUtil.VIP_STATE_INVALID);
+    }
+
+    @Override
+    public Vip findVipById(Integer vipId){
+        return vipMapper.findVipById(vipId);
     }
 
     @Override
@@ -64,4 +70,10 @@ public class VipServiceImpl implements VipService {
     public void updateInfo(Vip vip) {
         vipMapper.updateInfo(vip);
     }
+
+    @Override
+    public void resetType(Vip vip)  { vipMapper.resetType(vip);  }
+
+    @Override
+    public List<Vip> findVipAll(){ return vipMapper.findVipAll();}
 }
