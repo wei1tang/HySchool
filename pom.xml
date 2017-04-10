@@ -37,6 +37,7 @@
         <jsp-api.version>2.0</jsp-api.version>
         <servlet-api.version>2.5</servlet-api.version>
         <slf4j.version>1.7.10</slf4j.version>
+        <logback.version>1.2.3</logback.version>
 
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
@@ -234,16 +235,17 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <!--logback-->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
 
         <!--JSTL标签类-->
