@@ -1,45 +1,72 @@
 <configuration debug="false">
     <!-- ERROR、WARN、INFO、DEBUG-->
+    <!--
+    例如spring的controller抛出java运行时异常的时候,
+    可以设置root为DEBUG级别捕获异常,然后存储到STDOUT路径下,
+    因为此时抛出的异常属于DEBUG类型
+    不同级别日志路径分开
+    -->
+
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="E:/HySchool/logs/" />
+    <property name="LOG_HOME" value="E:/HySchool/logs/"/>
 
 
     <!-- 控制台输出 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
     </appender>
 
 
-
-
-    <!-- 按照每天生成日志文件 -->
-    <appender name="STDOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/stdout/stdout.log</file>
+    <!--输出DEBUG的log信息,主要捕获运行时异常-->
+    <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/debug/debug.log</file>
         <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--日志文件输出的文件名-->
-            <FileNamePattern>${LOG_HOME}/stdout/stdout.log.%d{yyyy-MM-dd}</FileNamePattern>
-            <!--日志文件保留天数-->
+            <FileNamePattern>${LOG_HOME}/debug/debug.log.%d{yyyy-MM-dd}</FileNamePattern>
             <MaxHistory>90</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
-        <!--日志文件最大的大小-->
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
             <MaxFileSize>10MB</MaxFileSize>
         </triggeringPolicy>
     </appender>
 
 
+    <!--输出INFO信息的日志-->
+    <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/info/info.log</file>
+        <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/info/info.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <MaxHistory>90</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
 
-    <appender name="STDERR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/stderr/stderr.log</file>
+    <!--输出error的log信息,用try catch捕获异常打印到日志文件-->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/error/error.log</file>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
@@ -47,29 +74,28 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--日志文件输出的文件名-->
-            <FileNamePattern>${LOG_HOME}/stderr/stderr.log.%d{yyyy-MM-dd}</FileNamePattern>
-            <!--日志文件保留天数-->
+            <FileNamePattern>${LOG_HOME}/error/error.log.%d{yyyy-MM-dd}</FileNamePattern>
             <MaxHistory>90</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
-        <!--日志文件最大的大小-->
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
             <MaxFileSize>10MB</MaxFileSize>
         </triggeringPolicy>
     </appender>
 
-
-
-    <!-- 日志输出级别 -->
+    <!--logback只支持一个文件一个日志级别-->
+    <!--到了生产期把此改为DEBUG即可监控spring等的运行期异常,如空指针等-->
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="STDERR" />
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="DEBUG" />
+        <appender-ref ref="INFO" />
+        <appender-ref ref="ERROR"/>
     </root>
 
+
+    <!--不能用下面的语句,会把运行时错误隐藏-->
+    <!--<logger name="org.springframework" level="INFO" additivity="false"/>-->
 </configuration>

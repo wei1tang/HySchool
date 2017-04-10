@@ -59,11 +59,6 @@ public class VipController {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         if (name_email!=null && !name_email.equals(""))
             return "redirect:/index";
-        logger.info("info test");
-        logger.error("error test");
-        System.out.println(1/0);
-        Vip vip = new Vip();
-        System.out.println(vip.getAvatarUrl().indexOf(4));
         return "login";
     }
 
