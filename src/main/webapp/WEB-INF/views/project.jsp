@@ -8,14 +8,13 @@
 
     <!--必要样式-->
     <link href="../../static/css/project.css" type="text/css" rel="stylesheet"/><!--项目详情界面css-->
-    <link href="../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--bootstrapcss-->
 
 </head>
 <body>
 
 <div class="container">
 
-    <%@include file="public/header-user.jsp"%>
+    <%@include file="public/header-search.jsp"%>
 
     <div class="project">
 

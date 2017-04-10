@@ -9,8 +9,8 @@
     <meta name="_csrf" content="${_csrf.token}"/>
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
     <!--必要样式-->
-    <link href="../../../static/css/superAdmin.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
-    <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--bootstrapcss-->
+    <link href="../../../static/css/superAdmin.css" type="text/css" rel="stylesheet"/><!--超级管理员界面css-->
+    <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
 
     <script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script><!--jQuery样式-->
     <script type="text/javascript" src="../../../static/js/index-page.js"></script><!--分页js-->

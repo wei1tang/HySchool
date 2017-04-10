@@ -71,6 +71,8 @@ html,body{
     margin-right: 20px;
     opacity:0.5;
     color: #2d3238;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    float:left;
 }
 .header .avatar-link:hover {
     opacity: 1;
@@ -84,6 +86,9 @@ html,body{
     margin-right: .5em;
     vertical-align: middle;/*垂直对齐一幅图像*/
     border-radius: 20px;/*向 div 元素添加圆角边框：*/
+}
+.header .me .button-link{
+    float:left;
 }
 /*----------- end header-------------*/
 

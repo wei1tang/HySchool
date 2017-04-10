@@ -31,7 +31,7 @@
 <body>
 
 <div class="container">
-    <%@include file="../public/header.jsp"%>
+    <%@include file="../public/header-search.jsp"%>
 
     <div class="showlist">
         <div class="typegoods">

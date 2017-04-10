@@ -149,6 +149,8 @@ li:after, div:after, ul:after {
     margin-right: 20px;
     opacity: 0.5;
     color: #2d3238;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    float:left;
 }
 
 .avatar-link:hover {
@@ -166,7 +168,9 @@ li:after, div:after, ul:after {
     vertical-align: middle; /*垂直对齐一幅图像*/
     border-radius: 20px; /*向 div 元素添加圆角边框：*/
 }
-
+.header .me .button-link{
+    float:left;
+}
 /*----------- end header-------------*/
 
 /*.login-banner{*/

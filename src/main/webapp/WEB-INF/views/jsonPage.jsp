@@ -21,7 +21,13 @@
 <script language="JavaScript">
     function check() {
         var name = $.sessionStorage.getItem("vip");
-        if (name === "") {
+        var type="${sessionScope.vip.userType}";
+        var user = '<%=session.getAttribute("vip")%>';
+        if (user === "null") {
+            //没登录
+
+        }else if(type==1){
+            //普通vip
         }
     }
 </script>
