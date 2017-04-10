@@ -153,7 +153,7 @@
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
                         <input type="checkbox" id="checkboxSuccess" value="option1">
-                        <label for="checkboxSuccess">确认同意<a href="#">发布规则</a></label>
+                        <label for="checkboxSuccess">确认同意<a class="dialog">发布规则</a></label>
                     </div>
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
@@ -329,6 +329,8 @@
 </div>
 
 <%@include file="../public/upload-photo.jsp"%>
+
+<%@include file="../public/pop-window-user.jsp"%>
 
 <!--选项卡js-->
 <script type="text/javascript" src="../../../static/js/user-select-tab.js"></script>

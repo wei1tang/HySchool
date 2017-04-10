@@ -92,7 +92,7 @@
                         <button type="submit" class="tran pr">注 册</button>
                     </div>
 
-                    <p class="view-clause">点击注册,即同意我们的 <a href="#">用户隐私条款</a></p>
+                    <p class="view-clause">点击注册,即同意我们的 <a class="dialog">用户隐私条款</a></p>
                 </div>
             </form>
 
@@ -141,6 +141,9 @@
 <%@include file="public/footer.jsp"%>
 
 <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
+
+<%@include file="public/pop-window-login.jsp"%>
+
 <script>
     $(function(){
 

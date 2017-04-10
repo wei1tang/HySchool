@@ -20,7 +20,7 @@
 
 <script language="JavaScript">
     function check() {
-        var name = $.sessionStorage.getItem("key");
+        var name = $.sessionStorage.getItem("vip");
         if (name === "") {
         }
     }
