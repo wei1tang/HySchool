@@ -8,7 +8,7 @@
 
     <!--必要样式-->
     <link href="../../../static/css/admin.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
-    <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--bootstrapcss-->
+    <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button pcss-->
 
     <script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script><!--jQuery样式-->
     <script type="text/javascript" src="../../../static/js/index-page.js"></script><!--分页js-->
@@ -17,7 +17,7 @@
 <body>
 
 <div class="container">
-    <%@include file="../public/header-user.jsp"%>
+    <%@include file="../public/header-search.jsp"%>
 
     <div class="admin">
         <div class="title">

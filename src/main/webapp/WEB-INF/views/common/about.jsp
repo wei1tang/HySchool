@@ -6,7 +6,7 @@
     <title>关于界面</title>
 
     <!--必要样式-->
-    <link href="../../../static/css/about.css" type="text/css" rel="stylesheet"/><!--管理员界面css-->
+    <link href="../../../static/css/about.css" type="text/css" rel="stylesheet"/><!--关于界面css-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
     <link href="../../../static/css/index-font-awesome.css" type="text/css" rel="stylesheet"/><!--按钮 css-->
     <link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css">

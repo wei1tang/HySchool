@@ -15,7 +15,7 @@
 
 <div class="container">
 
-    <%@include file="public/header.jsp"%>
+    <%@include file="public/header-user.jsp"%>
 
     <div id="join">
         <div class="title">

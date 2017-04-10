@@ -19,7 +19,7 @@
 <body>
 
 <div class="container">
-    <%@include file="../public/header-user.jsp"%>
+    <%@include file="../public/header-search.jsp"%>
     <div class="top">
         <div class="first">
             <div class="level">

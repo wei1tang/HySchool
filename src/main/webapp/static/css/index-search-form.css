@@ -5,7 +5,7 @@
     -moz-transform: translate(0, 0);
     transform: translate(0, 0);
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 10px;
 }
 .search-wrapper.active {}
 
@@ -23,7 +23,7 @@
 .search-wrapper.active .input-holder {
     margin-top: 5px;
     border-radius: 50px;
-    width:400px;
+    width:300px;
     background: rgba(0, 0, 0, .2);
     -webkit-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
     -moz-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);

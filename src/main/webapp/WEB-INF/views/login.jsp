@@ -22,7 +22,7 @@
 
 <div class="login-banner"></div>
 
-<%@include file="public/header.jsp"%>
+<%@include file="public/header-user.jsp"%>
 
 <div class="login-box">
     <div class="box-con tran">
