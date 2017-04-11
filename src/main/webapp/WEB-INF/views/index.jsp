@@ -19,7 +19,7 @@
 <script language="JavaScript">
     function check() {
         var name = $.sessionStorage.getItem("key");
-        if (name === ""){
+        if (name === "") {
 
         }
     }
@@ -28,22 +28,17 @@
 <body>
 
 <div class="container">
-    <c:if test="${sessionScope.vip eq null}">
-        <%@include file="header/unsign-search-header.jsp"%>
-    </c:if>
-    <c:if test="${sessionScope.vip ne null}">
-        <%@include file="header/signed-search-header.jsp"%>
-    </c:if>
+    <%@include file="public/header.jsp" %>
 
-    <%@include file="public/slider.jsp"%>
+    <%@include file="public/slider.jsp" %>
 
     <div class="showlist">
         <div class="typegoods">
             <div class="search_check">
-                <a class="list" >时间</a>
-                <a class="list" >积分</a>
-                <a class="list" >价格</a>
-                <a class="list" >热度</a>
+                <a class="list">时间</a>
+                <a class="list">积分</a>
+                <a class="list">价格</a>
+                <a class="list">热度</a>
             </div>
         </div>
 
@@ -51,7 +46,7 @@
             <c:forEach var="goods" items="${goodsList}">
                 <div class="list-item">
                     <div class="img">
-                        <img src="${goods.coverImageUrl}" class="img" href="project.jsp" />
+                        <img src="${goods.coverImageUrl}" class="img" href="project.jsp"/>
                         <div class="introduction"><p>${goods.description}</p></div>
                     </div>
                     <div class="list-content">
@@ -75,26 +70,26 @@
         <div id="page"></div>
         <!-- 分页 结束 -->
     </div>
-    <%@include file="public/footer.jsp"%>
+    <%@include file="public/footer.jsp" %>
 
 </div>
 <!--侧边栏start-->
-<%@include file="public/siderbar.jsp"%>
+<%@include file="public/siderbar.jsp" %>
 <!--侧边栏end-->
 <!--右边侧栏我要发布start-->
 <div class="rightsidebar">
-    <a ></a>
+    <a></a>
 </div>
 
 <!--右边侧栏我要发布end-->
 <!-- 分页 开始 -->
 <script type="text/javascript">
-    $(function(){
+    $(function () {
         $("#page").Page({
             totalPages: ${totalPages},//分页总数
             liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
-            callBack : function(page){
+            callBack: function (page) {
                 //console.log(page)
             }
         });
