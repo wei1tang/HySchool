@@ -11,15 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class CommonController {
 
-    @RequestMapping(value = "/category/{code}", method = RequestMethod.GET)
-    public String categoryPage(@PathVariable("code") Integer code){
-
-
-
-
-        return null;
-    }
-
     @RequestMapping("/about")
     public String about(){
         return "common/about";

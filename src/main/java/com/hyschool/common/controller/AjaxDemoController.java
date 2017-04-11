@@ -22,7 +22,7 @@ public class AjaxDemoController {
 
     private static Logger logger = LoggerFactory.getLogger(AjaxDemoController.class);
 
-    @RequestMapping(value = "jsonPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/jsonPage", method = RequestMethod.GET)
     public String goJsonPage(){
         return "jsonPage";
     }
@@ -35,7 +35,7 @@ public class AjaxDemoController {
      * @param email
      * @return
      */
-    @RequestMapping(value = "jsonForm", method = RequestMethod.POST)
+    @RequestMapping(value = "/jsonForm", method = RequestMethod.POST)
     @ResponseBody
     public String jsonForm(@RequestParam("name") String name, @RequestParam("email") String email){
         ObjectMapper objectMapper = new ObjectMapper();
@@ -58,7 +58,7 @@ public class AjaxDemoController {
      * ajax的get请求
      * @return
      */
-    @RequestMapping(value = "json", method = RequestMethod.GET)
+    @RequestMapping(value = "/json", method = RequestMethod.GET)
     @ResponseBody
     public String encode(){
         ObjectMapper objectMapper = new ObjectMapper();
@@ -86,7 +86,7 @@ public class AjaxDemoController {
      * @param demo
      * @return
      */
-    @RequestMapping(value = "json", method = RequestMethod.POST)
+    @RequestMapping(value = "/json", method = RequestMethod.POST)
     @ResponseBody
     public String jsonPost(@RequestParam("demo") String demo){
         ObjectMapper objectMapper = new ObjectMapper();

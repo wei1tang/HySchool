@@ -15,6 +15,7 @@
     <link href="../../static/css/font/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
     <link href="../../static/css/login.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 
 <div class="login-banner"></div>
 
-<%@include file="public/header-user.jsp"%>
+<%@include file="header/login-header.jsp"%>
 
 <div class="login-box">
     <div class="box-con tran">
@@ -139,8 +140,6 @@
 </div>
 
 <%@include file="public/footer.jsp"%>
-
-<script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
 
 <%@include file="public/pop-window-login.jsp"%>
 

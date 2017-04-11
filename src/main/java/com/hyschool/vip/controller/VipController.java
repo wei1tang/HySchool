@@ -58,7 +58,7 @@ public class VipController {
     public String goLogin(HttpServletRequest request){
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         if (name_email!=null && !name_email.equals(""))
-            return "redirect:/index";
+            return "redirect:/";
         return "login";
     }
 
@@ -102,7 +102,7 @@ public class VipController {
         CookieUtil.addLoginCookie(response,vip);
         session.setAttribute("vip",vip);
         logger.info("Vip:  "+vip.getName()+"|"+vip.getEmail()+"  成功登录!");
-        return "redirect:/index";
+        return "redirect:/";
     }
 
 
@@ -114,15 +114,16 @@ public class VipController {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @RequestMapping(value = "logout",method = RequestMethod.GET)
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
     public String logout(HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         CookieUtil.removeLoginCookie(response);
+        request.getSession().removeAttribute("vip");
         if (name_email!=null && !name_email.equals("")){
             name_email = URLDecoder.decode(name_email, ConstantsUtil.ENCODING);
             logger.info("Vip:  "+name_email+"  成功登出!");
         }
-        return "redirect:/index";
+        return "redirect:/";
     }
 
 

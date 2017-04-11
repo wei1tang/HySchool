@@ -28,7 +28,12 @@
 <body>
 
 <div class="container">
-    <%@include file="public/header-search.jsp"%>
+    <c:if test="${sessionScope.vip eq null}">
+        <%@include file="header/unsign-search-header.jsp"%>
+    </c:if>
+    <c:if test="${sessionScope.vip ne null}">
+        <%@include file="header/signed-search-header.jsp"%>
+    </c:if>
 
     <%@include file="public/slider.jsp"%>
 
@@ -87,7 +92,7 @@
     $(function(){
         $("#page").Page({
             totalPages: ${totalPages},//分页总数
-            liNums: 8,//分页的数字按钮数(建议取奇数)
+            liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
             callBack : function(page){
                 //console.log(page)

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2017-04-10 00:42:30
+Date: 2017-04-12 00:32:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `audit_approve_history` (
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_goods_history`;
 CREATE TABLE `audit_goods_history` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
   `is_pass` tinyint(1) NOT NULL DEFAULT '0',
@@ -48,7 +48,7 @@ CREATE TABLE `audit_goods_history` (
 -- ----------------------------
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `state` int(1) NOT NULL COMMENT '栏目的状态',
   `description` varchar(255) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `categories` (
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(5) NOT NULL,
   `vip_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `goods` (
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_comments`;
 CREATE TABLE `goods_comments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL,
   `vip_id` int(11) NOT NULL,
   `star_rating` double NOT NULL COMMENT '星级，所有用户的星级平均数是发布人的星级',
@@ -96,7 +96,7 @@ CREATE TABLE `goods_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_images`;
 CREATE TABLE `goods_images` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE `goods_images` (
 -- ----------------------------
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `to_vip_id` int(11) NOT NULL,
   `from_vip_id` int(11) NOT NULL,
   `content` varchar(255) NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE `notice` (
 -- ----------------------------
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_number` int(11) NOT NULL,
   `vip_buyer_id` int(11) NOT NULL,
   `vip_seller_id` int(11) NOT NULL,
@@ -152,7 +152,7 @@ CREATE TABLE `order` (
 -- ----------------------------
 DROP TABLE IF EXISTS `order_comments`;
 CREATE TABLE `order_comments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `seller_id` int(11) NOT NULL,
   `buyer_id` int(11) NOT NULL,
@@ -168,7 +168,7 @@ CREATE TABLE `order_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `order_goods_list`;
 CREATE TABLE `order_goods_list` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -193,14 +193,14 @@ CREATE TABLE `vip` (
   `update_time` timestamp NULL DEFAULT NULL,
   `reset_password_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vip_address
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_address`;
 CREATE TABLE `vip_address` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `vip_id` int(11) NOT NULL,
   `address` varchar(255) DEFAULT NULL COMMENT '详细地址',
   `province_code` varchar(6) DEFAULT NULL COMMENT '省份城市编码，下拉菜单用',
@@ -220,7 +220,7 @@ CREATE TABLE `vip_address` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_approve`;
 CREATE TABLE `vip_approve` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `vip_id` int(11) NOT NULL,
   `real_name` varchar(255) NOT NULL,
   `gender` tinyint(1) NOT NULL DEFAULT '0',
@@ -239,7 +239,7 @@ CREATE TABLE `vip_approve` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_goods_collections`;
 CREATE TABLE `vip_goods_collections` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `vip_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
   `is_delete` tinyint(1) DEFAULT '0',
@@ -252,7 +252,7 @@ CREATE TABLE `vip_goods_collections` (
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_messages_board`;
 CREATE TABLE `vip_messages_board` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `owner_id` int(11) NOT NULL,
   `from_id` int(11) NOT NULL,
   `content` varchar(255) DEFAULT NULL,

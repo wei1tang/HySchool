@@ -26,7 +26,7 @@ public class AdminINterceptor extends HandlerInterceptorAdapter {
         Vip vip = vipMapper.findVipByEmail(arr[1]);
         if (vip.getUserType() != ConstantsUtil.USER_ADMIN && vip.getUserType() != ConstantsUtil.USER_SUPER_ADMIN){
             String path = request.getContextPath();
-            response.sendRedirect(path+"/index");
+            response.sendRedirect(path+"/");
             return false;
         }
         return true;
