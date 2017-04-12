@@ -78,6 +78,7 @@
                         ${sessionScope.vip.name}
                     </li>
                     <c:if test="${sessionScope.vip.userType gt 1}">
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info">个人设置</a></li>
                         <li class="item"><a href="/" >认证审核</a></li>
                         <li class="item"><a href="/" >商品审核</a></li>
                     </c:if>

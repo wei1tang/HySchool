@@ -545,32 +545,21 @@ html,body{
 /*-----------end footer-------------*/
 
 /*-----bootstracp.css conflict with search solve -----*/
-input,
-button,
-select,
-textarea {
-    font-family: inherit;
-    font-size: inherit;
+#avatar-modal input,
+#avatar-modal  button,
+#avatar-modal select,
+#avatar-modal textarea {
     line-height: inherit;
 }
-* {
+#avatar-modal * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-*:before,
-*:after {
+#avatar-modal *:before,
+#avatar-modal *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-    margin: 0;
-    font: inherit;
-    color: inherit;
 }
 /*-----bootstracp.css conflict with search solve -----*/
