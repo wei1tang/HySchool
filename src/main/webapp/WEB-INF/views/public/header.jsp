@@ -16,21 +16,19 @@
         }
         .me .item{
             display: none;
+            text-align: center;
             margin-top:0;
             background-color: white;
             border-bottom: 1px solid rgba(0,0,0,.1);
             height: 40px;
         }
         .me li a{
-            margin-left: 22%;
             text-decoration:none;
             cursor: pointer;
             color: #2d3238;
             opacity: 0.5;/*设置div元素不透明度*/
         }
-        .me li .last{
-            margin-left: 15%;
-        }
+
         .me li a:hover,.me li a:active {
             opacity: 1;
         }
