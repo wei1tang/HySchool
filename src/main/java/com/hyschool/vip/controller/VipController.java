@@ -51,7 +51,6 @@ public class VipController {
     /**
      * get返回登录页面
      *
-     * @param request
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -70,13 +69,13 @@ public class VipController {
      * @param password
      * @param model
      * @param response
-     * @param session
+     * @param request
      * @return
      * @throws UnsupportedEncodingException
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String doLogin(@RequestParam("email")String email, @RequestParam("password")String password,
-                          Model model, HttpServletResponse response, HttpSession session) throws UnsupportedEncodingException {
+                          Model model, HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {
         String error;
         boolean isValid = EmailValidator.getInstance().isValid(email);
         if (email == null || email.equals("") || !isValid){
@@ -100,7 +99,7 @@ public class VipController {
             return "login";
         }
         CookieUtil.addLoginCookie(response,vip);
-        session.setAttribute("vip",vip);
+        request.getSession().setAttribute("vip",vip);
         logger.info("Vip:  "+vip.getName()+"|"+vip.getEmail()+"  成功登录!");
         return "redirect:/";
     }
