@@ -89,6 +89,7 @@
             totalPages: ${totalPages},//分页总数
             liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
+            pageHref:'http',//当前页面链接,pageHref+i(页面数字)=(string类型)href页面的链接
             callBack: function (page) {
                 //console.log(page)
             }

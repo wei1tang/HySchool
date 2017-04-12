@@ -17,7 +17,7 @@
 <body>
 
 <div class="container">
-    <%@include file="../header/unsign-search-header.jsp"%>
+    <%@include file="../public/header.jsp"%>
 
     <div class="admin">
         <div class="title">
@@ -87,6 +87,7 @@
             totalPages:40,//分页总数
             liNums: 8,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
+            pageHref:'http',//当前页面链接,pageHref+i(页面数字)=(string类型)href页面的链接
             callBack : function(page){
                 //console.log(page)
             }
