@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="用户名" id="username" easyform="length:4-16;char-chinese;" message="用户名必须为4—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
+                        <input type="text" name="name" placeholder="用户名" id="username" easyform="length:1-16;char-chinese;" message="用户名必须为1—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
                     </div>
 
                     <div class="form-group">
