@@ -5,6 +5,39 @@
     <link rel="stylesheet" type="text/css" href="../../../static/css/index-search-form.css"/><!--搜索栏css-->
     <script type="text/javascript" src="../../../static/js/index-search.js"></script><!--搜索栏js-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
+
+    <style type="text/css">
+        .me{
+            overflow: visible;
+        }
+        .me li{
+            margin-top: -16px;
+            list-style-type:none;
+        }
+        .me .item{
+            display: none;
+            margin-top:0;
+            background-color: white;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            height: 40px;
+        }
+        .me li a{
+            margin-left: 22%;
+            text-decoration:none;
+            cursor: pointer;
+            color: #2d3238;
+            opacity: 0.5;/*设置div元素不透明度*/
+        }
+        .me li .last{
+            margin-left: 15%;
+        }
+        .me li a:hover,.me li a:active {
+            opacity: 1;
+        }
+        #user-img:hover + .me .item,#user-img:active + .me .item{
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -33,21 +66,24 @@
 
 
         <c:if test="${sessionScope.vip ne null}">
-            <div class="sign">
-                <c:if test="${sessionScope.vip.userType gt 1}">
-                    <a href="/" class="list">认证审核</a>
-                    <a href="/" class="list">商品审核</a>
-                </c:if>
-                <c:if test="${sessionScope.vip.userType gt 2}">
-                    <a href="/" class="list">管理员审核</a>
-                </c:if>
+            <div class="sign" id="sign">
+
+
             </div>
 
             <div class="me" id="me">
-                <div class="avatar-link" title="user">
-                    <img src="../../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
+                <ul class="avatar-link" title="user">
+                    <li id="user-img"><img src="../../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
                         ${sessionScope.vip.name}
-                </div>
+                    </li>
+                    <c:if test="${sessionScope.vip.userType gt 1}">
+                        <li class="item"><a href="/" >认证审核</a></li>
+                        <li class="item"><a href="/" >商品审核</a></li>
+                    </c:if>
+                    <c:if test="${sessionScope.vip.userType gt 2}">
+                        <li class="item"><a href="/" class="last">管理员审核</a></li>
+                    </c:if>
+                </ul>
                 <div class="button-link">
                     <a href="${pageContext.request.contextPath}/vip/logout"
                        class="button button-primary button-rounded button-small">退出登录</a>
@@ -66,6 +102,19 @@
 <script>
     $(function () {
         console.info("${pageContext.request.requestURI}")
+    })
+</script>
+
+<script type="text/javascript">
+    $('#user-img').mouseenter(function () {
+        $('.header .me .item').css({
+            'display':'block'
+        });
+    });
+    $('.header .me').mouseleave(function () {
+        $('.header .me .item').css({
+            'display':'none'
+        });
     })
 </script>
 </body>

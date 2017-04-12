@@ -121,10 +121,6 @@
                         {
                             ev.counter = 0;
 
-                            var $submit_button =$("button");
-                            $submit_button.attr("type", "submit");
-
-
                             if (!!ev.success)    //成功事件
                                 ev.success();
 
@@ -132,6 +128,9 @@
                             {
                                 ev.form.submit();
                             }
+
+                            var $submit_button =$("button");
+                            $submit_button.attr("type", "submit");
                         }
                     };
 
