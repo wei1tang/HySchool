@@ -35,6 +35,9 @@
         #user-img:hover + .me .item,#user-img:active + .me .item{
             display: block;
         }
+        .list{
+            text-decoration: none;/*消除a下划线*/
+        }
     </style>
 </head>
 <body>
