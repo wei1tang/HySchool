@@ -20,7 +20,7 @@
     <!--<div class="logo"></div>-->
     <div class="settings"></div>
     <ul>
-        <li><a href="${pageContext.request.contextPath}/index"><i class="fa fa-home fa-lg"></i><span class="nav-text">首页</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/"><i class="fa fa-home fa-lg"></i><span class="nav-text">首页</span></a></li>
         <!--侧边栏鼠标未移动到其上时显示斜体字-->
         <li><a href="${pageContext.request.contextPath}/category1"><i class="fa fa-bicycle fa-lg"></i><span class="nav-text">校园代步</span></a></li>
 

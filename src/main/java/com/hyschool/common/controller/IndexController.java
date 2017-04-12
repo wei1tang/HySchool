@@ -40,7 +40,7 @@ public class IndexController {
      * @param model
      * @return
      */
-    @RequestMapping(value = {"/","/index"},method = RequestMethod.GET)
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     public String goIndex(Model model, HttpServletRequest request){
         String name_email = CookieUtil.getLoginVipNameEmail(request);
         String[] arr = StringUtils.split(name_email, "_");
@@ -53,6 +53,8 @@ public class IndexController {
         List<Goods> goodsList = goodsService.byCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         Integer count = goodsService.countByCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        String uri = request.getRequestURI();
+        model.addAttribute("pageUri", uri + "pno");
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("goodsList", goodsList);
@@ -66,8 +68,8 @@ public class IndexController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "/index/pno{pageNo}",method = RequestMethod.GET)
-    public String goIndex(@PathVariable("pageNo") Integer pageNo, Model model){
+    @RequestMapping(value = "/pno{pageNo}",method = RequestMethod.GET)
+    public String goIndex(@PathVariable("pageNo") Integer pageNo, Model model, HttpServletRequest request){
         if (pageNo == null || pageNo < 1){
             pageNo = PageUtil.DEFAULT_PAGE_NO;
         }
@@ -75,6 +77,8 @@ public class IndexController {
         List<Goods> goodsList = goodsService.byCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         Integer count = goodsService.countByCategoryAndPass(PageUtil.DEFAULT_CATEGORY_ID);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        String uri = request.getRequestURI();
+        model.addAttribute("pageUri", uri.substring(0, uri.length()-1));
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("goodsList", goodsList);

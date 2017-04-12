@@ -74,7 +74,7 @@
 
             <div class="me" id="me">
                 <ul class="avatar-link" title="user">
-                    <li id="user-img"><img src="../../../static/images/index-avatar.png" class="avatar" alt="avatar"/>
+                    <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>
                         ${sessionScope.vip.name}
                     </li>
                     <c:if test="${sessionScope.vip.userType gt 1}">
@@ -102,7 +102,8 @@
 </div>
 <script>
     $(function () {
-        console.info("${pageContext.request.requestURI}")
+        console.info("${pageContext.request.requestURI}");
+        console.info("${pageContext.request.contextPath}");
     })
 </script>
 

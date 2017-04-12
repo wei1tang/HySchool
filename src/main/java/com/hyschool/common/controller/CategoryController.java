@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,16 +22,16 @@ public class CategoryController {
     @Autowired
     GoodsService goodsService;
 
-
     /**
      * 根据category的id显示第一页商品
      *
      * @param categoryId
      * @param model
+     * @param request
      * @return
      */
     @RequestMapping(value = "/category{categoryId}", method = RequestMethod.GET)
-    public String byCategoryId(@PathVariable("categoryId") Integer categoryId, Model model){
+    public String byCategoryId(@PathVariable("categoryId") Integer categoryId, Model model, HttpServletRequest request){
         if (categoryId == null || categoryId < 1 || categoryId > 12){
             categoryId = PageUtil.DEFAULT_CATEGORY_ID;
         }
@@ -39,6 +40,8 @@ public class CategoryController {
         List<Goods> goodsList = goodsService.byCategoryAndPass(categoryId, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         Integer count = goodsService.countByCategoryAndPass(categoryId);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        String uri = request.getRequestURI();
+        model.addAttribute("pageUri", uri + "/pno");
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("goodsList", goodsList);
@@ -50,12 +53,13 @@ public class CategoryController {
      * 根据categoryId和pageNo生成分页
      *
      * @param categoryId
+     * @param request
      * @param pageNo
      * @param model
      * @return
      */
     @RequestMapping(value = "/category{categoryId}/pno{pageNo}", method = RequestMethod.GET)
-    public String byIdAndPageNo(@PathVariable("categoryId") Integer categoryId,
+    public String byIdAndPageNo(@PathVariable("categoryId") Integer categoryId, HttpServletRequest request,
                                 @PathVariable("pageNo") Integer pageNo, Model model){
         if (categoryId == null || categoryId < 1 || categoryId > 12){
             categoryId = PageUtil.DEFAULT_CATEGORY_ID;
@@ -67,6 +71,8 @@ public class CategoryController {
         List<Goods> goodsList = goodsService.byCategoryAndPass(categoryId, start, PageUtil.Goods_DEFAULT_PAGE_SIZE);
         Integer count = goodsService.countByCategoryAndPass(categoryId);
         Integer totalPages = PageUtil.getTotalPageCount(count, PageUtil.Goods_DEFAULT_PAGE_SIZE);
+        String uri = request.getRequestURI();
+        model.addAttribute("pageUri", uri.substring(0, uri.length()-1));
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("goodsList", goodsList);
