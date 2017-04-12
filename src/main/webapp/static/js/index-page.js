@@ -15,6 +15,7 @@
     hasLastPage: true,//是否有末页按钮
     hasPrv: true,//是否有前一页按钮
     hasNext: true,//是否有后一页按钮
+    pageHref:'http',//当前页面链接
     callBack : function(page){
         //回掉，page选中页数
     }
@@ -31,14 +32,14 @@
       var n = opts.liNums;
       var active = opts.activeClass;
       var str = '';
-      var str1 = '<li><a href="javascript:" class="'+ active +'">1</a></li>';
+      var str1 = '<li><a href=" '+ opts.pageHref + 1 +' " class="'+ active +'">1</a></li>';
       if (l > 1&&l < n+1) {
         for (i = 2; i < l + 1; i++) {
-          str += '<li><a href="javascript:">' + i + '</a></li>';
+          str += '<li><a href=" '+ opts.pageHref + i+ ' ">' + i + '</a></li>';
         }
       }else if(l > n){
         for (i = 2; i < n + 1; i++) {
-          str += '<li><a href="javascript:">' + i + '</a></li>';
+          str += '<li><a href=" '+ opts.pageHref + i+ ' ">' + i + '</a></li>';
         }
       }
       var dataHtml = '';
@@ -163,7 +164,7 @@
           var pageStart = activePage - (nums/2-1);
           var str1 = '';
           for(i=0;i<n;i++){
-            str1 += '<li><a href="javascript:" class="">' + (pageStart+i) + '</a></li>'
+            str1 += '<li><a href=" '+ opts.pageHref + (pageStart+i)+ ' " class="">' + (pageStart+i) + '</a></li>'
           }
           obj.find('ul').html(str1);
           obj.find('ul li').eq(nums/2-1).find('a').addClass(active);
@@ -173,11 +174,11 @@
           var str1 = '';
           if(l>n-1){
             for(i=0;i<n;i++){
-              str1 += '<li><a href="javascript:" class="">' + (i+1) + '</a></li>'
+              str1 += '<li><a href=" '+ opts.pageHref + (i+1)+ ' " class="">' + (i+1) + '</a></li>'
             }
           }else{
             for(i=0;i<l;i++){
-              str1 += '<li><a href="javascript:" class="">' + (i+1) + '</a></li>'
+              str1 += '<li><a href=" '+ opts.pageHref + (i+1)+ ' " class="">' + (i+1) + '</a></li>'
             }
           }
           obj.find('ul').html(str1);
@@ -188,13 +189,13 @@
           var str1 = '';
           if(l>n-1){
             for(i=l-(n-1);i<l+1;i++){
-              str1 += '<li><a href="javascript:" class="">' + i + '</a></li>'
+              str1 += '<li><a href=" '+ opts.pageHref + i + ' " class="">' + i + '</a></li>'
             }
            obj.find('ul').html(str1);
            obj.find('ul li').eq(index).find('a').addClass(active);
           }else{
             for(i=0;i<l;i++){
-              str1 += '<li><a href="javascript:" class="">' + (i+1) + '</a></li>'
+              str1 += '<li><a href=" '+ opts.pageHref + (i+1)+ ' " class="">' + (i+1) + '</a></li>'
             }
            obj.find('ul').html(str1);
            obj.find('ul li').eq(index).find('a').addClass(active);

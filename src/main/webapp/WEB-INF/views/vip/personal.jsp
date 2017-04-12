@@ -19,7 +19,7 @@
 <body>
 
 <div class="container">
-    <%@include file="../header/unsign-search-header.jsp"%>
+    <%@include file="../public/header.jsp"%>
     <div class="top">
         <div class="first">
             <div class="level">
