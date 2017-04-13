@@ -13,4 +13,7 @@ public interface GoodsService {
 
     Integer countByCategoryAndPass(Integer categoryId);
 
+    void createGoods(Goods goods);
+
+    void addOneComment(Integer id);
 }

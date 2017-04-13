@@ -24,4 +24,28 @@
         SELECT COUNT(*) FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER}
     </select>
 
+    <insert id="createGoods" parameterType="goods">
+        INSERT INTO goods (category_id,vip_id,name,state,price,stock,description,transaction_address,create_time)
+        VALUES (
+                #{categoryId,jdbcType=INTEGER},
+                #{vipId,jdbcType=INTEGER},
+                #{name,jdbcType=VARCHA},
+                #{state,jdbcType=INTEGER},
+                #{price,jdbcType=DOUBLE},
+                #{stock,jdbcType=INTEGER},
+                #{description,jdbcType=VARCHAR},
+                #{transactionAddress,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP}
+                )
+    </insert>
+
+    <update id="addOneComment" parameterType="INTEGER">
+        UPDATE goods SET total_comments=total_comments+1 WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="countReleaseGoods" resultType="INTEGER">
+        SELECT COUNT(*) FROM goods WHERE vip_id=#{vipId,jdbcType=INTEGER} AND state=#{state,jdbcType=Integer}
+    </select>
+
+
 </mapper>

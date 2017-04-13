@@ -33,8 +33,8 @@
     <div class="user">
         <div class="left">
             <div class="level">
-                <img class="avatar" src="../../../static/images/index-avatar.png"/>
-                <div class="username">测试账号</div>
+                <img class="avatar" src="${vip.avatarUrl}"/>
+                <div class="username">${vip.name}</div>
                 <div class="level-content">
                     积分: 0
                 </div>

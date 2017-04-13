@@ -20,11 +20,11 @@ public interface VipService {
 
     void createVip(String name, String email, String password, Date createTime);
 
-    void updateInvalidVip(String name, String email,String password, Date createTime);
+    void updateInvalidVip(String name, String email, String password, Date createTime);
 
-    void updateResetPasswordTime(Date resetPasswordTime,String email);
+    void updateResetPasswordTime(Date resetPasswordTime, String email);
 
-    void resetPassword(String password,String email);
+    void resetPassword(String password, String email);
 
     void updateInfo(Vip vip);
 

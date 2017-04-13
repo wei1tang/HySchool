@@ -38,4 +38,17 @@ public class GoodsServiceImpl implements GoodsService {
     public Integer countByCategoryAndPass(Integer categoryId) {
         return goodsMapper.countByCategoryAndState(categoryId, ConstantsUtil.GOODS_PASS);
     }
+
+    @Override
+    public void createGoods(Goods goods) {
+        goods.setState(ConstantsUtil.GOODS_CREATED);
+        goods.setUv(0);
+        goods.setTotalComments(0);
+        goodsMapper.createGoods(goods);
+    }
+
+    @Override
+    public void addOneComment(Integer id) {
+        goodsMapper.addOneComment(id);
+    }
 }

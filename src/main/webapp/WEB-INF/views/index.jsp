@@ -85,7 +85,7 @@
 <!-- 分页 开始 -->
 <script type="text/javascript">
     $(function () {
-        var currentNum=$("#page").Page({
+        $("#page").Page({
             totalPages: ${totalPages},//分页总数
             liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
@@ -96,7 +96,7 @@
             }
         });
     });
-//将div元素改为a标签,当点击是添加href链接,为pageHref+i(页面数字),会自动跳转到第i页,注意要从后台将currentpage补上否则出错
+//将div元素改为a标签,当点击时添加href链接,为pageHref+i(页面数字),会自动跳转到第i页,注意要从后台将currentpage补上否则出错
 </script>
 <!-- 分页 结束 -->
 

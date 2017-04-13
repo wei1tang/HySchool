@@ -9,9 +9,13 @@ import java.util.List;
 @Repository
 public interface GoodsMapper {
 
-    List<Goods> byCategoryAndState(@Param("categoryId") Integer  categoryId, @Param("start") Integer start,
-                                     @Param("pageSize") Integer pageSize, @Param("state") Integer state);
+    List<Goods> byCategoryAndState(@Param("categoryId") Integer categoryId, @Param("start") Integer start,
+                                   @Param("pageSize") Integer pageSize, @Param("state") Integer state);
 
     Integer countByCategoryAndState(@Param("categoryId") Integer categoryId, @Param("state") Integer state);
+
+    void createGoods(Goods goods);
+
+    void addOneComment(@Param("id") Integer id);
 
 }
