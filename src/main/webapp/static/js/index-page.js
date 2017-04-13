@@ -37,8 +37,7 @@ var returnNum=null;
       var str = '';
       if(opts.currentPage==1){
           fpagePrv(0);
-      }
-      if (l > 1&&l < n+1) {
+      }else if (l > 1&&l < n+1) {
         for (i = 2; i < l + 1; i++) {
             if(opts.currentPage==i){
                 str += '<li><a href=" '+ opts.pageHref + i+ ' " class="'+ active +' ">' + i + '</a></li>';
