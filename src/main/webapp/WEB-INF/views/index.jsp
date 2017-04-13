@@ -90,11 +90,13 @@
             liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
             pageHref:'${pageContext.request.contextPath}'+'${pageUri}',//当前页面链接,pageHref+i(页面数字)=(string类型)href页面的链接
+            currentPage:5,//当前页数
             callBack: function (page) {
                 //console.log(page)
             }
         });
-    })
+    });
+//将div元素改为a标签,当点击时添加href链接,为pageHref+i(页面数字),会自动跳转到第i页,注意要从后台将currentpage补上否则出错
 </script>
 <!-- 分页 结束 -->
 
