@@ -24,7 +24,7 @@
 
         <!--指定 MyBatis 所用日志的具体实现，未指定时将自动查找-->
         <!--控制台打印sql语句以及查询结果-->
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
 
         <!--指定 MyBatis 增加到日志名称的前缀-->
         <setting name="logPrefix" value="MybatisLog:"/>

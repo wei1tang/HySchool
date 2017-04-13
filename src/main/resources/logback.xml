@@ -8,13 +8,13 @@
     -->
 
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="E:/HySchool/logs/"/>
-
+    <property name="LOG_HOME" value="E:/HySchool/logs"/>
+    <property name="defaultPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t] %c - %m%replace(%ex){'\n', '\t\t'}%nopex%n"></property>
 
     <!-- 控制台输出 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>${defaultPattern}</pattern>
         </encoder>
     </appender>
 
@@ -22,68 +22,62 @@
     <!--输出DEBUG的log信息,主要捕获运行时异常-->
     <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/debug/debug.log</file>
-        <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/debug/debug.log.%d{yyyy-MM-dd}</FileNamePattern>
-            <MaxHistory>90</MaxHistory>
+            <fileNamePattern>${LOG_HOME}/debug/debug.log.%d{yyyy-MM-dd}</fileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
+            <pattern>${defaultPattern}</pattern>
         </encoder>
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
     </appender>
 
 
     <!--输出INFO信息的日志-->
     <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/info/info.log</file>
-        <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOG_HOME}/info/info.log.%d{yyyy-MM-dd}</FileNamePattern>
-            <MaxHistory>90</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
+            <pattern>${defaultPattern}</pattern>
         </encoder>
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
+    </appender>
+
+    <!--输出WARN信息的日志-->
+    <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/warn/warn.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/warn/warn.log.%d{yyyy-MM-dd}</FileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>${defaultPattern}</pattern>
+        </encoder>
     </appender>
 
     <!--输出error的log信息,用try catch捕获异常打印到日志文件-->
     <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/error/error.log</file>
-        <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOG_HOME}/error/error.log.%d{yyyy-MM-dd}</FileNamePattern>
-            <MaxHistory>90</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
+            <pattern>${defaultPattern}</pattern>
         </encoder>
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
     </appender>
 
     <!--logback只支持一个文件一个日志级别-->
@@ -92,6 +86,7 @@
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="DEBUG" />
         <appender-ref ref="INFO" />
+        <appender-ref ref="WARN" />
         <appender-ref ref="ERROR"/>
     </root>
 
