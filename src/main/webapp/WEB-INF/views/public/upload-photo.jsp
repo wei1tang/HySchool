@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
 
@@ -41,8 +42,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="avatar-preview preview-lg" id="imageHead"></div>
-                                <!--<div class="avatar-preview preview-md"></div>
-                        <div class="avatar-preview preview-sm"></div>-->
+                                <div class="avatar-preview preview-md"></div>
+                                <div class="avatar-preview preview-sm"></div>
                             </div>
                         </div>
                         <div class="row avatar-btns">
@@ -86,7 +87,71 @@
 </div>
 <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 <script src="../../../static/js/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="../../../static/js/user-upload-pho.js"></script>
+
+<script language="JavaScript">
+//做个下简易的验证  大小 格式
+    $('#avatarInput').on('change', function(e) {
+        var filemaxsize = 1024 * 5;//5M
+        var target = $(e.target);
+        var Size = target[0].files[0].size / 1024;
+        if(Size > filemaxsize) {
+            alert('图片过大，请重新选择!');
+            $(".avatar-wrapper").childre().remove;
+            return false;
+        }
+        if(!this.files[0].type.match(/image.*/)) {
+            alert('请选择正确的图片!')
+        } else {
+            var filename = document.querySelector("#avatar-name");
+            var texts = document.querySelector("#avatarInput").value;
+            var teststr = texts; //你这里的路径写错了
+            testend = teststr.match(/[^\\]+\.[^\(]+/i); //直接完整文件名的
+            filename.innerHTML = testend;
+        }
+
+    });
+
+    $(".avatar-save").on("click", function() {
+        var img_lg = document.getElementById('imageHead');
+        // 截图小的显示框内的内容
+        html2canvas(img_lg, {
+            allowTaint: true,
+            taintTest: false,
+            onrendered: function(canvas) {
+                canvas.id = "mycanvas";
+                //生成base64图片数据
+                var dataUrl = canvas.toDataURL("image/jpeg");
+                var newImg = document.createElement("img");
+                newImg.src = dataUrl;
+                imagesAjax(dataUrl)
+            }
+        });
+    })
+
+    function imagesAjax(src) {
+        var data = {};
+        console.info(src);
+        data.img = src;
+        $.ajax({
+            url: "/vip/changeAvatar",
+            data: data,
+            type: "POST",
+            dataType: 'json',
+            success: function(re) {
+                if(re.status == '1') {
+                    $('.user_pic img').attr('src',src );
+                }
+            }
+        });
+    }
+
+    //加上下面代码,ajax才能post
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function (e, xhr,options) {
+        xhr.setRequestHeader(header, token);
+    });
+</script>
 <!--结束上传pho-->
 
 </body>

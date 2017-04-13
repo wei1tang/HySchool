@@ -98,12 +98,12 @@
         </c:if>
     </div>
 </div>
-<script>
+<%--<script>
     $(function () {
         console.info("${pageContext.request.requestURI}");
         console.info("${pageContext.request.contextPath}");
     })
-</script>
+</script>--%>
 
 <script type="text/javascript">
     $('#user-img').mouseenter(function () {

@@ -333,4 +333,12 @@ public class VipController {
     }
 
 
+    @RequestMapping(value = "/changeAvatar", method = RequestMethod.POST)
+    public String changeAvatar(HttpServletRequest request){
+        System.out.println(request.getParameter("img"));
+        System.out.println("upload");
+        return "vip/info";
+    }
+
+
 }
