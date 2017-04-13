@@ -90,7 +90,11 @@
             liNums: 9,//分页的数字按钮数(建议取奇数)
             activeClass: 'activP', //active 类样式定义
             pageHref:'${pageContext.request.contextPath}'+'${pageUri}',//当前页面链接,pageHref+i(页面数字)=(string类型)href页面的链接
+<<<<<<< HEAD
+            currentPage:'${pageNo}',//当前页数
+=======
             currentPage:${pageNo},//当前页数
+>>>>>>> 3c2492793cc591d858b2b90d86b6c21e7a0ab4e8
             callBack: function (page) {
                 //console.log(page)
             }

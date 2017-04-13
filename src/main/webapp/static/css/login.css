@@ -120,6 +120,7 @@ li:after, div:after, ul:after {
     -webkit-transition: 0.3s; /* Safari 和 Chrome */
     transition: 0.3s; /*CSS属性(none|all|属性)  持续时间  时间函数  延迟时间*/
     opacity: 0.5; /*设置div元素不透明度*/
+    text-decoration: none;/*消除a下划线*/
     color: #2d3238;
 }
 
@@ -140,7 +141,7 @@ li:after, div:after, ul:after {
 
 .me {
     float: right;
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 100%;
     margin-left: 20px;
 }

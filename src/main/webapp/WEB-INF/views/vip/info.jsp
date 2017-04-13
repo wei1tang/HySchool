@@ -29,7 +29,11 @@
 
 <div class="container">
     <%@include file="../public/header.jsp"%>
-
+    <style type="text/css">
+        #user-img{
+            margin-top: 0;
+        }
+    </style>
     <div class="user">
         <div class="left">
             <div class="level">
@@ -68,11 +72,11 @@
                 <!--个人信息设置-->
                 <form class="setting active" action="${pageContext.request.contextPath}/vip/changeInfo" method="post" id="tab-1">
                     <div class="setting-item">
-                        <label for="email"><i>*</i>邮&nbsp;&nbsp;&nbsp;箱：</label>
+                        <label for="email"><i>*</i>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
                         <input type="text" value="${vip.email}" id="email" name="email" disabled>
                     </div>
                     <div class="setting-item">
-                        <label for="name"><i>*</i>用户名：</label>
+                        <label for="name"><i>*</i>用&nbsp;户&nbsp;名&nbsp;：</label>
                         <input type="text" value="${vip.name}" id="name" name="name" easyform="length:1-16;char-chinese;real-time;" message="用户名必须为1—16位的英文字母,数字或中文" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!">
                     </div>
                     <div class="setting-item">
@@ -81,7 +85,7 @@
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="setting-item">
-                        <span class="title"><i>*</i>头像上传</span>
+                        <span class="title"><i>*</i>头像上传&nbsp;&nbsp;&nbsp;</span>
                         <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#avatar-modal" >图片上传</button>
                     </div>
                     <div class="setting-item">

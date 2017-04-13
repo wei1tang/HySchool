@@ -7,9 +7,6 @@
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
 
     <style type="text/css">
-        .me{
-            overflow: visible;
-        }
         .me li{
             margin-top: -16px;
             list-style-type:none;
