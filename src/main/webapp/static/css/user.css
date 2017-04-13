@@ -549,8 +549,6 @@ input,
 button,
 select,
 textarea {
-    font-family: inherit;
-    font-size: inherit;
     line-height: inherit;
 }
 * {
@@ -569,8 +567,6 @@ input,
 optgroup,
 select,
 textarea {
-    margin: 0;
     font: inherit;
-    color: inherit;
 }
 /*-----bootstracp.css conflict with search solve -----*/
