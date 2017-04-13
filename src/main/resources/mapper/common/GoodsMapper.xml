@@ -29,7 +29,7 @@
         VALUES (
                 #{categoryId,jdbcType=INTEGER},
                 #{vipId,jdbcType=INTEGER},
-                #{name,jdbcType=VARCHA},
+                #{name,jdbcType=VARCHAR},
                 #{state,jdbcType=INTEGER},
                 #{price,jdbcType=DOUBLE},
                 #{stock,jdbcType=INTEGER},
@@ -44,7 +44,7 @@
     </update>
 
     <select id="countReleaseGoods" resultType="INTEGER">
-        SELECT COUNT(*) FROM goods WHERE vip_id=#{vipId,jdbcType=INTEGER} AND state=#{state,jdbcType=Integer}
+        SELECT COUNT(*) FROM goods WHERE vip_id=#{vipId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER}
     </select>
 
 

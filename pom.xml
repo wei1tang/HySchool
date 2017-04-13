@@ -324,6 +324,18 @@
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
         </dependency>
+
+        <!--缓存实现相隔一定时间对同一用户或商品审核-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-jdk5</artifactId>
+            <version>17.0</version>
+        </dependency>
     </dependencies>
     <!--jar包依赖 end-->
 
