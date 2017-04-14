@@ -14,7 +14,7 @@
     <link href="../../../static/css/webuploader.css" type="text/css" rel="stylesheet"/><!--多图上传css-->
 
     <!--上传照片-->
-    <script src="../../../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../../../static/js/jquery.min.js"></script><!--3.1.1与图片上传冲突->
     <link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css">
     <link href="../../../static/css/user-cropper.css" rel="stylesheet">
     <link href="../../../static/css/user-sitelogo.css" rel="stylesheet">
