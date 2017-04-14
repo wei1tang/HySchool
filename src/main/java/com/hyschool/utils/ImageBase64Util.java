@@ -1,8 +1,8 @@
 package com.hyschool.utils;
 
-import org.springframework.security.crypto.codec.Base64;
 
 import java.io.*;
+import java.util.Base64;
 
 /**
  * Created by LJW on 2017/4/14.
@@ -21,9 +21,9 @@ public class ImageBase64Util {
     public static void main(String[] args) throws IOException {
         String str = "lv jinwang";
         byte[] bytes = str.getBytes();
-        String encodeStr = new String(Base64.encode(bytes));
+        String encodeStr = new String(Base64.getEncoder().encode(bytes));
         System.out.println(encodeStr);
-        byte[] decodeBytes = Base64.decode(encodeStr.getBytes());
+        byte[] decodeBytes = Base64.getDecoder().decode(encodeStr.getBytes());
         String decodeStr = new String(decodeBytes, "UTF-8");
         System.out.println(decodeStr);
 
@@ -58,7 +58,7 @@ public class ImageBase64Util {
                 }
             }
         }
-        String base64EncodeString = new String(Base64.encode(data));
+        String base64EncodeString = new String(Base64.getEncoder().encode(data));
         return base64EncodeString;// 返回Base64编码过的字节数组字符串
     }
 
@@ -93,7 +93,7 @@ public class ImageBase64Util {
         }
         try {
             // Base64解码
-            byte[] bytes = Base64.decode(base64EncodeString.getBytes());
+            byte[] bytes = Base64.getDecoder().decode(base64EncodeString.getBytes());
             for (int i = 0; i < bytes.length; ++i) {
                 if (bytes[i] < 0) {// 调整异常数据
                     bytes[i] += 256;
