@@ -75,5 +75,10 @@ public class VipServiceImpl implements VipService {
     public void resetType(Vip vip)  { vipMapper.resetType(vip);  }
 
     @Override
+    public void updateAvatar(Vip vip) {
+        vipMapper.updateAvatar(vip);
+    }
+
+    @Override
     public List<Vip> findVipAll(){ return vipMapper.findVipAll();}
 }

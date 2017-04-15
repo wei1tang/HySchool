@@ -1,13 +1,6 @@
 <configuration debug="false">
     <!-- ERROR、WARN、INFO、DEBUG-->
-    <!--
-    例如spring的controller抛出java运行时异常的时候,
-    可以设置root为DEBUG级别捕获异常,然后存储到STDOUT路径下,
-    因为此时抛出的异常属于DEBUG类型
-    不同级别日志路径分开
-    -->
 
-    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="E:/HySchool/logs"/>
     <property name="defaultPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t] %c - %m%replace(%ex){'\n', '\t\t'}%nopex%n"></property>
 
@@ -19,17 +12,14 @@
     </appender>
 
 
-
-    <!--输出INFO信息的日志-->
-    <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/info/info.log</file>
+    <!--输出INFO,WARN,ERROR信息的日志-->
+    <appender name="STDOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/stdout/hyschool-stdout.log</file>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>INFO</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
+            <level>INFO</level>     <!--默认情况大于等于INFO就接受-->
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/info/info.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <FileNamePattern>${LOG_HOME}/stdout/hyschool-stdout.%d{yyyy-MM-dd}.log</FileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <charset>UTF-8</charset>
@@ -37,33 +27,17 @@
         </encoder>
     </appender>
 
-    <!--输出WARN信息的日志-->
-    <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/warn/warn.log</file>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>WARN</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/warn/warn.log.%d{yyyy-MM-dd}</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <charset>UTF-8</charset>
-            <pattern>${defaultPattern}</pattern>
-        </encoder>
-    </appender>
 
-    <!--输出error的log信息,用try catch捕获异常打印到日志文件-->
-    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/error/error.log</file>
+    <!--输出ERROR的log信息,用try catch捕获异常打印到日志文件-->
+    <appender name="STDERR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/stderr/hyschool-stderr.log</file>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
+            <onMatch>ACCEPT</onMatch>       <!--用于配置符合过滤条件的操作,接受-->
+            <onMismatch>DENY</onMismatch>   <!--用于配置不符合过滤条件的操作,拒绝-->
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/error/error.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <FileNamePattern>${LOG_HOME}/stderr/hyschool-stderr.%d{yyyy-MM-dd}.log</FileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <charset>UTF-8</charset>
@@ -71,15 +45,27 @@
         </encoder>
     </appender>
 
-    <!--logback只支持一个文件一个日志级别-->
+
+    <!--控制台日志级别-->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="INFO" />
-        <appender-ref ref="WARN" />
-        <appender-ref ref="ERROR"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="STDERR"/>
     </root>
 
+    <!--<logger name="com.hyschool" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+    <!--</logger>-->
 
-    <!--<logger name="org.springframework" level="INFO" additivity="false"/>-->
-    <logger name="org.apache" level="DEBUG" additivity="false"/>
+    <!--<logger name="com.hyschool" additivity="false">-->
+        <!--<appender-ref ref="STDERR"/>-->
+    <!--</logger>-->
+
+    <!--将spring加入到CONSOLE和STDOUT,记录spring的一些异常-->
+    <!--<logger name="org.springframework" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+
+
 </configuration>

@@ -91,4 +91,8 @@
         UPDATE vip set user_Type=#{userType,jdbcType=INTEGER} WHERE email=#{email,jdbcType=VARCHAR}
     </update>
 
+    <update id="updateAvatar" parameterType="vip">
+        UPDATE vip SET avatar_url=#{avatarUrl} WHERE email=#{email}
+    </update>
+
 </mapper>

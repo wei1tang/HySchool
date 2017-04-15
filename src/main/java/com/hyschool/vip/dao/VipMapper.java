@@ -32,6 +32,6 @@ public interface VipMapper {
 
     void resetType(Vip vip);
 
-
+    void updateAvatar(Vip vip);
 
 }

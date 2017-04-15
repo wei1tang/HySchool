@@ -28,9 +28,12 @@ public final class ConstantsUtil {
     public static final String STRING_USER_SUPER_ADMIN = "超级管理员";
 
     //图片存储路径
-    public static final String GOODS_IMAGES_URL = "/images/goods-images/";
-    public static final String VIP_APPROVE_IMAGES_URL = "/images/vip-approve-images/";
-    public static final String  VIP_AVATAR_IMAGES_URL= "/images/vip-avatar-images/";
+    public static final String GOODS_IMAGES_FILEPATH = "E:\\HySchool\\images\\goods-images\\";
+    public static final String VIP_APPROVE_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-approve-images\\";
+    public static final String VIP_AVATAR_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-avatar-images\\";
+
+    //图片访问的url
+    public static final String UPLOAD_IMAGES_URL = "http://localhost:8080/uploadImage?filePath=";
 
     //商品状态,state字段
     public static final Integer GOODS_CREATED = 0; //已创建，在收藏夹，未发布状态

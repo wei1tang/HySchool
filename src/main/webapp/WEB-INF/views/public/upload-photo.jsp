@@ -137,9 +137,10 @@
             data: data,
             type: "POST",
             dataType: 'json',
-            success: function(re) {
-                if(re.status == '1') {
-                    $('.user_pic img').attr('src',src );
+            success: function(data) {
+                if(data.status == 'success') {
+                    //$('.user_pic img').attr('src',src );
+                    window.location.href=data.url;
                 }
             }
         });

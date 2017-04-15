@@ -12,10 +12,12 @@
 * 用户认证和发布商品需要经过管理员审核,驳回或通过。
 * 超级管理员可以将普通vip提升为管理员。
 * 项目审核后台也在此项目,合在一起。
-### 3.session逻辑
+### 4.session逻辑
 * 登录controller加session
 * 主页查找cookie加session(用户直接打开浏览器访问主页)
 * 其他controller被login的拦截器查找cookie添加session
+### 5.图片存储
+* 所有图片存在本地E盘下,通过url进行页面加载图片
 ## 二、数据库  
 * 数据库sql文件有字段注释。
 * 数据库的timestamp都是默认为null,若更新或创建记着new Date()

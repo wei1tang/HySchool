@@ -29,4 +29,6 @@ public interface VipService {
     void updateInfo(Vip vip);
 
     void resetType(Vip vip);
+
+    void updateAvatar(Vip vip);
 }
