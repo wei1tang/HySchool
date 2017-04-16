@@ -20,4 +20,6 @@ public interface GoodsMapper {
 
     void addOneComment(@Param("id") Integer id);
 
+    void addOneUv(@Param("id") Integer id);
+
 }

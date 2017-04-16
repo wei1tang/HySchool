@@ -70,4 +70,11 @@ public class GoodsServiceImpl implements GoodsService {
     public void addOneComment(Integer id) {
         goodsMapper.addOneComment(id);
     }
+
+    @Override
+    public void addOneUv(Integer id) {
+        goodsMapper.addOneUv(id);
+    }
+
+
 }
