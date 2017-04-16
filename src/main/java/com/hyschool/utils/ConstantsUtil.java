@@ -33,7 +33,7 @@ public final class ConstantsUtil {
     public static final String VIP_AVATAR_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-avatar-images\\";
 
     //图片访问的url
-    public static final String UPLOAD_IMAGES_URL = "http://localhost:8080/uploadImage?filePath=";
+    public static final String UPLOAD_IMAGES_URL = "http://localhost:8080/previewImage?filePath=";
 
     //商品状态,state字段
     public static final Integer GOODS_CREATED = 0; //已创建，在收藏夹，未发布状态

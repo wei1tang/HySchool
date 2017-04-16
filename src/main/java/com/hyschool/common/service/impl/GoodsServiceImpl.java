@@ -24,6 +24,15 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsImagesService goodsImagesService;
 
     @Override
+    public Goods byId(Integer id) {
+        Goods goods = goodsMapper.byId(id);
+        goods.setOnlineTimeFormatted(DateUtil.sdf.format(goods.getOnlineTime()));
+        List<String> imagesUrlList = goodsImagesService.findEffectiveImagesByGoodsId(id);
+        goods.setImagesUrlList(imagesUrlList);
+        return goods;
+    }
+
+    @Override
     public List<Goods> byCategoryAndPass(Integer categoryId, Integer start, Integer pageSize) {
         List<Goods> goodsList = goodsMapper.byCategoryAndState(categoryId, start, pageSize, ConstantsUtil.GOODS_PASS);
         for (Goods goods : goodsList){

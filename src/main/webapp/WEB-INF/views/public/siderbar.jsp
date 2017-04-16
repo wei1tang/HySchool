@@ -47,7 +47,7 @@
         <li><a href="${pageContext.request.contextPath}/category12"><i class="fa fa-cube fa-lg"></i><span class="nav-text">其他</span></a></li>
     </ul>
     <ul class="logout">
-        <li><a href="#"><i class="fa fa-lightbulb-o fa-lg"></i><span class="nav-text">加入我们</span></a></li>
+        <li><a href="${pageContext.request.contextPath}/joinUs"><i class="fa fa-lightbulb-o fa-lg"></i><span class="nav-text">加入我们</span></a></li>
     </ul>
 </div>
 <!--侧边栏end-->

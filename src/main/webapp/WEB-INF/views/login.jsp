@@ -141,7 +141,7 @@
 
 <%@include file="public/footer.jsp"%>
 
-<%@include file="public/pop-window-login.jsp"%>
+<%@include file="public/popWindowLogin.jsp"%>
 
 <script>
     $(function(){

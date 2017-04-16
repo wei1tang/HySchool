@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface GoodsMapper {
 
+    Goods byId(@Param("id") Integer id);
+
     List<Goods> byCategoryAndState(@Param("categoryId") Integer categoryId, @Param("start") Integer start,
                                    @Param("pageSize") Integer pageSize, @Param("state") Integer state);
 

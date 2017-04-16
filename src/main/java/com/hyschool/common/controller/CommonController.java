@@ -22,12 +22,17 @@ public class CommonController {
 
     private static Logger logger = LoggerFactory.getLogger(CommonController.class);
 
-    @RequestMapping("/about")
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String about(){
         return "common/about";
     }
 
-    @RequestMapping(value = "/uploadImage", method = RequestMethod.GET)
+    @RequestMapping(value = "joinUs", method = RequestMethod.GET)
+    public String joinUs(){
+        return "common/joinUs";
+    }
+
+    @RequestMapping(value = "/previewImage", method = RequestMethod.GET)
     public String uploadImage(@RequestParam("filePath") String filePath, HttpServletResponse response){
         FileInputStream inputStream;
         try {

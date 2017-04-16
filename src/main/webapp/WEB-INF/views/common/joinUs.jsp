@@ -7,7 +7,7 @@
     <title>加入我们</title>
     <!--必要样式-->
 
-    <link href="../../static/css/joinus.css" type="text/css" rel="stylesheet"/><!--加入我们css-->
+    <link href="../../../static/css/joinus.css" type="text/css" rel="stylesheet"/><!--加入我们css-->
 
 </head>
 
@@ -15,13 +15,13 @@
 
 <div class="container">
 
-    <%@include file="public/header.jsp"%>
+    <%@include file="../public/header.jsp"%>
 
     <div id="join">
         <div class="title">
             <h4>加入“二手交易网”。一切为经济更共享！</h4>
             <h3>简历投递</h3>
-            <p>hr#HySchool.com(#替换成@)</p>
+            <p>hr@HySchool.com</p>
         </div>
         <div id="join-left" class="list">
             <dl>
@@ -144,7 +144,7 @@
         </div>
     </div>
 
-    <%@include file="public/footer.jsp"%>
+    <%@include file="../public/footer.jsp"%>
 
 </div>
 

@@ -12,5 +12,9 @@
     <select id="findCoverImage" parameterType="Integer" resultType="String">
         SELECT image_url FROM goods_images WHERE goods_id = #{goodsId} AND state = 1 limit 0,1
     </select>
+
+    <select id="byGoodsIdAndState" resultType="String">
+        SELECT image_url FROM goods_images WHERE goods_id = #{goodsId} AND state = #{state}
+    </select>
     
 </mapper>

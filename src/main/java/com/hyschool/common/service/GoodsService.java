@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface GoodsService {
 
+    Goods byId(Integer id);
+
     List<Goods> byCategoryAndPass(Integer categoryId, Integer start, Integer pageSize);
 
     Integer countByCategoryAndPass(Integer categoryId);

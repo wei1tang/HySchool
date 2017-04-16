@@ -156,21 +156,21 @@ public class VipController {
                              @RequestParam("password1") String password1, @RequestParam("password2") String password2) {
         boolean isValid = EmailValidator.getInstance().isValid(email);
         if (!isValid) {
-            String message = "邮箱格式不正确";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "邮箱格式不正确";
+            model.addAttribute("error", error);
+            return "login";
         }
         if ((!password1.equals(password2)) || password1.equals(null) || password2.equals(null)) {
-            String message = "密码输入不规范";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "密码输入不规范";
+            model.addAttribute("error", error);
+            return "login";
         }
 
         Vip availableVip = vipService.findAvailableVip(email);
         if (availableVip != null) {
-            String message = "邮箱已存在，请直接登录。";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "邮箱已存在，请直接登录。";
+            model.addAttribute("error", error);
+            return "login";
         }
         Vip invalidVip = vipService.findInvalidVip(email);
         if (invalidVip != null) {
@@ -180,7 +180,7 @@ public class VipController {
             vipService.updateInvalidVip(name, email, password1, date);
             vipValidateService.updateVipValidate(email, validateCode);
             registerValidateService.processRegister(email, validateCode);
-            return "vip/activate_prompt";
+            return "vip/activatePrompt";
         }
 
         String validateCode = passwordManager.encryptPassword(email + System.currentTimeMillis());
@@ -189,7 +189,7 @@ public class VipController {
         vipService.createVip(name, email, password1, date);
         vipValidateService.createVipValidate(email, validateCode);
         registerValidateService.processRegister(email, validateCode);
-        return "vip/activate_prompt";
+        return "vip/activatePrompt";
     }
 
 
@@ -205,10 +205,10 @@ public class VipController {
     public String activate(Model model, @RequestParam("email") String email, @RequestParam("validateCode") String validateCode) {
         try {
             registerValidateService.processActivate(email, validateCode);//调用激活方法
-            return "vip/activate_success";
+            return "vip/activateSuccess";
         } catch (ServiceException e) {
-            model.addAttribute("message", e.getMessage());
-            return "vip/activate_failure";
+            model.addAttribute("error", e.getMessage());
+            return "vip/activateFailure";
         }
     }
 
@@ -224,15 +224,15 @@ public class VipController {
     public String goForgotPassword(Model model, @RequestParam("email") String email) {
         boolean isValid = EmailValidator.getInstance().isValid(email);
         if (!isValid) {
-            String message = "邮箱格式不正确";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "邮箱格式不正确";
+            model.addAttribute("error", error);
+            return "vip/registerError";
         }
         Vip vip = vipService.findAvailableVip(email);
         if (vip == null) {
-            String message = "邮箱不存在，请重新输入。";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "邮箱不存在，请重新输入。";
+            model.addAttribute("error", error);
+            return "vip/registerError";
         }
         //生成验证码，发邮箱进行改密码
         String validateCode = passwordManager.encryptPassword(email + System.currentTimeMillis());
@@ -261,18 +261,18 @@ public class VipController {
                 Date currentTime = new Date();
                 if (currentTime.before(vip.getResetLastActivateTime())) {
                     model.addAttribute("email", email);
-                    return "vip/reset_password";
+                    return "vip/resetPassword";
                 }
             } else {
                 String message = "邮箱账号不存在。";
                 model.addAttribute("message", message);
-                return "vip/register_error";
+                return "vip/registerError";
             }
         }
 
         String message = "验证码已过期。";
         model.addAttribute("message", message);
-        return "vip/register_error";
+        return "vip/registerError";
     }
 
 
@@ -289,9 +289,9 @@ public class VipController {
     public String doResetPassword(Model model, @RequestParam("email") String email, @RequestParam("password1") String password1,
                                   @RequestParam("password2") String password2) {
         if ((!password1.equals(password2)) || password1.equals(null) || password2.equals(null)) {
-            String message = "密码输入不规范";
-            model.addAttribute("message", message);
-            return "vip/register_error";
+            String error = "密码输入不规范";
+            model.addAttribute("error", error);
+            return "vip/registerError";
         }
         password1 = passwordManager.encryptPassword(password1);
         vipService.resetPassword(password1, email);

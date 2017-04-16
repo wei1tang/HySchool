@@ -332,9 +332,9 @@
     <%@include file="../public/footer.jsp"%>
 </div>
 
-<%@include file="../public/upload-photo.jsp"%>
+<%@include file="../public/uploadPhoto.jsp"%>
 
-<%@include file="../public/pop-window-user.jsp"%>
+<%@include file="../public/popWindowUser.jsp"%>
 
 <!--选项卡js-->
 <script type="text/javascript" src="../../../static/js/user-select-tab.js"></script>

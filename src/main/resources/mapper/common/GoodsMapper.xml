@@ -16,6 +16,11 @@
         <result column="off_the_shelf_time" jdbcType="TIMESTAMP" property="offTheShelfTime"/>
     </resultMap>
 
+
+    <select id="byId" parameterType="Integer" resultType="goods">
+        SELECT * FROM goods WHERE id=#{id, jdbcType=INTEGER}
+    </select>
+
     <select id="byCategoryAndState" resultMap="BaseResultMap">
         SELECT * FROM goods WHERE category_id=#{categoryId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER} limit #{start},#{pageSize}
     </select>

@@ -49,7 +49,10 @@
             <a href="/" class="list">关于</a>
         </div>
 
-        <c:if test="${pageContext.request.requestURI ne '/WEB-INF/views/login.jsp'}">
+        <c:if test="${pageContext.request.requestURI ne '/WEB-INF/views/login.jsp' and
+                      pageContext.request.requestURI ne '/WEB-INF/views/common/joinUs.jsp' and
+                      pageContext.request.requestURI ne '/WEB-INF/views/common/about.jsp' and
+                      pageContext.request.requestURI ne '/WEB-INF/views/vip/info.jsp'}">
             <!--添加搜索-->
             <form onSubmit="submitFn(this, event);" id="searchFrom">
                 <div class="search-wrapper">
@@ -74,6 +77,9 @@
                     <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>
                         ${sessionScope.vip.name}
                     </li>
+                    <c:if test="${sessionScope.vip.userType eq 1}">
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info">个人设置</a></li>
+                    </c:if>
                     <c:if test="${sessionScope.vip.userType gt 1}">
                         <li class="item"><a href="${pageContext.request.contextPath}/vip/info">个人设置</a></li>
                         <li class="item"><a href="/" >认证审核</a></li>

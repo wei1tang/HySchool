@@ -7,14 +7,14 @@
     <title>项目详情页</title>
 
     <!--必要样式-->
-    <link href="../../static/css/project.css" type="text/css" rel="stylesheet"/><!--项目详情界面css-->
+    <link href="../../../static/css/project.css" type="text/css" rel="stylesheet"/><!--项目详情界面css-->
 
 </head>
 <body>
 
 <div class="container">
 
-    <%@include file="public/header.jsp"%>
+    <%@include file="../public/header.jsp"%>
 
     <div class="project">
 
@@ -49,10 +49,10 @@
                     </li>
                     <li class="detail-seller">
                         <div class="name"><span>卖家</span></div>
-                        <a href="vip/personal.jsp" target="_blank">
+                        <a href="../vip/personal.jsp" target="_blank">
                             <div class="value">
                                 <span class="value-name">阿澈</span>
-                                <img class="detail-grade" src="../../static/images/project-ico_lv6.png" alt="等级显示">
+                                <img class="detail-grade" src="../../../static/images/project-ico_lv6.png" alt="等级显示">
                             </div>
                         </a>
                     </li>
@@ -85,23 +85,23 @@
         <div class="product-user">
             <div class="user-desc ">
                 <a href="#" target="_blank">
-                    <img id="user_ph" src="../../static/images/index-avatar.png">
+                    <img id="user_ph" src="../../../static/images/index-avatar.png">
                 </a>
                 <span id="user_cmt">用了一年多，没修过没拆开过，充一次电能用四五个小时<br>联系我时，请说明是在『花样校园』上看到的哦</span>
             </div>
         </div>
 
         <%--评论--%>
-        <%@include file="public/comment.jsp"%>
+        <%@include file="../public/comment.jsp"%>
 
     </div>
 
-    <%@include file="public/footer.jsp"%>
+    <%@include file="../public/footer.jsp"%>
 
 </div>
 
-<script type="text/javascript" src="../../static/js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="../../static/js/project-photo-viewer.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../../static/js/project-photo-viewer.js"></script>
 
 
 </body>
