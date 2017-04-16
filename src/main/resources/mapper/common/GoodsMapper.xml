@@ -9,6 +9,7 @@
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="price" jdbcType="DOUBLE" property="price"/>
         <result column="stock" jdbcType="INTEGER" property="stock"/>
+        <result column="user_time" jdbcType="VARCHAR" property="userTime"/>
         <result column="description" jdbcType="VARCHAR" property="description"/>
         <result column="transaction_address" jdbcType="VARCHAR" property="transactionAddress"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>

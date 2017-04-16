@@ -21,6 +21,8 @@ public class Goods {
 
     private Integer stock;
 
+    private String usedTime;
+
     private String description;
 
     private Integer uv;
@@ -102,6 +104,14 @@ public class Goods {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    public String getUsedTime() {
+        return usedTime;
+    }
+
+    public void setUsedTime(String usedTime) {
+        this.usedTime = usedTime;
     }
 
     public String getDescription() {

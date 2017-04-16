@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../../../static/css/index-search-form.css"/><!--搜索栏css-->
     <script type="text/javascript" src="../../../static/js/index-search.js"></script><!--搜索栏js-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
+    <link href="../../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
 
     <style type="text/css">
         .me li{
@@ -17,7 +18,7 @@
             margin-top:0;
             background-color: white;
             border-bottom: 1px solid rgba(0,0,0,.1);
-            height: 40px;
+            height: 50px;
         }
         .me li a{
             text-decoration:none;
@@ -68,26 +69,31 @@
 
         <c:if test="${sessionScope.vip ne null}">
             <div class="me" id="me">
+                <a class="list"><i class="iconfont" style="font-size: 32px;">&#xe6f2;</i>通知</a>
+                <a class="list"><i class="iconfont" style="font-size: 32px;">&#xe602;</i>购物车</a>
                 <ul class="avatar-link" title="user">
                     <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>
                         ${sessionScope.vip.name}
                     </li>
                     <c:if test="${sessionScope.vip.userType eq 1}">
-                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info">个人设置</a></li>
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="iconfont">&#xe832;</i>&nbsp;&nbsp;&nbsp;个人设置</a></li>
                     </c:if>
                     <c:if test="${sessionScope.vip.userType gt 1}">
-                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info">个人设置</a></li>
-                        <li class="item"><a href="/" >认证审核</a></li>
-                        <li class="item"><a href="/" >商品审核</a></li>
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="iconfont">&#xe832;</i>个人设置</a></li>
+                        <li class="item"><a href="/" ><i class="iconfont">&#xe638;</i>认证审核</a></li>
+                        <li class="item"><a href="/" ><i class="iconfont">&#xe673;</i>商品审核</a></li>
                     </c:if>
                     <c:if test="${sessionScope.vip.userType gt 2}">
-                        <li class="item"><a href="/" class="last">管理员审核</a></li>
+                        <li class="item"><a href="/" class="last"><i class="iconfont">&#xe665;</i>设管理员</a></li>
                     </c:if>
+                    <li class="item"><a href="${pageContext.request.contextPath}/vip/logout" class="last"><i class="iconfont">&#xe70e;</i>退出登录</a></li>
                 </ul>
-                <div class="button-link">
+
+
+                <%--<div class="button-link">
                     <a href="${pageContext.request.contextPath}/vip/logout"
                        class="button button-primary button-rounded button-small">退出登录</a>
-                </div>
+                </div>--%>
             </div>
         </c:if>
 

@@ -49,7 +49,7 @@
                         <img src="${goods.coverImageUrl}" class="img"/>
                         <div class="introduction">
                             <a href="${pageContext.request.contextPath}/goods/no${goods.id}" style="text-decoration: none;color: white">
-                                <p style="">${goods.description}</p>
+                                <p style="">本件商品已使用${goods.usedTime}</p>
                             </a>
                         </div>
                     </div>
