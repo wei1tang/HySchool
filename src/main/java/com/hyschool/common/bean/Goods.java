@@ -1,5 +1,8 @@
 package com.hyschool.common.bean;
 
+import com.hyschool.vip.bean.Vip;
+import com.hyschool.vip.bean.VipApprove;
+
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +36,10 @@ public class Goods {
     private Date offTheShelfTime;
 
     //额外添加的页面展示元素
+    private Vip vip;
+
+    private VipApprove vipApprove;
+
     private String category;
 
     private String onlineTimeFormatted;
@@ -151,6 +158,22 @@ public class Goods {
 
     public void setOffTheShelfTime(Date offTheShelfTime) {
         this.offTheShelfTime = offTheShelfTime;
+    }
+
+    public Vip getVip() {
+        return vip;
+    }
+
+    public void setVip(Vip vip) {
+        this.vip = vip;
+    }
+
+    public VipApprove getVipApprove() {
+        return vipApprove;
+    }
+
+    public void setVipApprove(VipApprove vipApprove) {
+        this.vipApprove = vipApprove;
     }
 
     public String getCategory() {

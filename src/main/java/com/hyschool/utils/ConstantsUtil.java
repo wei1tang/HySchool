@@ -55,4 +55,9 @@ public final class ConstantsUtil {
     //商品照片状态
     public static final Integer IMAGES_EFFECTIVE = 1;
     public static final Integer IMAGES_DELETED = 2; //上传的时候可能删除替换照片
+
+    //用户认证状态
+    public static final Integer VIP_APPROVE_UNCHECK = 1;
+    public static final Integer VIP_APPROVE_PASS = 2;
+    public static final Integer VIP_APPROVE_FAIL = 3;
 }

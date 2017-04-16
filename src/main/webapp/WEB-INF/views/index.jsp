@@ -46,8 +46,12 @@
             <c:forEach var="goods" items="${goodsList}">
                 <div class="list-item">
                     <div class="img">
-                        <img src="${goods.coverImageUrl}" class="img" href="project.jsp"/>
-                        <div class="introduction"><p>${goods.description}</p></div>
+                        <img src="${goods.coverImageUrl}" class="img"/>
+                        <div class="introduction">
+                            <a href="${pageContext.request.contextPath}/goods/no${goods.id}" style="text-decoration: none;color: white">
+                                <p style="">${goods.description}</p>
+                            </a>
+                        </div>
                     </div>
                     <div class="list-content">
                         <div class="name">${goods.name}</div>
@@ -55,7 +59,15 @@
                         <div class="deadline">上架时间: ${goods.onlineTimeFormatted}</div>
                         <div class="roles-icons">
                             <div class="roles">
-                                <span class="type">${goods.category}</span>
+                                <c:choose>
+                                    <c:when test="${goods.vipApprove eq null}">
+                                        <span>用户尚未认证</span>
+                                    </c:when>
+                                    <c:when test="${goods.vipApprove ne null}">
+                                        <span>${goods.vipApprove.faculty}${goods.vipApprove.grade}级</span>
+                                        <span>${goods.vipApprove.school}</span>
+                                    </c:when>
+                                </c:choose>
                             </div>
                             <div class="icons">
                                 <span><i class="fa fa-eye fa-lg"></i>${goods.uv}</span>

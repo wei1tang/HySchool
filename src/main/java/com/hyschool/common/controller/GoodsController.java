@@ -23,7 +23,7 @@ public class GoodsController {
     GoodsService goodsService;
 
 
-    @RequestMapping(value = "no{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/no{id}", method = RequestMethod.GET)
     public String viewGoods(@PathVariable("id")Integer id, Model model) {
         Goods goods = goodsService.byId(id);
         model.addAttribute("goods", goods);

@@ -11,13 +11,17 @@ public class VipApprove {
 
     private Boolean gender;
 
-    private Integer phone;
+    private String phone;
 
     private String provinceCode;
 
     private String cityCode;
 
     private String school;
+
+    private String faculty;
+
+    private Integer grade;
 
     private String imageUrl;
 
@@ -57,11 +61,11 @@ public class VipApprove {
         this.gender = gender;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -87,6 +91,22 @@ public class VipApprove {
 
     public void setSchool(String school) {
         this.school = school == null ? null : school.trim();
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     public String getImageUrl() {

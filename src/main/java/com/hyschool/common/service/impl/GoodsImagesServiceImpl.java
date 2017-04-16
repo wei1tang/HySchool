@@ -24,7 +24,7 @@ public class GoodsImagesServiceImpl implements GoodsImagesService {
 
     @Override
     public List<String> findEffectiveImagesByGoodsId(Integer goodsId) {
-        return goodsImagesMapper.findByGoodsIdAndState(goodsId, ConstantsUtil.IMAGES_EFFECTIVE);
+        return goodsImagesMapper.byGoodsIdAndState(goodsId, ConstantsUtil.IMAGES_EFFECTIVE);
     }
 
 }

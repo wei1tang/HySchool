@@ -22,48 +22,54 @@
             <div class="product-photo">
                 <div id="photo-viewer"></div>
                 <div id="thumbnails">
-                    <a href="../../static/images/project-images/1.jpg" class="thumb active">
-                        <img src="../../static/images/project-images/1.jpg" width="60px" height="60px" />
-                    </a>
-                    <a href="../../static/images/project-images/2.jpg" class="thumb ">
-                        <img src="../../static/images/project-images/2.jpg" width="60px" height="60px"/>
-                    </a>
-                    <a href="../../static/images/project-images/3.jpg" class="thumb ">
-                        <img src="../../static/images/project-images/3.jpg" width="60px" height="60px"/>
-                    </a>
+                    <c:forEach items="${goods.imagesUrlList}" var="imageUrl">
+                        <a href="${imageUrl}" class="thumb active">
+                            <img src="${imageUrl}" width="60px" height="60px" />
+                        </a>
+                    </c:forEach>
                 </div>
             </div>
             <div class="product-detail">
                 <div class="detail-hd">
-                    <h2 class="detail-title">微软平板电脑换个大屏手机</h2>
+                    <h2 class="detail-title">${goods.name}</h2>
                     <div class="detail-price ">
-                        <span>1900</span>
+                        <span>${goods.price}</span>
                         <span class="is-auction">可拍卖</span>
                     </div>
-                    <p class="bro-counts">浏览了<span>64</span>次</p>
+                    <p class="bro-counts">浏览了<span>${goods.uv}</span>次</p>
                 </div>
                 <ul class="detail-information">
                     <li class="detail-place">
                         <div class="name"><span>交易地点</span></div>
-                        <div class="value"><span>东九教学楼</span></div>
+                        <div class="value"><span>${goods.transactionAddress}</span></div>
                     </li>
                     <li class="detail-seller">
                         <div class="name"><span>卖家</span></div>
                         <a href="../vip/personal.jsp" target="_blank">
                             <div class="value">
-                                <span class="value-name">阿澈</span>
+                                <span class="value-name">${goods.vip.name}</span>
                                 <img class="detail-grade" src="../../../static/images/project-ico_lv6.png" alt="等级显示">
                             </div>
                         </a>
                     </li>
                     <li class="detail-cert">
                         <div class="name"><span>认证状态</span></div>
-                        <div class="value"><span>光电16级(未认证)</span></div>
+                        <div  class="value">
+                            <c:choose>
+                                <c:when test="${goods.vipApprove eq null}">
+                                    <span>用户尚未认证</span>
+                                </c:when>
+                                <c:when test="${goods.vipApprove ne null}">
+                                    <span>${goods.vipApprove.faculty}${goods.vipApprove.grade}级</span>
+                                    <span>${goods.vipApprove.school}</span>
+                                </c:when>
+                            </c:choose>
+                        </div>
                     </li>
                     <li class="detail-tel">
                         <div class="name"><span>手机</span></div>
                         <div class="value">
-                            <span class="user-num">15992345345</span>
+                            <span class="user-num">${goods.vipApprove.phone}</span>
                         </div>
                     </li>
                     <li class="detail-qq">
@@ -75,7 +81,7 @@
                     <li class="detail-time">
                         <div class="name"><span>发布时间</span></div>
                         <div class="value">
-                            <span class="real-time">4天前</span>
+                            <span class="real-time">${goods.onlineTimeFormatted}</span>
                         </div>
                     </li>
                 </ul>
@@ -84,10 +90,10 @@
 
         <div class="product-user">
             <div class="user-desc ">
-                <a href="#" target="_blank">
-                    <img id="user_ph" src="../../../static/images/index-avatar.png">
+                <a href="#">
+                    <img id="user_ph" src="${goods.vip.avatarUrl}">
                 </a>
-                <span id="user_cmt">用了一年多，没修过没拆开过，充一次电能用四五个小时<br>联系我时，请说明是在『花样校园』上看到的哦</span>
+                <span id="user_cmt">${goods.description}</span>
             </div>
         </div>
 
@@ -99,6 +105,8 @@
     <%@include file="../public/footer.jsp"%>
 
 </div>
+
+<%@include file="../public/siderbar.jsp" %>
 
 <script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../../../static/js/project-photo-viewer.js"></script>

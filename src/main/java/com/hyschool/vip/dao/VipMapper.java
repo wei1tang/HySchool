@@ -14,7 +14,7 @@ public interface VipMapper {
 
     Vip findVipByEmail(@Param("email")String email);
 
-    Vip findVipById(@Param("vipId")Integer vipId);
+    Vip findVipById(@Param("id")Integer vipId);
 
     List<Vip>  findVipAll();
 

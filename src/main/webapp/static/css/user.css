@@ -30,7 +30,7 @@ html,body{
     font-size: 18px;
     font-weight: 600;
     float: left;
-    color: #00d8ff;
+    color: #03a9f4;
     cursor: pointer;/*鼠标指向时改变光标*/
 }
 .header .header-content .logo img {
@@ -391,7 +391,7 @@ html,body{
 .published table tr a{
     float: left;
     cursor: pointer;/*鼠标指向时改变光标*/
-    color:  #00d8ff;
+    color:  #03a9f4;
     text-decoration: none;
 }
 .published table tr a:hover,.published table tr a:active {
@@ -452,7 +452,7 @@ html,body{
 .aplied table tr a{
     float: left;
     cursor: pointer;/*鼠标指向时改变光标*/
-    color:  #00d8ff;
+    color:  #03a9f4;
     text-decoration: none;
 }
 .aplied table tr a:hover,.aplied table tr a:active {

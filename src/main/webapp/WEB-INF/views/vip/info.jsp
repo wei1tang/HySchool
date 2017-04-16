@@ -37,7 +37,7 @@
     <div class="user">
         <div class="left">
             <div class="level">
-                <img class="avatar" src="${vip.avatarUrl}"/>
+                <img class="avatar" data-toggle="modal" data-target="#avatar-modal" src="${vip.avatarUrl}"/>
                 <div class="username">${vip.name}</div>
                 <div class="level-content">
                     积分: 0
@@ -84,10 +84,6 @@
                         <input type="text" value="${vip.selfIntroduction}" id="selfIntroduction" name="selfIntroduction">
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <div class="setting-item">
-                        <span class="title"><i>*</i>头像上传&nbsp;&nbsp;&nbsp;</span>
-                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#avatar-modal" >图片上传</button>
-                    </div>
                     <div class="setting-item">
                         <button  class="button button-primary button-rounded button-small" type="submit">确定</button>
                     </div>

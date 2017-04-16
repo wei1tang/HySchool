@@ -18,6 +18,8 @@
 * 其他controller被login的拦截器查找cookie添加session
 ### 5.图片存储
 * 所有图片存在本地E盘下,通过url进行页面加载图片
+### 6.颜色
+* 项目的主体颜色为蓝色 #03a9f4
 ## 二、数据库  
 * 数据库sql文件有字段注释。
 * 数据库的timestamp都是默认为null,若更新或创建记着new Date()

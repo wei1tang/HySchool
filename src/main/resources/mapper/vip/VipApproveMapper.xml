@@ -6,12 +6,19 @@
         <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="real_name" jdbcType="VARCHAR" property="realName"/>
         <result column="gender" jdbcType="BIT" property="gender"/>
-        <result column="phone" jdbcType="INTEGER" property="phone"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="province_code" jdbcType="VARCHAR" property="provinceCode"/>
         <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>
         <result column="school" jdbcType="VARCHAR" property="school"/>
+        <result column="faculty" jdbcType="VARCHAR" property="faculty"/>
+        <result column="grade" jdbcType="INTEGER" property="grade"/>
         <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
         <result column="state" jdbcType="INTEGER" property="state"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
+
+    <select id="byVipIdAndState" resultType="vipApprove">
+        SELECT * FROM vip_approve WHERE vip_id = #{vipId} AND state = #{state}
+    </select>
+
 </mapper>

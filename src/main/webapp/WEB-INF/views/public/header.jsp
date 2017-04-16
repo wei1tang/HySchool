@@ -67,11 +67,6 @@
 
 
         <c:if test="${sessionScope.vip ne null}">
-            <div class="sign" id="sign">
-
-
-            </div>
-
             <div class="me" id="me">
                 <ul class="avatar-link" title="user">
                     <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>

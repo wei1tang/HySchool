@@ -11,6 +11,6 @@ public interface GoodsImagesMapper {
 
     String findCoverImage(@Param("goodsId") Integer goodsId);
 
-    List<String> findByGoodsIdAndState(@Param("goodsId") Integer goodsId, @Param("state") Integer state);
+    List<String> byGoodsIdAndState(@Param("goodsId") Integer goodsId, @Param("state") Integer state);
 
 }

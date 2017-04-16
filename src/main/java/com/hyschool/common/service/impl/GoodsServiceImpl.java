@@ -7,6 +7,8 @@ import com.hyschool.common.service.GoodsService;
 import com.hyschool.enums.CategoryEnum;
 import com.hyschool.utils.ConstantsUtil;
 import com.hyschool.utils.DateUtil;
+import com.hyschool.vip.service.VipApproveService;
+import com.hyschool.vip.service.VipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,10 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsMapper goodsMapper;
     @Autowired
     GoodsImagesService goodsImagesService;
+    @Autowired
+    VipService vipService;
+    @Autowired
+    VipApproveService vipApproveService;
 
     @Override
     public Goods byId(Integer id) {
@@ -29,6 +35,8 @@ public class GoodsServiceImpl implements GoodsService {
         goods.setOnlineTimeFormatted(DateUtil.sdf.format(goods.getOnlineTime()));
         List<String> imagesUrlList = goodsImagesService.findEffectiveImagesByGoodsId(id);
         goods.setImagesUrlList(imagesUrlList);
+        goods.setVip(vipService.findVipById(goods.getVipId()));
+        goods.setVipApprove(vipApproveService.byVipIdAndPass(goods.getVipId()));
         return goods;
     }
 
@@ -39,6 +47,8 @@ public class GoodsServiceImpl implements GoodsService {
             goods.setCategory((CategoryEnum.getByCode(goods.getCategoryId())).getDescription());
             goods.setOnlineTimeFormatted(DateUtil.sdf.format(goods.getOnlineTime()));
             goods.setCoverImageUrl(goodsImagesService.findCoverImage(goods.getId()));
+            goods.setVip(vipService.findVipById(goods.getVipId()));
+            goods.setVipApprove(vipApproveService.byVipIdAndPass(goods.getVipId()));
         }
         return goodsList;
     }

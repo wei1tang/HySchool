@@ -30,7 +30,7 @@ html,body{
     font-size: 18px;
     font-weight: 600;
     float: left;
-    color: #00d8ff;
+    color: #03a9f4;
     cursor: pointer;/*鼠标指向时改变光标*/
 }
 .header .logo img {
@@ -154,7 +154,7 @@ html,body{
     opacity: 0.3;
 }
 .project #thumbnails img:hover{
-    border: 1px solid #00d8ff;
+    border: 1px solid #03a9f4;
 }
 
 
@@ -175,7 +175,7 @@ html,body{
     position: relative;
 }
 .product-detail .detail-hd .detail-title{
-    color: #00d8ff;
+    color: #03a9f4;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
@@ -223,7 +223,7 @@ html,body{
     display: inline-block;
     min-width: 30px;
     padding: 7px 12px;
-    background-color: #00d8ff;
+    background-color: #03a9f4;
     color: #FFFFFF;
     text-align: center;
     white-space: nowrap;
@@ -239,7 +239,7 @@ html,body{
     vertical-align: middle;
 }
 .product-detail .detail-information li .value .value-name{
-    color: #00d8ff;
+    color: #03a9f4;
     font-size: 14px;
     padding-right: 22px;
     background-image: url(../images/project-ico_seller.png);
