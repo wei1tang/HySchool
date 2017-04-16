@@ -33,21 +33,36 @@
                 <th class="operation">操作</th>
             </tr>
             <c:forEach var="vip" items="${vipList}">
-            <h id="test1">test1</h>
                 <tr>
                     <td id="vipId">${vip.id}</td>
                     <td id="vipName">${vip.name}</td>
                     <td id="vipType">${vip.stringUserType}</td>
                     <td>
                     <span>
-                    <a id="setAdmin"  >提升管理员</a>
-                    <span class="ant-divider"></span>
-                    <a id="removeAdmin" >取消管理员</a>
+                        <a id="setAdmin" href="${pageContext.request.contextPath}/admin/superAdmin/Id=${vip.id}" <%--onclick="window.location.href='superAdmin?id=${vip.id}'"--%> >     设置或取消管理员身份</a>
+
                     </span>
                     </td>
                 </tr>
             </c:forEach>
 
+<%--            <script>
+                function is_submit(value){
+                    var form1=$("#form1");
+                    if(value=1){
+                            form1.action="/admin/superAdmin1";
+                            $("#form1").attr("action",form1.action);
+
+                            form1.submit();
+                    }
+                    if(value=2){
+                        form1.action="/admin/superAdmin2";
+                        $("#form1").attr("action",form1.action);
+                        form1.submit();
+                    }
+                }
+
+            </script>--%>
         </table>
         <!-- 分页 开始 -->
         <div id="page"></div>
@@ -57,9 +72,8 @@
     <%@include file="../public/footer.jsp"%>
 
 </div>
-
 <!--ajax json实现-->
-<script>
+<%--<script>
     $(document).ready(function () {
     });
 
@@ -96,10 +110,10 @@
         $(document).ajaxSend(function (e, xhr, options) {
             xhr.setRequestHeader(header, token);
         });
-    });
+    });--%>
 
 
-</script>
+
 <%--<!--ajax(非json)-->
 <script type="text/javascript" >
     function changeType() {
