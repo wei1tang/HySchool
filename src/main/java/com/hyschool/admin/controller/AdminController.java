@@ -8,10 +8,7 @@ import com.hyschool.vip.service.VipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -46,26 +43,31 @@ public class AdminController {
         return "admin/superAdmin";
     }
 
-    @RequestMapping(value = "/superAdmin",method = RequestMethod.POST)
-    @ResponseBody
-    public String auditAdmin(@RequestParam("vipId") Integer vipId){
-        ObjectMapper objectMapper = new ObjectMapper();
-        System.out.println(vipId);
-        Map<String, Object> map = new HashMap();
-        Vip vip = vipService.findVipById(vipId);
-        if (vip.getUserType()==ConstantsUtil.USER_VIP)
+    @RequestMapping(value = "/superAdmin/Id={Id}",method = RequestMethod.GET)
+    public String auditAdmin(@PathVariable ("Id") Integer Id,Model model){
+        Vip vip = vipService.findVipById(Id);
+        if (vip.getUserType()==ConstantsUtil.USER_VIP){
             vip.setUserType(ConstantsUtil.USER_ADMIN);
-        else {
+        }
+        else if (vip.getUserType()==ConstantsUtil.USER_ADMIN){
             vip.setUserType(ConstantsUtil.USER_VIP);
         }
-        map.put("stringUserType",vip.getStringUserType());
-        String data=null;
-        try {
-            data=objectMapper.writeValueAsString(map);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+        else{
+            System.out.println("未取值");
         }
-        return data;
+        vipService.resetType(vip);
+        List<Vip> vipList= vipService.findVipAll();
+        for (int i = 0; i <vipList.size() ; i++) {
+            if (vipList.get(i).getUserType()== ConstantsUtil.USER_VIP)
+                vipList.get(i).setStringUserType(ConstantsUtil.STRING_USER_VIP);
+            else if(vipList.get(i).getUserType()== ConstantsUtil.USER_ADMIN)
+                vipList.get(i).setStringUserType(ConstantsUtil.STRING_USER_ADMIN);
+            else
+                vipList.get(i).setStringUserType(ConstantsUtil.STRING_USER_SUPER_ADMIN) ;
+        }
+        model.addAttribute("vipList",vipList);
+        return "admin/superAdmin";
     }
+
 
 }
