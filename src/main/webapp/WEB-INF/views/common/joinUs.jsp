@@ -21,7 +21,7 @@
         <div class="title">
             <h4>加入“二手交易网”。一切为经济更共享！</h4>
             <h3>简历投递</h3>
-            <p>hr@HySchool.com</p>
+            <p>hr@hyschool.com</p>
         </div>
         <div id="join-left" class="list">
             <dl>

@@ -46,7 +46,7 @@
         </div>
         <div class="nav">
             <a href="/" class="list">首页</a>
-            <a href="/" class="list">关于</a>
+            <a href="${pageContext.request.contextPath}/joinUs" class="list">关于</a>
         </div>
 
         <c:if test="${pageContext.request.requestURI ne '/WEB-INF/views/login.jsp' and
