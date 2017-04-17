@@ -17,29 +17,13 @@ public class Notice {
 
     private Boolean haveRead;
 
-    private Boolean isDelete;
+    private Boolean isDeleted;
 
     private Date createTime;
 
     private Date readTime;
 
-    private Boolean is_public_all;
-
-    public Boolean getIs_public_all() {
-        return is_public_all;
-    }
-
-    public void setIs_public_all(Boolean is_public_all) {
-        this.is_public_all = is_public_all;
-    }
-
-    public Boolean getDelete() {
-        return isDelete;
-    }
-
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
-    }
+    private Boolean isPublicAll;
 
     public Integer getId() {
         return id;
@@ -97,12 +81,12 @@ public class Notice {
         this.haveRead = haveRead;
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean getDeleted() {
+        return isDeleted;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 
     public Date getCreateTime() {
@@ -119,5 +103,13 @@ public class Notice {
 
     public void setReadTime(Date readTime) {
         this.readTime = readTime;
+    }
+
+    public Boolean getPublicAll() {
+        return isPublicAll;
+    }
+
+    public void setPublicAll(Boolean publicAll) {
+        isPublicAll = publicAll;
     }
 }

@@ -6,18 +6,22 @@ import com.google.common.cache.LoadingCache;
 import com.hyschool.bean.common.Goods;
 import com.hyschool.service.common.GoodsService;
 import com.hyschool.bean.vip.Vip;
+import com.hyschool.utils.SpecialDateEditorUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -88,6 +92,19 @@ public class GoodsController implements InitializingBean {
         model.addAttribute("goods", goods);
         return "common/goods";
     }
+
+
+    /**
+     * spring mvc date数据绑定
+     *
+     * @param webDataBinder
+     */
+    @InitBinder
+    public void initBinder(WebDataBinder webDataBinder) {
+        webDataBinder.registerCustomEditor(Date.class, new SpecialDateEditorUtil());
+    }
+
+
 
     @RequestMapping(value = "/release", method = RequestMethod.POST)
     public String releaseGoods(Goods goods, HttpSession session) {

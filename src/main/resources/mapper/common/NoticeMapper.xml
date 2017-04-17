@@ -9,9 +9,28 @@
         <result column="type" jdbcType="INTEGER" property="type"/>
         <result column="url" jdbcType="VARCHAR" property="url"/>
         <result column="have_read" jdbcType="BIT" property="haveRead"/>
-        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
         <result column="is_public_all" jdbcType="BIT" property="isPublicAll"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="read_time" jdbcType="TIMESTAMP" property="readTime"/>
     </resultMap>
+
+    <insert id="createNotice" parameterType="notice">
+        INSERT INTO
+        notice
+        (to_vip_id, from_vip_id, content, type, url, have_read, is_deleted, is_public_all, create_time, read_time)
+        VALUES
+        (
+        #{toVipId},
+        #{fromId},
+        #{content},
+        #{type},
+        #{url},
+        #{haveRead},
+        #{isDeleted},
+        #{isPublicAll},
+        #{createTime}
+        )
+    </insert>
+
 </mapper>

@@ -1,12 +1,13 @@
 package com.hyschool.utils;
 
 public final class ConstantsUtil {
-	
-	private ConstantsUtil() { }
+
+    private ConstantsUtil() {
+    }
 
     public static final String EMAIL_NICK = "HySchool";
 
-	//发送邮件主题
+    //发送邮件主题
     public static final String REGISTER_SUBJECT = "欢迎使用 HySchool,请确认邮箱";
     public static final String RESET_PASSWORD_SUBJECT = "重置密码";
 
@@ -46,14 +47,18 @@ public final class ConstantsUtil {
     public static final Integer GOODS_FAIL = 3; //已驳回
     public static final Integer GOODS_SOLD = 4; //已卖出
     public static final Integer GOODS_CLOSE = -1; //已下架
+    public static String[] goodsStateArr = new String[]{GOODS_CREATED + "", GOODS_UNCHECK + "", +GOODS_PASS + "",
+            GOODS_FAIL + "", GOODS_SOLD + "", GOODS_CLOSE + ""};
 
     //商品状态字符串
     public static final String GOODS_CREATED_STR = "未发布"; //已创建，在收藏夹，未发布状态
     public static final String GOODS_UNCHECK_STR = "待审核"; //待审核
     public static final String GOODS_PASS_STR = "已通过"; //已通过
     public static final String GOODS_FAIL_STR = "已驳回"; //已驳回
-    public static final String GOODS_SOLD_STR= "已卖出"; //已卖出
+    public static final String GOODS_SOLD_STR = "已卖出"; //已卖出
     public static final String GOODS_CLOSE_STR = "已下架"; //已下架
+    public static String[] goodsStateStrArr = new String[]{GOODS_CREATED_STR, GOODS_UNCHECK_STR, GOODS_PASS_STR, GOODS_FAIL_STR,
+            GOODS_SOLD_STR, GOODS_CLOSE_STR};
 
     //订单状态
     public static final Integer ORDER_UNPAID = 0; //未付款
@@ -67,6 +72,10 @@ public final class ConstantsUtil {
     //商品照片状态
     public static final Integer IMAGES_DELETED = 0; //上传的时候可能删除替换照片
     public static final Integer IMAGES_EFFECTIVE = 1;
+
+    //是否已被逻辑删除
+    public static final Integer LOGIC_DELETED_NO = 0;
+    public static final Integer LOGIC_DELETED_YES = 1;
 
     //用户认证状态
     public static final Integer VIP_APPROVE_UNCHECK = 0;
