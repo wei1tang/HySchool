@@ -22,4 +22,8 @@ public interface GoodsMapper {
 
     void addOneUv(@Param("id") Integer id);
 
+    List<Goods> findAuditAll();
+
+    void stateChange(Goods goods);
+
 }

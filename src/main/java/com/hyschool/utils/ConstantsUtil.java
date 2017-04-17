@@ -47,6 +47,14 @@ public final class ConstantsUtil {
     public static final Integer GOODS_SOLD = 4; //已卖出
     public static final Integer GOODS_CLOSE = -1; //已下架
 
+    //商品状态字符串
+    public static final String GOODS_CREATED_STR = "未发布"; //已创建，在收藏夹，未发布状态
+    public static final String GOODS_UNCHECK_STR = "待审核"; //待审核
+    public static final String GOODS_PASS_STR = "已通过"; //已通过
+    public static final String GOODS_FAIL_STR = "已驳回"; //已驳回
+    public static final String GOODS_SOLD_STR= "已卖出"; //已卖出
+    public static final String GOODS_CLOSE_STR = "已下架"; //已下架
+
     //订单状态
     public static final Integer ORDER_UNPAID = 0; //未付款
     public static final Integer ORDER_PAID_NOTSHIPPED = 1; //已付款,商家未发货

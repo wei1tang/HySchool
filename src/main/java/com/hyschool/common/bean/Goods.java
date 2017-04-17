@@ -50,6 +50,16 @@ public class Goods {
 
     private List<String> imagesUrlList;
 
+    private String goodsStateStr;
+
+    public String getGoodsStateStr() {
+        return goodsStateStr;
+    }
+
+    public void setGoodsStateStr(String goodsStateStr) {
+        this.goodsStateStr = goodsStateStr;
+    }
+
     public Integer getId() {
         return id;
     }

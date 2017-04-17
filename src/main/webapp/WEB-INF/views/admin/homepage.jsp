@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,7 @@
         <div class="title">
             管理员界面
         </div>
+
         <table>
             <tr class="columns">
                 <th class="name">物品名</th>
@@ -30,45 +32,20 @@
                 <th class="status">状态</th>
                 <th class="operation">操作</th>
             </tr>
+            <c:forEach var="goods" items="${goodsList}">
             <tr>
-                <td>物品一</td>
-                <td>电脑</td>
-                <td>审核通过</td>
+                <td>${goods.name}</td>
+                <td>${goods.category}</td>
+                <td>${goods.goodsStateStr}</td>
                 <td>
                     <span>
-                    <a href="#" >审核通过</a>
-                    <span class="ant-divider"></span><a href="#">不通过</a>
+                        <a href="${pageContext.request.contextPath}/admin/homepage/pass/Id=${goods.id}" >审核通过</a>
                     <span class="ant-divider"></span>
-                    <a href="#">删除</a>
+                        <a href="${pageContext.request.contextPath}/admin/homepage/fail/Id=${goods.id}">审核驳回</a>
                     </span>
                 </td>
             </tr>
-            <tr>
-                <td>物品二</td>
-                <td>电脑</td>
-                <td>审核通过</td>
-                <td>
-                    <span>
-                    <a href="#" >审核通过</a>
-                    <span class="ant-divider"></span><a href="#">不通过</a>
-                    <span class="ant-divider"></span>
-                    <a href="#">删除</a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>物品三</td>
-                <td>电脑</td>
-                <td>审核通过</td>
-                <td>
-                    <span>
-                    <a href="#" >审核通过</a>
-                    <span class="ant-divider"></span><a href="#">不通过</a>
-                    <span class="ant-divider"></span>
-                    <a href="#">删除</a>
-                    </span>
-                </td>
-            </tr>
+            </c:forEach>
         </table>
         <!-- 分页 开始 -->
         <div id="page"></div>

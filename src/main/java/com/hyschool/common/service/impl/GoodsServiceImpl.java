@@ -76,5 +76,10 @@ public class GoodsServiceImpl implements GoodsService {
         goodsMapper.addOneUv(id);
     }
 
+    @Override
+    public List<Goods> findAuditAll(){return goodsMapper.findAuditAll(); }
+
+    @Override
+    public void stateChange(Goods goods){goodsMapper.stateChange(goods);};
 
 }

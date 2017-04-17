@@ -2,6 +2,8 @@ package com.hyschool.admin.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hyschool.common.bean.Goods;
+import com.hyschool.common.service.GoodsService;
 import com.hyschool.utils.ConstantsUtil;
 import com.hyschool.vip.bean.Vip;
 import com.hyschool.vip.service.VipService;
@@ -22,9 +24,77 @@ import java.util.Map;
 public class AdminController {
     @Autowired
     VipService vipService;
+    @Autowired
+    GoodsService goodsService;
 
-    @RequestMapping("/homepage")
-    public String index(){
+    @RequestMapping(value = "/homepage",method = RequestMethod.GET)
+    public String goAuditGoods(Model model){
+        List<Goods> goodsList= goodsService.findAuditAll();
+        for (int i = 0; i <goodsList.size() ; i++) {
+            if (goodsList.get(i).getState()==ConstantsUtil.GOODS_UNCHECK){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_UNCHECK_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_FAIL){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_FAIL_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_PASS){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_PASS_STR);
+            }
+            else {
+                System.out.println("商品类型不正确");
+            }
+        }
+        model.addAttribute("goodsList",goodsList);
+        return "admin/homepage";
+    }
+
+    @RequestMapping(value = "/homepage/pass/Id={Id}",method = RequestMethod.GET)
+    public String doPass(@PathVariable ("Id") Integer Id,Model model){
+        Goods goods = goodsService.byId(Id);
+        goods.setState(ConstantsUtil.GOODS_PASS);
+        goods.setGoodsStateStr(ConstantsUtil.GOODS_PASS_STR);
+        goodsService.stateChange(goods);
+        List<Goods> goodsList= goodsService.findAuditAll();
+        for (int i = 0; i <goodsList.size() ; i++) {
+            if (goodsList.get(i).getState()==ConstantsUtil.GOODS_UNCHECK){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_UNCHECK_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_FAIL){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_FAIL_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_PASS){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_PASS_STR);
+            }
+            else {
+                System.out.println("商品类型不正确");
+            }
+        }
+        model.addAttribute("goodsList",goodsList);
+        return "admin/homepage";
+    }
+
+    @RequestMapping(value = "/homepage/fail/Id={Id}",method = RequestMethod.GET)
+    public String doFail(@PathVariable ("Id") Integer Id,Model model){
+        Goods goods = goodsService.byId(Id);
+        goods.setState(ConstantsUtil.GOODS_FAIL);
+        goods.setGoodsStateStr(ConstantsUtil.GOODS_FAIL_STR);
+        goodsService.stateChange(goods);
+        List<Goods> goodsList= goodsService.findAuditAll();
+        for (int i = 0; i <goodsList.size() ; i++) {
+            if (goodsList.get(i).getState()==ConstantsUtil.GOODS_UNCHECK){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_UNCHECK_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_FAIL){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_FAIL_STR);
+            }
+            else if (goodsList.get(i).getState()==ConstantsUtil.GOODS_PASS){
+                goodsList.get(i).setGoodsStateStr(ConstantsUtil.GOODS_PASS_STR);
+            }
+            else {
+                System.out.println("商品类型不正确");
+            }
+        }
+        model.addAttribute("goodsList",goodsList);
         return "admin/homepage";
     }
 
