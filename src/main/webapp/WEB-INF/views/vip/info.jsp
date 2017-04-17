@@ -146,6 +146,28 @@
                             <div id="filePicker">选择图片</div>
                         </div>
                     </div>
+
+                    <div class="publish-item img-box full">
+                        <section class=" img-section">
+                            <p class="up-p">作品图片：<span class="up-span">最多可以上传5张图片，马上上传</span></p>
+                            <div class="z_photo upimg-div clear" >
+                                <!--<section class="up-section fl">
+                                        <span class="up-span"></span>
+                                        <img src="/img/buyerCenter/delete.png" class="close-upimg">
+                                        <img src="/img/buyerCenter/3c.png" class="type-upimg" alt="添加标签">
+                                        <img src="/img/test2.jpg" class="up-img">
+                                        <p class="img-namep"></p>
+                                        <input id="taglocation" name="taglocation" value="" type="hidden">
+                                        <input id="tags" name="tags" value="" type="hidden">
+                                    </section>-->
+                                <section class="z_file fl">
+                                    <img src="../../../static/images/add-pho.png" class="add-img">
+                                    <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
                         <input type="checkbox" id="checkboxSuccess" value="option1">
@@ -349,6 +371,16 @@
 <%--多图上传js--%>
 <script src="../../../static/js/webuploader.js"></script>
 <script src="../../../static/js/user-up.js"></script>
+
+<!--多图上传2-->
+<aside class="mask works-mask">
+    <div class="mask-content">
+        <p class="del-p">您确定要删除作品图片吗？</p>
+        <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+    </div>
+</aside>
+<script type="text/javascript"  src="../../../static/js/imgUp.js"></script>
+
 
 </body>
 </html>

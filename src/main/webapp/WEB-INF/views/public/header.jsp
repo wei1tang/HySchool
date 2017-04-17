@@ -91,7 +91,7 @@
             'display':'block'
         });
     });
-    $('.header .me').mouseleave(function () {
+    $('.header .me .avatar-link').mouseleave(function () {
         $('.header .me .item').css({
             'display':'none'
         });
