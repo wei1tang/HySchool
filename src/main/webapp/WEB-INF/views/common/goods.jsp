@@ -9,6 +9,7 @@
     <!--必要样式-->
     <link href="../../../static/css/project.css" type="text/css" rel="stylesheet"/><!--项目详情界面css-->
 
+    <script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script><!--3.1.1 js-->
 </head>
 <body>
 
@@ -108,7 +109,7 @@
 
 <%@include file="../public/siderbar.jsp" %>
 
-<script type="text/javascript" src="../../../static/js/jquery-3.1.1.min.js"></script>
+
 <script type="text/javascript" src="../../../static/js/project-photo-viewer.js"></script>
 
 

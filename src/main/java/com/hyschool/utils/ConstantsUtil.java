@@ -32,6 +32,10 @@ public final class ConstantsUtil {
     public static final String VIP_APPROVE_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-approve-images\\";
     public static final String VIP_AVATAR_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-avatar-images\\";
 
+//    public static final String GOODS_IMAGES_FILEPATH = "/Users/tangwei/Desktop/images/goods-images/";
+//    public static final String VIP_APPROVE_IMAGES_FILEPATH = "/Users/tangwei/Desktop/images/vip-approve-images/";
+//    public static final String VIP_AVATAR_IMAGES_FILEPATH = "/Users/tangwei/Desktop/images/vip-avatar-images/";
+
     //图片访问的url
     public static final String UPLOAD_IMAGES_URL = "http://localhost:8080/previewImage?filePath=";
 
@@ -42,6 +46,14 @@ public final class ConstantsUtil {
     public static final Integer GOODS_FAIL = 3; //已驳回
     public static final Integer GOODS_SOLD = 4; //已卖出
     public static final Integer GOODS_CLOSE = -1; //已下架
+
+    //商品状态字符串
+    public static final String GOODS_CREATED_STR = "未发布"; //已创建，在收藏夹，未发布状态
+    public static final String GOODS_UNCHECK_STR = "待审核"; //待审核
+    public static final String GOODS_PASS_STR = "已通过"; //已通过
+    public static final String GOODS_FAIL_STR = "已驳回"; //已驳回
+    public static final String GOODS_SOLD_STR= "已卖出"; //已卖出
+    public static final String GOODS_CLOSE_STR = "已下架"; //已下架
 
     //订单状态
     public static final Integer ORDER_UNPAID = 0; //未付款

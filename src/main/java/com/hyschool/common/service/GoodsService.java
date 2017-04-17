@@ -20,4 +20,8 @@ public interface GoodsService {
     void addOneComment(Integer id);
 
     void addOneUv(Integer id);
+
+    List<Goods> findAuditAll();
+
+    void stateChange(Goods goods);
 }

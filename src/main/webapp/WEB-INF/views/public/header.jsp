@@ -5,38 +5,12 @@
     <link rel="stylesheet" type="text/css" href="../../../static/css/index-search-form.css"/><!--搜索栏css-->
     <script type="text/javascript" src="../../../static/js/index-search.js"></script><!--搜索栏js-->
     <link href="../../../static/css/admin-buttonstyle.css" type="text/css" rel="stylesheet"/><!--button css-->
-    <link href="../../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">
+    <%--<link href="../../../static/css/font/iconfont.css" type="text/css" rel="stylesheet">--%>
 
-    <style type="text/css">
-        .me li{
-            margin-top: -16px;
-            list-style-type:none;
-        }
-        .me .item{
-            display: none;
-            text-align: center;
-            margin-top:0;
-            background-color: white;
-            border-bottom: 1px solid rgba(0,0,0,.1);
-            height: 50px;
-        }
-        .me li a{
-            text-decoration:none;
-            cursor: pointer;
-            color: #2d3238;
-            opacity: 0.5;/*设置div元素不透明度*/
-        }
+    <link href="../../../static/css/index-sider-style.css" rel="stylesheet" type="text/css" /><!--侧边栏样式-->
+    <link href="../../../static/css/header.css" rel="stylesheet" type="text/css" /><!--header样式-->
 
-        .me li a:hover,.me li a:active {
-            opacity: 1;
-        }
-        #user-img:hover + .me .item,#user-img:active + .me .item{
-            display: block;
-        }
-        .list{
-            text-decoration: none;/*消除a下划线*/
-        }
-    </style>
+
 </head>
 <body>
 
@@ -66,27 +40,26 @@
             </form>
         </c:if>
 
-
         <c:if test="${sessionScope.vip ne null}">
             <div class="me" id="me">
-                <a class="list"><i class="iconfont" style="font-size: 32px;">&#xe6f2;</i>通知</a>
-                <a class="list"><i class="iconfont" style="font-size: 32px;">&#xe602;</i>购物车</a>
+                <a class="list"><i class="fa fa-bell-o fa-lg"></i><span>通知</span></a>
+                <a class="list"><i class="fa fa-shopping-cart fa-lg"></i><span>购物车</span></a>
                 <ul class="avatar-link" title="user">
                     <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>
                         ${sessionScope.vip.name}
                     </li>
                     <c:if test="${sessionScope.vip.userType eq 1}">
-                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="iconfont">&#xe832;</i>&nbsp;&nbsp;&nbsp;个人设置</a></li>
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="fa fa-cog fa-lg"></i><span>个人设置</span></a></li>
                     </c:if>
                     <c:if test="${sessionScope.vip.userType gt 1}">
-                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="iconfont">&#xe832;</i>个人设置</a></li>
-                        <li class="item"><a href="/" ><i class="iconfont">&#xe638;</i>认证审核</a></li>
-                        <li class="item"><a href="/" ><i class="iconfont">&#xe673;</i>商品审核</a></li>
+                        <li class="item"><a href="${pageContext.request.contextPath}/vip/info"><i class="fa fa-cog fa-lg"></i><span>个人设置</span></a></li>
+                        <li class="item"><a href="/" ><i class="fa fa-file-archive-o fa-lg"></i><span>认证审核</span></a></li>
+                        <li class="item"><a href="/" ><i class="fa fa-shopping-basket fa-lg"></i><span>商品审核</span></a></li>
                     </c:if>
                     <c:if test="${sessionScope.vip.userType gt 2}">
-                        <li class="item"><a href="/" class="last"><i class="iconfont">&#xe665;</i>设管理员</a></li>
+                        <li class="item"><a href="/" class="last"><i class="fa fa-th-large fa-lg"></i><span>设管理员</span></a></li>
                     </c:if>
-                    <li class="item"><a href="${pageContext.request.contextPath}/vip/logout" class="last"><i class="iconfont">&#xe70e;</i>退出登录</a></li>
+                    <li class="item"><a href="${pageContext.request.contextPath}/vip/logout" class="last"><i class="fa fa-sign-out fa-lg"></i><span>退出登录</span></a></li>
                 </ul>
 
 
@@ -118,7 +91,7 @@
             'display':'block'
         });
     });
-    $('.header .me').mouseleave(function () {
+    $('.header .me .avatar-link').mouseleave(function () {
         $('.header .me .item').css({
             'display':'none'
         });

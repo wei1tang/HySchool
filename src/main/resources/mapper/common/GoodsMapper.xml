@@ -18,6 +18,10 @@
     </resultMap>
 
 
+    <select id="findAuditAll"  resultMap="BaseResultMap">
+        SELECT * FROM goods WHERE state=1 OR state=2 OR state=3
+    </select>
+
     <select id="byId" parameterType="Integer" resultType="goods">
         SELECT * FROM goods WHERE id=#{id, jdbcType=INTEGER}
     </select>
@@ -51,6 +55,10 @@
 
     <update id="addOneUv" parameterType="INTEGER">
         UPDATE goods SET uv = uv+1 WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="stateChange" parameterType="goods">
+        UPDATE goods SET state = #{state,jdbcType=INTEGER} WHERE id = #{id,jdbcType=INTEGER}
     </update>
 
     <select id="countReleaseGoods" resultType="INTEGER">

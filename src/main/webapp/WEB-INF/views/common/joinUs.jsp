@@ -9,6 +9,7 @@
 
     <link href="../../../static/css/joinus.css" type="text/css" rel="stylesheet"/><!--加入我们css-->
 
+    <script src="../../../static/js/jquery-3.1.1.js"></script><!--3.1.1js-->
 </head>
 
 <body>

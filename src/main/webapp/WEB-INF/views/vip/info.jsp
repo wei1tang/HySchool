@@ -29,11 +29,7 @@
 
 <div class="container">
     <%@include file="../public/header.jsp"%>
-    <style type="text/css">
-        #user-img{
-            margin-top: 0;
-        }
-    </style>
+
     <div class="user">
         <div class="left">
             <div class="level">
@@ -45,6 +41,7 @@
             </div>
             <ul class="nav">
                 <li class="active"><a class="item" href="#tab-1"><i class="fa fa-gear fa-lg"></i>个人信息设置</a></li>
+                <li><a class="item" href="#tab-5"><i class="fa fa-envelope-o fa-lg"></i>消息管理</a></li>
                 <li><a class="item" href="#tab-2"><i class="fa fa-pencil fa-lg"></i>发布物品</a></li>
                 <li><a class="item" href="#tab-3"><i class="fa fa-refresh fa-lg"></i>已发布物品</a></li>
                 <li><a class="item" href="#tab-4"><i class="fa fa-flag fa-lg"></i>已购买物品</a></li>
@@ -150,6 +147,28 @@
                             <div id="filePicker">选择图片</div>
                         </div>
                     </div>
+
+                    <div class="publish-item img-box full">
+                        <section class=" img-section">
+                            <p class="up-p">作品图片：<span class="up-span">最多可以上传5张图片，马上上传</span></p>
+                            <div class="z_photo upimg-div clear" >
+                                <!--<section class="up-section fl">
+                                        <span class="up-span"></span>
+                                        <img src="/img/buyerCenter/delete.png" class="close-upimg">
+                                        <img src="/img/buyerCenter/3c.png" class="type-upimg" alt="添加标签">
+                                        <img src="/img/test2.jpg" class="up-img">
+                                        <p class="img-namep"></p>
+                                        <input id="taglocation" name="taglocation" value="" type="hidden">
+                                        <input id="tags" name="tags" value="" type="hidden">
+                                    </section>-->
+                                <section class="z_file fl">
+                                    <img src="../../../static/images/add-pho.png" class="add-img">
+                                    <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
                         <input type="checkbox" id="checkboxSuccess" value="option1">
@@ -320,7 +339,37 @@
                     </nav>
                     <!-- 分页 结束 -->
                 </div>
-
+                <!-- 收件箱 -->
+                <div class="information" id="tab-5">
+                    <div class="text-header">
+                        <p>收件箱</p>
+                        <a href="">清空邮件</a>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -353,6 +402,16 @@
 <%--多图上传js--%>
 <script src="../../../static/js/webuploader.js"></script>
 <script src="../../../static/js/user-up.js"></script>
+
+<!--多图上传2-->
+<aside class="mask works-mask">
+    <div class="mask-content">
+        <p class="del-p">您确定要删除作品图片吗？</p>
+        <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+    </div>
+</aside>
+<script type="text/javascript"  src="../../../static/js/imgUp.js"></script>
+
 
 </body>
 </html>
