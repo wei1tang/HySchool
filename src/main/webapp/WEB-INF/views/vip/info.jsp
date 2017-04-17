@@ -29,11 +29,7 @@
 
 <div class="container">
     <%@include file="../public/header.jsp"%>
-    <style type="text/css">
-        #user-img{
-            margin-top: 0;
-        }
-    </style>
+
     <div class="user">
         <div class="left">
             <div class="level">

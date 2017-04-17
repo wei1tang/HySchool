@@ -32,6 +32,10 @@ public final class ConstantsUtil {
     public static final String VIP_APPROVE_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-approve-images\\";
     public static final String VIP_AVATAR_IMAGES_FILEPATH = "E:\\HySchool\\images\\vip-avatar-images\\";
 
+//    public static final String GOODS_IMAGES_FILEPATH = "\\Users\\tangwei\\Desktop\\HySchool\\images\\goods-images\\";
+//    public static final String VIP_APPROVE_IMAGES_FILEPATH = "\\Users\\tangwei\\Desktop\\HySchool\\images\\vip-approve-images\\";
+//    public static final String VIP_AVATAR_IMAGES_FILEPATH = "\\Users\\tangwei\\Desktop\\HySchool\\images\\vip-avatar-images\\";
+
     //图片访问的url
     public static final String UPLOAD_IMAGES_URL = "http://localhost:8080/previewImage?filePath=";
 

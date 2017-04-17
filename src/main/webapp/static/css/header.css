@@ -1,0 +1,128 @@
+/*----------- start header-------------*/
+.header{
+    position: fixed;
+    z-index: 999;/*设置重叠优先级*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+.header .header-content {
+    line-height: 60px;
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+}
+.header .header-content .logo {
+    font-size: 17px;
+    font-weight: 600;
+    float: left;
+    color: #00d8ff;
+    cursor: pointer;/*鼠标指向时改变光标*/
+}
+.header .header-content .logo img {
+    float: left;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.header .header-content .nav {
+
+    float: left;
+    margin-left: 20px;
+}
+.header .header-content .list {
+    font-weight: 500;
+    font-size: 16px;
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    -webkit-transition: 0.3s;/* Safari 和 Chrome */
+    transition: 0.3s;/*CSS属性(none|all|属性)  持续时间  时间函数  延迟时间*/
+    opacity: 0.5;/*设置div元素不透明度*/
+    text-decoration: none;/*消除a下划线*/
+    color: #2d3238;
+}
+.header .header-content .list:hover,.header .header-content .list:active {
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);/*向框添加一个或多个阴影*/
+}
+.header .header-content .sign {
+    font-size: 14px;
+    float: right;
+    margin-left: 20px;
+}
+.header .header-content .sign a{
+    text-decoration: none;
+}
+.header .header-content .me {
+    float: right;
+    /*overflow: hidden;*/
+    height: 100%;
+    margin-left: 20px;
+}
+.header .header-content li{
+    width: 150px;
+    list-style-type:none;
+}
+.header .header-content .item{
+    display: none;
+    text-align: center;
+    margin-top:0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    height: 50px;
+    width: 120px;
+}
+.header .header-content li a{
+    text-decoration:none;
+    cursor: pointer;
+    color: #2d3238;
+    opacity: 0.5;/*设置div元素不透明度*/
+}
+
+.header .header-content .me .avatar-link {
+    font-size: 16px;
+    opacity:0.5;
+    color: #2d3238;
+    cursor: pointer;/*鼠标指向时改变光标*/
+    float:left;
+    padding: 0;
+    margin: 0;
+}
+.header .header-content .me li a:hover,.header .header-content .me li a:active {
+    opacity: 1;
+}
+#user-img:hover + .me .item,#user-img:active + .me .item{
+    display: block;
+}
+
+.header .header-content .me span{
+    margin-left: 5px;
+}
+
+
+
+
+.header .header-content .me .avatar-link:hover {
+    opacity: 1;
+}
+.header .header-content .me .avatar-link:active {
+    opacity: 1;
+}
+.header .header-content .me .avatar-link .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: .5em;
+    vertical-align: middle;/*垂直对齐一幅图像*/
+    border-radius: 20px;/*向 div 元素添加圆角边框：*/
+}
+
+.header .header-content .me .button-link{
+    float:left;
+}
+
+/*----------- end header-------------*/
+
