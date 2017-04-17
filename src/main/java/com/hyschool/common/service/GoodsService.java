@@ -18,4 +18,6 @@ public interface GoodsService {
     void createGoods(Goods goods);
 
     void addOneComment(Integer id);
+
+    void addOneUv(Integer id);
 }

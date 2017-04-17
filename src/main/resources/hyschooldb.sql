@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2017-04-12 23:15:12
+Date: 2017-04-16 23:02:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,10 +30,6 @@ CREATE TABLE `audit_approve_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip认证审核记录';
 
 -- ----------------------------
--- Records of audit_approve_history
--- ----------------------------
-
--- ----------------------------
 -- Table structure for audit_goods_history
 -- ----------------------------
 DROP TABLE IF EXISTS `audit_goods_history`;
@@ -46,10 +42,6 @@ CREATE TABLE `audit_goods_history` (
   `audit_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='发布的商品审核记录';
-
--- ----------------------------
--- Records of audit_goods_history
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for categories
@@ -65,10 +57,6 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='栏目，直接用枚举类';
 
 -- ----------------------------
--- Records of categories
--- ----------------------------
-
--- ----------------------------
 -- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
@@ -80,7 +68,8 @@ CREATE TABLE `goods` (
   `state` int(1) NOT NULL COMMENT '商品的状态，待发布，提交审核，已驳回，已发布，已被购买，已完成交易，已下架。',
   `price` double(11,2) NOT NULL,
   `stock` int(5) NOT NULL COMMENT '库存量，不知道用不用的着，二手街一般为1',
-  `description` varchar(255) DEFAULT NULL,
+  `used_time` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `uv` int(11) DEFAULT NULL,
   `total_comments` int(5) DEFAULT NULL,
   `transaction_address` varchar(255) DEFAULT NULL COMMENT '交易地点，线上或某个学校',
@@ -89,87 +78,6 @@ CREATE TABLE `goods` (
   `off_the_shelf_time` timestamp NULL DEFAULT NULL COMMENT '下架时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of goods
--- ----------------------------
-INSERT INTO `goods` VALUES ('1', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('2', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('3', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('4', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('5', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('6', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('7', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('8', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('9', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('10', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('11', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('12', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('13', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('14', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('15', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('16', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('17', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('18', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('19', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('20', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('21', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('22', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('23', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('24', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('25', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('26', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('27', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('28', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('29', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('30', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('31', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('32', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('33', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('34', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('35', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('36', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('37', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('38', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('39', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('40', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('41', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('42', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('43', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('44', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('45', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('46', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('47', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('48', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('49', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('50', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('51', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('52', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('53', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('54', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('55', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('56', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('57', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('58', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('59', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('60', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('61', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('62', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('63', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('64', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('65', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('66', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('67', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('68', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('69', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('70', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('71', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('72', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('73', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('74', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('75', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('76', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
-INSERT INTO `goods` VALUES ('77', '1', '1', 'goods', '2', '5000.00', '1', '商品的描述', null, null, '华科', null, '2017-03-20 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for goods_comments
@@ -187,10 +95,6 @@ CREATE TABLE `goods_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of goods_comments
--- ----------------------------
-
--- ----------------------------
 -- Table structure for goods_images
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_images`;
@@ -202,30 +106,6 @@ CREATE TABLE `goods_images` (
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of goods_images
--- ----------------------------
-INSERT INTO `goods_images` VALUES ('1', '1', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('2', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('3', '3', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('4', '4', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('5', '5', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('6', '6', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('7', '7', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('8', '8', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('9', '9', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('10', '10', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('11', '11', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('12', '12', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('13', '13', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('14', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('15', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('16', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('17', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('18', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('19', '2', '/static/images/goods-images/2.png', '1', null);
-INSERT INTO `goods_images` VALUES ('20', '2', '/static/images/goods-images/2.png', '1', null);
 
 -- ----------------------------
 -- Table structure for notice
@@ -245,10 +125,6 @@ CREATE TABLE `notice` (
   `read_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of notice
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for order
@@ -275,10 +151,6 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of order
--- ----------------------------
-
--- ----------------------------
 -- Table structure for order_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `order_comments`;
@@ -295,10 +167,6 @@ CREATE TABLE `order_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='完成订单后对发布人(店家)的评价';
 
 -- ----------------------------
--- Records of order_comments
--- ----------------------------
-
--- ----------------------------
 -- Table structure for order_goods_list
 -- ----------------------------
 DROP TABLE IF EXISTS `order_goods_list`;
@@ -308,10 +176,6 @@ CREATE TABLE `order_goods_list` (
   `goods_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of order_goods_list
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for vip
@@ -332,12 +196,7 @@ CREATE TABLE `vip` (
   `update_time` timestamp NULL DEFAULT NULL,
   `reset_password_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of vip
--- ----------------------------
-INSERT INTO `vip` VALUES ('17', '吕金旺', '769707043@qq.com', '$2a$10$4BQU/OYP/hlcwOM0oo7.ee4uDD8fvo.QJoz2wk.QYnJgvFVBuXFce', '2', null, '2', '/static/images/vip-avatar-images/ljw.jpg', '我的个人简介31232', null, '2017-04-10 16:44:57', null, null);
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vip_address
@@ -360,10 +219,6 @@ CREATE TABLE `vip_address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户的收货地址';
 
 -- ----------------------------
--- Records of vip_address
--- ----------------------------
-
--- ----------------------------
 -- Table structure for vip_approve
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_approve`;
@@ -372,19 +227,17 @@ CREATE TABLE `vip_approve` (
   `vip_id` int(11) NOT NULL,
   `real_name` varchar(255) NOT NULL,
   `gender` tinyint(1) NOT NULL DEFAULT '0',
-  `phone` int(11) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `province_code` varchar(6) NOT NULL,
   `city_code` varchar(6) NOT NULL,
   `school` varchar(50) NOT NULL,
+  `faculty` varchar(100) NOT NULL,
+  `grade` int(11) NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `state` int(1) NOT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of vip_approve
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vip_goods_collections
@@ -398,10 +251,6 @@ CREATE TABLE `vip_goods_collections` (
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip的个人商品收藏';
-
--- ----------------------------
--- Records of vip_goods_collections
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for vip_messages_board
@@ -419,10 +268,6 @@ CREATE TABLE `vip_messages_board` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='留言板，设计不完全';
 
 -- ----------------------------
--- Records of vip_messages_board
--- ----------------------------
-
--- ----------------------------
 -- Table structure for vip_validate
 -- ----------------------------
 DROP TABLE IF EXISTS `vip_validate`;
@@ -431,8 +276,3 @@ CREATE TABLE `vip_validate` (
   `validate_code` varchar(255) DEFAULT NULL COMMENT '激活码',
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='注册修改密码用的激活码表';
-
--- ----------------------------
--- Records of vip_validate
--- ----------------------------
-INSERT INTO `vip_validate` VALUES ('769707043@qq.com', null);

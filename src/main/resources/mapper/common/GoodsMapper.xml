@@ -49,6 +49,10 @@
         UPDATE goods SET total_comments=total_comments+1 WHERE id = #{id,jdbcType=INTEGER}
     </update>
 
+    <update id="addOneUv" parameterType="INTEGER">
+        UPDATE goods SET uv = uv+1 WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
     <select id="countReleaseGoods" resultType="INTEGER">
         SELECT COUNT(*) FROM goods WHERE vip_id=#{vipId,jdbcType=INTEGER} AND state=#{state,jdbcType=INTEGER}
     </select>
