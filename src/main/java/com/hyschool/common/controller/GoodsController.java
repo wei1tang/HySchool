@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.concurrent.TimeUnit;
 
@@ -44,7 +45,7 @@ public class GoodsController implements InitializingBean {
         localCache = CacheBuilder.newBuilder().expireAfterWrite(30, TimeUnit.MINUTES).maximumSize(10000L)
                 .build(new CacheLoader<String, Integer>() {
                     @Override
-                    public Integer load(String key) throws Exception {
+                    public Integer load(String ip) throws Exception {
                         return -1;
                     }
                 });
@@ -56,17 +57,32 @@ public class GoodsController implements InitializingBean {
      *
      * @param id
      * @param model
-     * @param session
+     * @param request
      * @return
      */
     @RequestMapping(value = "/no{id}", method = RequestMethod.GET)
-    public String viewGoods(@PathVariable("id") Integer id, Model model, HttpSession session) {
-        Vip vip = (Vip) session.getAttribute("vip");
-        if (localCache.getUnchecked(vip.getEmail()).equals(1)) {
-            logger.info("用户: " + vip.getEmail() + " 三十分钟内不再增加UV");
+    public String viewGoods(@PathVariable("id") Integer id, Model model, HttpServletRequest request) {
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_CLIENT_IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        if (localCache.getUnchecked(ip).equals(1)) {
+            logger.info("用户: " + ip + " 三十分钟内不再增加UV");
         } else {
             goodsService.addOneUv(id);
-            localCache.put(vip.getEmail(), 1);
+            localCache.put(ip, 1);
         }
         Goods goods = goodsService.byId(id);
         model.addAttribute("goods", goods);
