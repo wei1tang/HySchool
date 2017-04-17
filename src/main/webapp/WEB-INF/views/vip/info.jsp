@@ -41,6 +41,7 @@
             </div>
             <ul class="nav">
                 <li class="active"><a class="item" href="#tab-1"><i class="fa fa-gear fa-lg"></i>个人信息设置</a></li>
+                <li><a class="item" href="#tab-5"><i class="fa fa-envelope-o fa-lg"></i>消息管理</a></li>
                 <li><a class="item" href="#tab-2"><i class="fa fa-pencil fa-lg"></i>发布物品</a></li>
                 <li><a class="item" href="#tab-3"><i class="fa fa-refresh fa-lg"></i>已发布物品</a></li>
                 <li><a class="item" href="#tab-4"><i class="fa fa-flag fa-lg"></i>已购买物品</a></li>
@@ -338,7 +339,37 @@
                     </nav>
                     <!-- 分页 结束 -->
                 </div>
-
+                <!-- 收件箱 -->
+                <div class="information" id="tab-5">
+                    <div class="text-header">
+                        <p>收件箱</p>
+                        <a href="">清空邮件</a>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                    <div class="item">
+                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="close-button"><a href="">X</a></div>
+                        <div class="send-time">发送时间: 2017/01/13</div>
+                        <div class="send-person">发送人:系统</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

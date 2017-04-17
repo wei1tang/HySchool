@@ -503,8 +503,8 @@ html,body{
     height: 100%;
     opacity: 0;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 100;
 }
 .z_photo .up-section{
@@ -525,8 +525,8 @@ html,body{
     height: 100%;
     visibility: hidden;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 9;
     background: rgba(0,0,0,.5);
 }
@@ -607,8 +607,8 @@ html,body{
     height: 66px;
     line-height: 66px;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     width: 100%;
 }
 .mask-content .check-p span{
@@ -621,8 +621,6 @@ html,body{
 .check-p .del-com{
     border-right: 1px solid #D1D1D1;
 }
-
-
 .w-dropmenu_tri {
     position: absolute;
     top: -12px;
@@ -635,3 +633,101 @@ html,body{
     border-color: transparent transparent #fff;
     margin-left: -6px;
 }
+/*上传图片插件的样式*/
+/*-----------start information-------------*/
+.information{
+    text-align: left;
+    display: inline;
+}
+.information .text-header{
+    height: 30px;
+    width: 100%;
+}
+.information .text-header p{
+    width: 86%;
+    float: left;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+.information .text-header a{
+    width: 10%;
+    float: left;
+    border-bottom: 1px solid black;
+    color: #1B9AF7;
+    text-decoration: none;
+}
+.information .text-header a:hover{
+    opacity: 0.5;
+}
+.information .item a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #2d3238;
+}
+.information .item a:hover{
+    color:#428bca;
+}
+.information .item{
+    position: relative;
+    z-index: 1;
+    margin:8px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    overflow: hidden;
+    /*list-style: none;ul里面消除li的点*/
+    height: 80px;
+    background: #fff;
+    box-shadow: 2px 2px 2px #aaa;
+    cursor: pointer;/*鼠标指向时改变光标*/
+}
+.information .item:hover{
+    background-color: rgba(0, 0, 0, .1);
+}
+.information .item .text-name {
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 30px;
+    width: 90%;
+    float: left;
+}
+.information .item .close-button {
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 30px;
+    width: 3%;
+    float: left;
+    display: none;
+}
+.information .item .close-button:hover{
+    color: red;
+}
+.information .item .send-time {
+    line-height: 40px;
+    float: left;
+    width: 60%;
+    height: 40px;
+    /*padding-right: 10px;*/
+    text-align: left;
+    color: #c7c7c7;
+    margin-left: 10px;
+}
+.information .item .send-person {
+    color: #c7c7c7;
+    line-height: 40px;
+    float: left;
+    width: 35%;
+    height: 40px;
+    text-align: right;
+    margin-right: 10px;
+    /*padding-left: 10px;*/
+}
+.user .right .information {
+    display: none;
+}
+.information .item:hover > .close-button{
+    display: block;
+}
+/*-----------end information-------------*/
