@@ -39,9 +39,7 @@
 
     <!--实体类的别名,类名首字母小写-->
     <typeAliases>
-        <package name="com.hyschool.admin.bean"/>
-        <package name="com.hyschool.common.bean"/>
-        <package name="com.hyschool.vip.bean"/>
+        <package name="com.hyschool.bean"/>
     </typeAliases>
 
 </configuration>

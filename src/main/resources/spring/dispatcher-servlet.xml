@@ -13,7 +13,7 @@
     <context:annotation-config/>
 
     <!-- scan the package and the sub package -->
-    <context:component-scan base-package="com.hyschool.*.controller"/>
+    <context:component-scan base-package="com.hyschool.controller"/>
 
     <!-- if you use annotation you must configure following setting -->
     <mvc:annotation-driven/>

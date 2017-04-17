@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hyschool.vip.dao.VipValidateMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipValidate">
+<mapper namespace="com.hyschool.dao.vip.VipValidateMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.vip.VipValidate">
         <id column="email" property="email" jdbcType="VARCHAR"/>
         <result column="validate_code" property="validateCode" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <insert id="createVipValidate" parameterType="com.hyschool.vip.bean.VipValidate">
+    <insert id="createVipValidate" parameterType="com.hyschool.bean.vip.VipValidate">
         INSERT INTO vip_validate (email,validate_code)
         VALUES (
                 #{email,jdbcType=VARCHAR},
@@ -14,7 +14,7 @@
                 )
     </insert>
 
-    <update id="updateVipValidate" parameterType="com.hyschool.vip.bean.VipValidate">
+    <update id="updateVipValidate" parameterType="com.hyschool.bean.vip.VipValidate">
         UPDATE vip_validate set validate_code=#{validateCode,jdbcType=VARCHAR }
         WHERE email=#{email,jdbcType=VARCHAR}
     </update>

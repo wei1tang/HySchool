@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyschool.vip.dao.VipAddressMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.vip.bean.VipAddress">
+<mapper namespace="com.hyschool.dao.vip.VipAddressMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.vip.VipAddress">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="address" jdbcType="VARCHAR" property="address"/>

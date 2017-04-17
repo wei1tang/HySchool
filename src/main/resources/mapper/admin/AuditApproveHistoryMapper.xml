@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyschool.admin.dao.AuditApproveHistoryMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.admin.bean.AuditApproveHistory">
+<mapper namespace="com.hyschool.dao.admin.AuditApproveHistoryMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.admin.AuditApproveHistory">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="admin_id" jdbcType="INTEGER" property="adminId"/>
         <result column="vip_id" jdbcType="INTEGER" property="vipId"/>

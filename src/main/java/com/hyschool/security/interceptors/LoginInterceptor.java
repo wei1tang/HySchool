@@ -1,9 +1,8 @@
 package com.hyschool.security.interceptors;
 
 import com.hyschool.utils.CookieUtil;
-import com.hyschool.vip.bean.Vip;
-import com.hyschool.vip.dao.VipMapper;
-import com.hyschool.vip.service.VipService;
+import com.hyschool.bean.vip.Vip;
+import com.hyschool.service.vip.VipService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
