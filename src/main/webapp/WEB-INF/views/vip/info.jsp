@@ -172,7 +172,7 @@
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
                         <input type="checkbox" id="checkboxSuccess" value="option1">
-                        <label for="checkboxSuccess">确认同意<a class="dialog">发布规则</a></label>
+                        <label for="checkboxSuccess">确认同意<a class="dialog1">发布规则</a></label>
                     </div>
                     <div class="publish-item">
                         <span class="title">&nbsp;</span>
@@ -346,25 +346,25 @@
                         <a href="">清空邮件</a>
                     </div>
                     <div class="item">
-                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="text-name"><a class="dialog2">项目名1-1</a></div>
                         <div class="close-button"><a href="">X</a></div>
                         <div class="send-time">发送时间: 2017/01/13</div>
                         <div class="send-person">发送人:系统</div>
                     </div>
                     <div class="item">
-                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="text-name"><a class="dialog2">项目名1-1</a></div>
                         <div class="close-button"><a href="">X</a></div>
                         <div class="send-time">发送时间: 2017/01/13</div>
                         <div class="send-person">发送人:系统</div>
                     </div>
                     <div class="item">
-                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="text-name"><a class="dialog2">项目名1-1</a></div>
                         <div class="close-button"><a href="">X</a></div>
                         <div class="send-time">发送时间: 2017/01/13</div>
                         <div class="send-person">发送人:系统</div>
                     </div>
                     <div class="item">
-                        <div class="text-name"><a href="">项目名1-1</a></div>
+                        <div class="text-name"><a class="dialog2">项目名1-1</a></div>
                         <div class="close-button"><a href="">X</a></div>
                         <div class="send-time">发送时间: 2017/01/13</div>
                         <div class="send-person">发送人:系统</div>
@@ -380,6 +380,8 @@
 <%@include file="../public/uploadPhoto.jsp"%>
 
 <%@include file="../public/popWindowUser.jsp"%>
+
+<%@include file="../public/popWindowEmail.jsp"%>
 
 <!--选项卡js-->
 <script type="text/javascript" src="../../../static/js/user-select-tab.js"></script>

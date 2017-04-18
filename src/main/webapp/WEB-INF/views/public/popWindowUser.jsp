@@ -116,7 +116,7 @@
 <script type="text/javascript" src="../../../static/js/jquery-hDialog.js"></script>
 <script>
     $(function() {
-        var $el = $('.dialog');
+        var $el = $('.dialog1');
         $el.hDialog({
             box: '#tab-about4',
             boxBg: '#ffffff',
