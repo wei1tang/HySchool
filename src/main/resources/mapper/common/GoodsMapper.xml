@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyschool.common.dao.GoodsMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Goods">
+<mapper namespace="com.hyschool.dao.common.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.common.Goods">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="category_id" jdbcType="INTEGER" property="categoryId"/>
         <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
@@ -17,6 +17,10 @@
         <result column="off_the_shelf_time" jdbcType="TIMESTAMP" property="offTheShelfTime"/>
     </resultMap>
 
+
+    <select id="findAuditAll"  resultMap="BaseResultMap">
+        SELECT * FROM goods WHERE state=1 OR state=2 OR state=3
+    </select>
 
     <select id="byId" parameterType="Integer" resultType="goods">
         SELECT * FROM goods WHERE id=#{id, jdbcType=INTEGER}
@@ -51,6 +55,10 @@
 
     <update id="addOneUv" parameterType="INTEGER">
         UPDATE goods SET uv = uv+1 WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="stateChange" parameterType="goods">
+        UPDATE goods SET state = #{state,jdbcType=INTEGER} WHERE id = #{id,jdbcType=INTEGER}
     </update>
 
     <select id="countReleaseGoods" resultType="INTEGER">

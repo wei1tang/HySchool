@@ -2,8 +2,8 @@ package com.hyschool.security.interceptors;
 
 import com.hyschool.utils.ConstantsUtil;
 import com.hyschool.utils.CookieUtil;
-import com.hyschool.vip.bean.Vip;
-import com.hyschool.vip.dao.VipMapper;
+import com.hyschool.bean.vip.Vip;
+import com.hyschool.dao.vip.VipMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

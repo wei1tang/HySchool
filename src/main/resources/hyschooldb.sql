@@ -119,7 +119,7 @@ CREATE TABLE `notice` (
   `type` int(1) NOT NULL,
   `url` varchar(255) NOT NULL,
   `have_read` tinyint(1) NOT NULL DEFAULT '0',
-  `is_delete` tinyint(1) NOT NULL DEFAULT '0',
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `is_public_all` tinyint(1) NOT NULL DEFAULT '0',
   `create_time` timestamp NULL DEFAULT NULL,
   `read_time` timestamp NULL DEFAULT NULL,

@@ -1,6 +1,6 @@
 package com.hyschool.spring;
 
-import com.hyschool.vip.dao.VipMapper;
+import com.hyschool.dao.vip.VipMapper;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hyschool.common.dao.GoodsImagesMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.common.bean.GoodsImages">
+<mapper namespace="com.hyschool.dao.common.GoodsImagesMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.common.GoodsImages">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
         <result column="image_url" property="imageUrl" jdbcType="VARCHAR"/>

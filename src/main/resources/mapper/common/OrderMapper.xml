@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyschool.common.dao.OrderMapper">
-    <resultMap id="BaseResultMap" type="com.hyschool.common.bean.Order">
+<mapper namespace="com.hyschool.dao.common.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.hyschool.bean.common.Order">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="order_number" jdbcType="INTEGER" property="orderNumber"/>
         <result column="vip_buyer_id" jdbcType="INTEGER" property="vipBuyerId"/>

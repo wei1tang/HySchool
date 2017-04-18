@@ -21,12 +21,12 @@
 <script language="JavaScript">
     function check() {
         var name = $.sessionStorage.getItem("vip");
-        var type="${sessionScope.vip.userType}";
+        var type = "${sessionScope.vip.userType}";
         var user = '<%=session.getAttribute("vip")%>';
         if (user === "null") {
             //没登录
 
-        }else if(type==1){
+        } else if (type == 1) {
             //普通vip
         }
     }
@@ -45,6 +45,17 @@
     <input type="button" id="formDemoSubmit" value="提交">
 </form>
 <div id="formReturn"></div>
+
+<%--一个string的list--%>
+<c:forEach items="${hisReason}" var="reasons" varStatus="tik">
+    <h2>
+        第${tik.index+1}次审核记录：
+    </h2>
+    <div>
+            ${reasons}
+    </div>
+</c:forEach>
+
 
 <script src="<%=request.getContextPath()%>/static/js/jquery-3.1.1.min.js"></script>
 <script>

@@ -36,7 +36,7 @@
 
     <!--自动扫描mapper接口，并注入sqlsession-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hyschool.admin.dao,com.hyschool.vip.dao,com.hyschool.business.dao,com.hyschool.common.dao"/>
+        <property name="basePackage" value="com.hyschool.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSession"/>
     </bean>
 

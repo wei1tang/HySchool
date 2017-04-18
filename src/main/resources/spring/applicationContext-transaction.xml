@@ -25,7 +25,7 @@
 
     <aop:config>
         <!--AspectJ 的切点表达式语言,将txAdvice声明为切面-->
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.hyschool.*.service.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.hyschool.service.*.*(..))"/>
     </aop:config>
 
 </beans>

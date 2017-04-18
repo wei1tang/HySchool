@@ -1,6 +1,6 @@
 package com.hyschool.utils;
 
-import com.hyschool.vip.bean.Vip;
+import com.hyschool.bean.vip.Vip;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
