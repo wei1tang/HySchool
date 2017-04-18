@@ -1,9 +1,13 @@
 package com.hyschool.spring;
 
 import com.hyschool.service.common.GoodsService;
+import com.hyschool.service.common.NoticeService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by LJW on 2017/4/12.
@@ -14,6 +18,8 @@ public class ServiceTest extends BaseSpringTestCase {
 
     @Autowired
     GoodsService goodsService;
+    @Autowired
+    NoticeService noticeService;
 
 
     /**
@@ -24,6 +30,16 @@ public class ServiceTest extends BaseSpringTestCase {
         Integer id = 1;
         goodsService.addOneComment(id);
         System.out.println();
+    }
+
+    @Test
+    public void testNoticeService(){
+        List<Integer> idList = new ArrayList<>();
+        idList.add(1);
+        idList.add(2);
+        idList.add(3);
+        noticeService.readManyNotice(idList);
+        noticeService.deleteManyNotice(idList);
     }
 
 

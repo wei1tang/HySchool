@@ -40,7 +40,7 @@ public class GoodsController implements InitializingBean {
 
     /**
      * 缓存做商品的浏览量uv,30分钟内用户刷新界面不增加uv
-     * email为缓存的key
+     * ip为缓存的key
      *
      * @throws Exception
      */

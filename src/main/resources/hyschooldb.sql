@@ -44,19 +44,6 @@ CREATE TABLE `audit_goods_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='发布的商品审核记录';
 
 -- ----------------------------
--- Table structure for categories
--- ----------------------------
-DROP TABLE IF EXISTS `categories`;
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `state` int(1) NOT NULL COMMENT '栏目的状态',
-  `description` varchar(255) NOT NULL,
-  `create_time` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='栏目，直接用枚举类';
-
--- ----------------------------
 -- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
@@ -212,7 +199,7 @@ CREATE TABLE `vip_address` (
   `phone` varchar(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `is_default` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否是默认地址',
-  `is_delete` tinyint(1) DEFAULT '0' COMMENT '是否已经删除',
+  `is_deleted` tinyint(1) DEFAULT '0' COMMENT '是否已经删除',
   `create_time` timestamp NULL DEFAULT NULL,
   `delete_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -247,7 +234,7 @@ CREATE TABLE `vip_goods_collections` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `vip_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
-  `is_delete` tinyint(1) DEFAULT '0',
+  `is_deleted` tinyint(1) DEFAULT '0',
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='vip的个人商品收藏';
@@ -261,7 +248,7 @@ CREATE TABLE `vip_messages_board` (
   `owner_id` int(11) NOT NULL,
   `from_id` int(11) NOT NULL,
   `content` varchar(255) DEFAULT NULL,
-  `is_delete` tinyint(1) DEFAULT '0' COMMENT '用户可以删除留言，是否删除',
+  `is_deleted` tinyint(1) DEFAULT '0' COMMENT '用户可以删除留言，是否删除',
   `create_time` timestamp NULL DEFAULT NULL,
   `delete_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)

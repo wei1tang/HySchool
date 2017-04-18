@@ -26,24 +26,24 @@ public enum CategoryEnum {
 
     static {
         Map<Integer, CategoryEnum> map = new LinkedHashMap<>();
-        for (CategoryEnum category : CategoryEnum.values()) {
-            map.put(category.getCode(), category);
+        for (CategoryEnum categoryEnum : CategoryEnum.values()) {
+            map.put(categoryEnum.getCode(), categoryEnum);
         }
         CATEGORIES = Collections.unmodifiableMap(map);
-    }
-
-    private Integer code;
-
-    private String description;
-
-    CategoryEnum(Integer code, String description){
-        this.code = code;
-        this.description = description;
     }
 
     public static CategoryEnum getByCode(Integer code) {
         return CATEGORIES.get(Integer.valueOf(code));
     }
+
+    CategoryEnum(Integer code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
+    private Integer code;
+
+    private String description;
 
     public Integer getCode() {
         return code;

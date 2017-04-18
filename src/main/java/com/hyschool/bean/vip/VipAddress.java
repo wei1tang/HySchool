@@ -21,7 +21,7 @@ public class VipAddress {
 
     private Boolean isDefault;
 
-    private Boolean isDelete;
+    private Boolean isDeleted;
 
     private Date createTime;
 
@@ -99,12 +99,12 @@ public class VipAddress {
         this.isDefault = isDefault;
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public Date getCreateTime() {

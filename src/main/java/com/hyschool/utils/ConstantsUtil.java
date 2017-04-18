@@ -82,12 +82,4 @@ public final class ConstantsUtil {
     public static final Integer VIP_APPROVE_PASS = 1;
     public static final Integer VIP_APPROVE_FAIL = 2;
 
-    //notice类型
-    public static final Integer GOODS_COMMENTS_NOTICE = 0; //商品评价通知
-    public static final Integer VIP_COMMENTS_NOTICE = 1; //用户评价通知
-    public static final Integer VIP_MESSAGES_BOARD_NOTICE = 2; //留言板通知
-    public static final Integer PAY_ORDER_NOTICE = 3; //买家付款通知
-    public static final Integer CANCEL_ORDER_NOTICE = 4; //取消已付款订单通知
-    public static final Integer ORDER_VIP_CONFIRM_NOTICE = 5; //买家确认收货通知
-    public static final Integer PUBLIC_NOTICE = 6; //公共通知
 }

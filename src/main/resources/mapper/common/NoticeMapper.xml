@@ -33,4 +33,18 @@
         )
     </insert>
 
+    <update id="readManyNotice">
+        UPDATE notice SET have_read = 1, read_time = #{readTime} WHERE id IN
+        <foreach collection="idList" item="id" index="index" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="deleteManyNotice">
+        UPDATE notice SET is_deleted = 1 WHERE id IN
+        <foreach collection="idList" item="id" index="index" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
 </mapper>

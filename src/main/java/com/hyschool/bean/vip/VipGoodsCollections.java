@@ -9,7 +9,7 @@ public class VipGoodsCollections {
 
     private Integer goodsId;
 
-    private Boolean isDelete;
+    private Boolean isDeleted;
 
     private Date createTime;
 
@@ -37,12 +37,12 @@ public class VipGoodsCollections {
         this.goodsId = goodsId;
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public Date getCreateTime() {

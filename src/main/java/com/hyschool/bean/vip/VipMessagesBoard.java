@@ -11,7 +11,7 @@ public class VipMessagesBoard {
 
     private String content;
 
-    private Boolean isDelete;
+    private Boolean isDeleted;
 
     private Date createTime;
 
@@ -49,12 +49,12 @@ public class VipMessagesBoard {
         this.content = content == null ? null : content.trim();
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public Date getCreateTime() {
