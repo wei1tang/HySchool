@@ -1,42 +1,41 @@
 package com.hyschool.service.common;
 
+import com.hyschool.bean.vip.Vip;
+
 import java.util.List;
 
 /**
  * Created by LJW on 2017/4/17.
  */
 public interface NoticeService {
-/*
 
-    void createAuditVipApprovePassNotice();
+    void createAuditVipApprovePassNotice(Integer toVipId);
 
-    void createAuditVipApproveFailNotice();
+    void createAuditVipApproveFailNotice(Integer toVipId, String reason);
 
-    void createAuditGoodsPassNotice();
+    void createAuditGoodsPassNotice(Integer toVipId, String goodsName);
 
-    void createAuditGoodsFailNotice();
+    void createAuditGoodsFailNotice(Integer toVipId, String goodsName, String reason);
 
-    void createAuditGoodsCloseNotice();
+    void createAuditGoodsCloseNotice(Integer toVipId, String goodsName, String reason);
 
-    void createGoodsCommentsNotice();
+    void createGoodsCommentsNotice(Integer toVipId, Vip fromVip, String goodsName);
 
-    void createCommentReplyNotice();
+    void createCommentReplyNotice(Integer toVipId, Vip fromVip, String goodsName);
 
-    void createMessageBoardNotice();
+    void createMessageBoardNotice(Integer toVipId, Vip fromVip);
 
-    void createPayOrderNotice();
+    void createPayOrderNotice(Integer toVipId, Vip fromVip, String orderNumber);
 
-    void createCancleOrderNotice();
+    void createCancleOrderNotice(Integer toVipId, Vip fromVip, String orderNumber);
 
-    void createVipConfirmOrderNotice();
+    void createVipConfirmOrderNotice(Integer toVipId, Vip fromVip, String orderNumber);
 
-    void createPublicNotice();
+    void createBecomeAdminNotice(Integer toVipId);
 
-    void createBecomeAdminNotice();
+    void createNoLongerAdminNotice(Integer toVipId);
 
-    void createNoLongerAdminNotice();
-
-*/
+    void createNoticeFromAnnouncement();
 
     void readManyNotice(List<Integer> idList);
 

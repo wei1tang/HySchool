@@ -101,7 +101,7 @@ DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `to_vip_id` int(11) NOT NULL,
-  `from_vip_id` int(11) NOT NULL,
+  `from_vip_id` int(11) DEFAULT NULL,
   `content` varchar(255) NOT NULL,
   `type` int(1) NOT NULL,
   `url` varchar(255) NOT NULL,

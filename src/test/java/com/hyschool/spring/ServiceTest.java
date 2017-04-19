@@ -33,13 +33,23 @@ public class ServiceTest extends BaseSpringTestCase {
     }
 
     @Test
-    public void testNoticeService(){
+    public void testNoticeService() {
         List<Integer> idList = new ArrayList<>();
         idList.add(1);
         idList.add(2);
         idList.add(3);
         noticeService.readManyNotice(idList);
         noticeService.deleteManyNotice(idList);
+    }
+
+    @Test
+    public void testCreateNotice() {
+        noticeService.createAuditVipApprovePassNotice(1);
+        noticeService.createAuditVipApproveFailNotice(1, "原因哦");
+
+        noticeService.createAuditGoodsPassNotice(2, "goods");
+        noticeService.createAuditGoodsFailNotice(2, "goods", "reason");
+        noticeService.createAuditGoodsCloseNotice(2, "goods", "reason");
     }
 
 

@@ -1,7 +1,5 @@
 package com.hyschool.bean.common;
 
-import java.util.Date;
-
 public class OrderGoodsList {
     private Integer id;
 
