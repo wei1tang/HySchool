@@ -11,8 +11,43 @@
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="is_default" jdbcType="BIT" property="isDefault"/>
-        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
     </resultMap>
+
+    <insert id="createVipAddress" parameterType="vipAddress">
+        INSERT INTO vip_address
+        (address, province_code, city_code, postcode, phone, name, is_default, is_deleted, create_time)
+        VALUES
+        (
+        #{address},
+        #{provinceCode},
+        #{cityCode},
+        #{postCode},
+        #{phone},
+        #{name},
+        #{isDefault},
+        #{isDeleted}
+        )
+    </insert>
+
+    <update id="updateVipAddress" parameterType="vipAddress">
+        UPDATE vip_address
+        set address = #{address},
+            province_code = #{provinceCode},
+            city_code = #{cityCode},
+            postcode = #{postcode},
+            phone = #{phone},
+            name = #{name}
+        WHERE id = #{id}
+    </update>
+
+    <update id="setAddressDefault" parameterType="Integer">
+        UPDATE vip_address SET is_default = 1 WHERE id = #{id}
+    </update>
+
+    <update id="deleteVipAddress">
+        UPDATE vip_address SET is_deleted = 1, delete_time = #{deleteTime} WHERE id = #{id}
+    </update>
 </mapper>

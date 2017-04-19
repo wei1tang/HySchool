@@ -6,7 +6,7 @@
         <result column="owner_id" jdbcType="INTEGER" property="ownerId"/>
         <result column="from_id" jdbcType="INTEGER" property="fromId"/>
         <result column="content" jdbcType="VARCHAR" property="content"/>
-        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
     </resultMap>

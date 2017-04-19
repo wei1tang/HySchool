@@ -5,7 +5,7 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="vip_id" jdbcType="INTEGER" property="vipId"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
-        <result column="is_delete" jdbcType="BIT" property="isDelete"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 </mapper>

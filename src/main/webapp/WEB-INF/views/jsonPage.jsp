@@ -46,6 +46,10 @@
 </form>
 <div id="formReturn"></div>
 
+<br>
+<input type="button" class="btn btn-success btn-lg btn-right" value="通过"
+       onclick="return checkReason(1, true);">
+
 <%--一个string的list--%>
 <c:forEach items="${hisReason}" var="reasons" varStatus="tik">
     <h2>
@@ -133,6 +137,45 @@
 
 
     });
+
+
+    /**
+     *
+     *
+     * @param status
+     * @param isPass
+     * @returns {boolean}
+     */
+    function checkReason(status, isPass) {
+        var msg = "已通过";
+        if (isPass == false) {
+            var value = $.trim($('#reason').val());
+            if (value == '') {
+                $('#subTip').html('驳回情况下，请填写审核理由。');
+                return false;
+            }
+            msg = "已驳回";
+        }
+        $('#status').val(status);
+        $.ajax({
+            type: "post",
+            url: "${pageContext.request.contextPath}/audit/new/user/check4update.action",
+            data: $("form").serializeArray(),
+            success: function (data) {
+                if (data.indexOf("input") > 0 && data.indexOf("select") > 0) {
+                    alert(msg);
+                    window.opener.userformSubmit();
+                    self.close();
+                } else {
+                    $('#auditView').html(data);
+                }
+            },
+            error: function () {
+                alert("提交失败,请尝试重新提交");
+            }
+        });
+        return false;
+    }
 </script>
 </body>
 </html>

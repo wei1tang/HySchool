@@ -34,6 +34,7 @@ public class IndexController {
 
 
     /**
+     * 打开主页时检查cookie,vip放入session
      * 只显示主页的第一页
      *
      * @param model
