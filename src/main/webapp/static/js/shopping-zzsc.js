@@ -25,12 +25,14 @@ function removeErrorMessage(el){
 
     var offset = $el.parent().offset();
     var idLeft=offset.left+563;
+    var idRight=offset.right-10;
 
     var id =  "easytip-div-" + el.id;
     var $tip=$("#"+id);
     $tip.css({
         'display': 'none',
         'left':idLeft+'px',
+        'right':idRight+'px',
     });
 }
 function validateTypes(el) {
