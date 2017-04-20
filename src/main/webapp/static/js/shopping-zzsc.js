@@ -22,10 +22,15 @@ function showErrorMessage(el){
 }
 function removeErrorMessage(el){
     var $el=$(el);
+
+    var offset = $el.parent().offset();
+    var idLeft=offset.left+563;
+
     var id =  "easytip-div-" + el.id;
     var $tip=$("#"+id);
     $tip.css({
         'display': 'none',
+        'left':idLeft+'px',
     });
 }
 function validateTypes(el) {

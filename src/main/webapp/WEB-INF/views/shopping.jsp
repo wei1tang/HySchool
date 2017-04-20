@@ -27,9 +27,9 @@
         <div id="msform">
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active" id="bar1">Account Setup</li>
-                <li id="bar2">Social Profiles</li>
-                <li id="bar3">Personal Details</li>
+                <li class="active" id="bar1">购物车栏</li>
+                <li id="bar2">订单信息</li>
+                <li id="bar3">确认支付</li>
             </ul>
             <!-- fieldsets -->
             <fieldset>
