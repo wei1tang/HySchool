@@ -176,6 +176,10 @@ html,body{
     overflow: hidden;
     /*list-style: none;ul里面消除li的点*/
 }
+.step-cont .cont-item i{
+    color: darkorange;
+    margin-right: 5px;
+}
 .step-cont .cont-item .title{
     display: inline;
     float:left;
