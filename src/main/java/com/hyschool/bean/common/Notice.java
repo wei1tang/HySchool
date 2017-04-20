@@ -5,9 +5,9 @@ import java.util.Date;
 public class Notice {
     private Integer id;
 
-    private Integer toId;
+    private Integer toVipId;
 
-    private Integer fromId;
+    private Integer fromVipId;
 
     private String content;
 
@@ -19,11 +19,11 @@ public class Notice {
 
     private Boolean isDeleted;
 
+    private Integer annId;
+
     private Date createTime;
 
     private Date readTime;
-
-    private Boolean isPublicAll;
 
     public Integer getId() {
         return id;
@@ -33,20 +33,20 @@ public class Notice {
         this.id = id;
     }
 
-    public Integer getToId() {
-        return toId;
+    public Integer getToVipId() {
+        return toVipId;
     }
 
-    public void setToId(Integer toId) {
-        this.toId = toId;
+    public void setToVipId(Integer toVipId) {
+        this.toVipId = toVipId;
     }
 
-    public Integer getFromId() {
-        return fromId;
+    public Integer getFromVipId() {
+        return fromVipId;
     }
 
-    public void setFromId(Integer fromId) {
-        this.fromId = fromId;
+    public void setFromVipId(Integer fromVipId) {
+        this.fromVipId = fromVipId;
     }
 
     public String getContent() {
@@ -105,11 +105,11 @@ public class Notice {
         this.readTime = readTime;
     }
 
-    public Boolean getPublicAll() {
-        return isPublicAll;
+    public Integer getAnnId() {
+        return annId;
     }
 
-    public void setPublicAll(Boolean publicAll) {
-        isPublicAll = publicAll;
+    public void setAnnId(Integer annId) {
+        this.annId = annId;
     }
 }

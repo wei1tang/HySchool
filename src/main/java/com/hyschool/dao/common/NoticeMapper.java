@@ -10,7 +10,9 @@ import java.util.List;
 @Repository
 public interface NoticeMapper {
 
-    void createNotice(Notice notice);
+    void createNoticeNoFromId(Notice notice);
+
+    void createNoticeWithFromId(Notice notice);
 
     void readManyNotice(@Param("idList") List<Integer> idList, @Param("readTime")Date readTime);
 

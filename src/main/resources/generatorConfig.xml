@@ -25,7 +25,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.hyschool.common.bean"
+        <javaModelGenerator targetPackage="com.hyschool.bean.common"
                             targetProject="src\main\java\">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -40,14 +40,14 @@
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.hyschool.common.dao"
+                             targetPackage="com.hyschool.dao.common"
                              targetProject="src\main\java\">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
 
-        <table tableName="goods_images"></table>
+        <table tableName="announcement"></table>
 
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
