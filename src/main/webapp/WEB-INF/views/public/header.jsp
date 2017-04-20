@@ -42,7 +42,7 @@
 
         <c:if test="${sessionScope.vip ne null}">
             <div class="me" id="me">
-                <a class="list"><i class="fa fa-bell-o fa-lg"></i><span>通知</span></a>
+                <a class="list"><i class="fa fa-bell-o fa-lg"></i><sup id="email-number">0</sup><span>通知</span></a>
                 <a class="list"><i class="fa fa-shopping-cart fa-lg"></i><span>购物车</span></a>
                 <ul class="avatar-link" title="user">
                     <li id="user-img"><img src="${sessionScope.vip.avatarUrl}" class="avatar" alt="avatar"/>
@@ -84,7 +84,7 @@
         console.info("${pageContext.request.contextPath}");
     })
 </script>--%>
-
+<%--下拉框js--%>
 <script type="text/javascript">
     $('#user-img').mouseenter(function () {
         $('.header .me .item').css({
@@ -96,6 +96,24 @@
             'display':'none'
         });
     })
+</script>
+<%--信息栏数字显示js--%>
+<script type="text/javascript">
+    var emailNumber=3;//这里是后台给出信息的总数
+    var $emailText = $("#email-number");
+
+    $emailText.text(emailNumber);
+
+    var myText = document.getElementById('email-number').innerText;
+    if(myText==='0'){
+        $emailText.css({
+            'display':'none',
+        });
+    }else{
+        $emailText.css({
+            'display':'inline',
+        });
+    }
 </script>
 </body>
 </html>

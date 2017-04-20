@@ -117,7 +117,7 @@ $(".next").click(function(){
                     var $major = $("#cont-major");
                     var majorText = $major.val();
 
-                    $(".myName").text(parseInt(nameText));
+                    $(".myName").text(nameText);
                     $(".myId").text(idText);
                     $(".myClass").text(classText);
                     $(".myMajor").text(majorText);

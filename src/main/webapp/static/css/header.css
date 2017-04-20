@@ -63,6 +63,20 @@
     height: 100%;
     margin-left: 20px;
 }
+.header .header-content .me sup{
+    background: rgba(0,147,253,1);
+    color: white;
+    border-radius: 5px; /*圆角*/
+    padding: 0 3px; /*左右边距*/
+    /*top: -1em; !*数字离图片右上角的高度*!*/
+    margin-left: -7px;
+    font-size: 75%;/*解决sup影响边距*/
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+}
+
 .header .header-content li{
     width: 150px;
     list-style-type:none;
