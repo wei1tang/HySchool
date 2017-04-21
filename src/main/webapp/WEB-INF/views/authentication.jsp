@@ -32,7 +32,7 @@
         <div id="msform">
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active" id="bar1">填写学号和姓名</li>
+                <li class="active" id="bar1">填写认证信息</li>
                 <li id="bar2">上传学生证照片</li>
                 <li id="bar3">提交认证审核</li>
             </ul>
@@ -46,6 +46,10 @@
                         <h3>认证信息</h3>
                     </div>
                     <form class="step-cont" id="cont-info">
+                        <div class="cont-item">
+                            <label for="cont-school" class="title"><i>*</i>学校</label>
+                            <input type="text" id="cont-school" >
+                        </div>
                         <div class="cont-item">
                             <label for="cont-name" class="title"><i>*</i>姓名</label>
                             <input type="text" id="cont-name" >
@@ -80,6 +84,7 @@
             <fieldset>
                 <h2 class="fs-title">提交认证审核</h2>
                 <div class="fs-subtitle">请确认审核信息:
+                    <p>学校:<span style="color: red" class="mySchool"></span></p>
                     <p>姓名:<span style="color: red" class="myName"></span></p>
                     <p>学号:<span style="color: red" class="myId"></span></p>
                     <p>年级:<span style="color: red" class="myClass"></span></p>
